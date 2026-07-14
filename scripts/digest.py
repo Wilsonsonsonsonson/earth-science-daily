@@ -226,20 +226,25 @@ def build_prompt(candidates: list, today: str, prefs: dict) -> str:
 篩選與寫作原則：
 - 忽略例行、重複、規模很小或無明顯新聞價值的項目；同一事件被多個來源報導時合併成一則，選最權威的連結。
 - 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
-- 每則的 title 要短而有力（20 字以內），summary 用一句話講出「為什麼值得看」而不是复述標題（60 字以內），語氣自然、像懂行的朋友報消息，不聳動、不誇大。
+- 日報是雙語格式（英文在前、繁體中文在後），讀者想藉此練習專業英語：
+  - title_en：精煉的英文標題（期刊論文可直接用原標題或縮短版，事件類自己寫，10 個單字以內）。
+  - summary_en：一句自然、道地的英文摘要（25 個單字以內），用學術新聞的語感，是讀者的英語教材，不要是中式英文。
+  - title_zh：中文短標題（20 字以內）。
+  - summary_zh：中文一句話講出「為什麼值得看」，不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大（60 字以內）。
 - 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
 - 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
-- intro 是 2~3 句的今日導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白。
-- 全部使用繁體中文。emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
+- intro_en 是 1~2 句英文的今日導言；intro_zh 是 2~3 句中文導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
+- emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
 {guidelines_block}
 請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）。source 欄位填該則內容的來源名稱（期刊名／機構名，合併多來源時填最權威的那個）：
 {{
-  "intro": "今日導言，2~3 句",
+  "intro_en": "One or two sentences in English",
+  "intro_zh": "今日導言，2~3 句",
   "seismo": [
-    {{"emoji": "🌋", "title": "短標題", "summary": "一句話重點", "link": "https://...", "source": "來源名稱"}}
+    {{"emoji": "🌋", "title_en": "Short English title", "summary_en": "One English sentence", "title_zh": "中文短標題", "summary_zh": "中文一句話重點", "link": "https://...", "source": "來源名稱"}}
   ],
   "other": [
-    {{"emoji": "📄", "title": "短標題", "summary": "一句話重點", "link": "https://...", "source": "來源名稱"}}
+    {{"emoji": "📄", "title_en": "Short English title", "summary_en": "One English sentence", "title_zh": "中文短標題", "summary_zh": "中文一句話重點", "link": "https://...", "source": "來源名稱"}}
   ]
 }}
 
@@ -281,19 +286,31 @@ WEEKDAYS_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 
 def item_field(item: dict) -> dict:
-    title = f"{item.get('emoji', '•')} {item['title']}"
-    summary = item.get("summary", "").strip()
-    link = item.get("link", "")
-    source = item.get("source", "").strip()
-    value = summary
+    title_en = item.get("title_en") or item.get("title", "")
+    name = f"{item.get('emoji', '•')} {title_en}"
+
+    lines = []
+    summary_en = (item.get("summary_en") or "").strip()
+    if summary_en:
+        lines.append(summary_en)
+    title_zh = (item.get("title_zh") or "").strip()
+    summary_zh = (item.get("summary_zh") or item.get("summary") or "").strip()
+    zh = "｜".join(x for x in (title_zh, summary_zh) if x)
+    if zh:
+        lines.append(f"🇹🇼 {zh}")
+
     tail = []
+    source = (item.get("source") or "").strip()
     if source:
         tail.append(f"來源：{source}")
+    link = item.get("link", "")
     if link:
         tail.append(f"[閱讀原文 →]({link})")
     if tail:
-        value += "\n" + " · ".join(tail)
-    return {"name": title[:256], "value": value[:1024] or "（見連結）", "inline": False}
+        lines.append(" · ".join(tail))
+
+    value = "\n".join(lines)
+    return {"name": name[:256], "value": value[:1024] or "（見連結）", "inline": False}
 
 
 def section_embed(title: str, items: list, color: int, empty_text: str) -> dict:
@@ -307,9 +324,12 @@ def section_embed(title: str, items: list, color: int, empty_text: str) -> dict:
 
 def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
     weekday = WEEKDAYS_ZH[now_tw.weekday()]
+    intro_en = (digest.get("intro_en") or "").strip()
+    intro_zh = (digest.get("intro_zh") or digest.get("intro") or "早安！以下是過去 24 小時的地球科學精選。").strip()
+    description = f"*{intro_en}*\n\n{intro_zh}" if intro_en else intro_zh
     header = {
-        "title": f"🌍 地球科學日報",
-        "description": digest.get("intro", "早安！以下是過去 24 小時的地球科學精選。"),
+        "title": f"🌍 地球科學日報 · Earth Science Daily",
+        "description": description,
         "color": COLOR_HEADER,
         "author": {"name": f"{now_tw.strftime('%Y 年 %m 月 %d 日')}（週{weekday}）早報"},
     }

@@ -28,12 +28,13 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          CWA_API_KEY: ${{ secrets.CWA_API_KEY }}
         run: python scripts/digest.py
 
-      - name: Commit updated seen-list
+      - name: Commit state and archive
         run: |
           git config user.name "earth-science-digest-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/seen.json
-          git diff --cached --quiet || git commit -m "chore: update seen list [skip ci]"
+          git add data/ archive/
+          git diff --cached --quiet || git commit -m "chore: daily digest state + archive [skip ci]"
           git push

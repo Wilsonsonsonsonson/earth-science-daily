@@ -7,5 +7,14 @@
     "example_en": "The high attenuation of seismic waves in the mantle provides clues about the temperature and composition of the rock.",
     "zh": "衰減",
     "note": "想像聲音傳過牆壁會變小聲，地震波在岩層中傳遞時能量也會被吸收或散射，這就是衰減。"
+  },
+  {
+    "date": "2026-07-14",
+    "term": "attenuation",
+    "pos": "n.",
+    "definition_en": "The gradual loss of intensity of a wave or signal as it travels through a medium.",
+    "example_en": "High seismic attenuation in the crust often indicates the presence of fluids or high temperatures.",
+    "zh": "衰減",
+    "note": "源自拉丁文 attenuare，意為「變薄」，在物理學中指訊號強度隨距離或介質影響而下降。"
   }
 ]

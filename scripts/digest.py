@@ -217,6 +217,16 @@ def build_prompt(candidates: list, today: str, prefs: dict) -> str:
 {rules}
 """
 
+    terminology = prefs.get("terminology", [])
+    terminology_block = ""
+    if terminology:
+        pairs = "\n".join(f"- {t}" for t in terminology)
+        terminology_block = f"""
+中文一律使用台灣學術界慣用語（繁體中文、台灣譯名），嚴禁使用中國大陸的學術用語。讀者是台灣的地球科學學習者，錯誤用語會養壞他的專業語感。常見對照（左為英文，右為台灣正確用法）：
+{pairs}
+不在對照表內的詞彙，也一律優先選擇台灣學界與國家教育研究院雙語詞彙資料庫的慣用譯名。
+"""
+
     return f"""你是一份地球科學日報的主編，讀者是對地球科學有興趣的一般讀者，會在吃早餐時滑手機瀏覽。今天是 {today}。
 
 你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分兩類標籤：
@@ -235,7 +245,7 @@ def build_prompt(candidates: list, today: str, prefs: dict) -> str:
 - 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
 - intro_en 是 1~2 句英文的今日導言；intro_zh 是 2~3 句中文導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
 - emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
-{guidelines_block}
+{terminology_block}{guidelines_block}
 請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）。source 欄位填該則內容的來源名稱（期刊名／機構名，合併多來源時填最權威的那個）：
 {{
   "intro_en": "One or two sentences in English",

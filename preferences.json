@@ -7,6 +7,27 @@
   "blocked_keywords": [],
   "_blocked_keywords說明": "標題或摘要含這些關鍵字的項目會在送給 AI 前就被丟棄（不分大小寫），例如 ['Publisher Correction', 'Retraction'] 可濾掉更正啟事。",
 
+  "terminology": [
+    "mantle → 地函（勿用：地幔）",
+    "magnitude → 規模、地震規模（勿用：震級）",
+    "seismometer / seismic station → 地震儀、測站",
+    "algorithm → 演算法（勿用：算法）",
+    "data → 資料（勿用：數據，但『大數據』為既定用法可接受）",
+    "resolution → 解析度（勿用：分辨率）",
+    "artificial intelligence → 人工智慧（勿用：人工智能）",
+    "software / program → 軟體、程式（勿用：軟件、程序）",
+    "simulation / modeling → 模擬（勿用：仿真）",
+    "optimization → 最佳化（勿用：優化）",
+    "sensor → 感測器（勿用：傳感器）",
+    "laser → 雷射（勿用：激光）",
+    "satellite imagery → 衛星影像（勿用：衛星圖像）",
+    "network → 網路（勿用：網絡）",
+    "information → 資訊（勿用：信息）",
+    "digital → 數位（勿用：數字化）",
+    "quality → 品質（勿用：質量，物理學的 mass 才譯質量）"
+  ],
+  "_terminology說明": "台灣學術用語對照表，會直接交給 AI 要求遵守。發現日報用了中國用語時，把正確對照加進來即可，隔天生效。",
+
   "editorial_guidelines": [
     "更正啟事（Correction / Erratum）與撤稿聲明本身不值得報導，除非撤稿原因涉及重大學術爭議。",
     "純方法微幅改進、缺乏新發現的論文，標準從嚴。"

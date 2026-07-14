@@ -170,7 +170,7 @@ def mark_seen(candidates: list) -> None:
     save_seen(seen)
 
 
-def build_prompt(candidates: list) -> str:
+def build_prompt(candidates: list, today: str) -> str:
     lines = []
     for c in candidates:
         lines.append(
@@ -179,37 +179,47 @@ def build_prompt(candidates: list) -> str:
         )
     candidate_block = "\n".join(lines) if lines else "(今日無新候選項目)"
 
-    return f"""你是一份地球科學日報的編輯，讀者是對地球科學有興趣的一般讀者，會在吃早餐時瀏覽。
+    return f"""你是一份地球科學日報的主編，讀者是對地球科學有興趣的一般讀者，會在吃早餐時滑手機瀏覽。今天是 {today}。
 
 你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分兩類標籤：
-- [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。
-- [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的 1-3 則即可，不必每天都有。
+- [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。最多挑 8 則。
+- [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的內容，最多 3 則，不必每天都有。
 
-篩選原則：
-- 忽略例行、重複、規模很小或無明顯新聞價值的項目。
-- 同一事件如果被多個來源報導，合併成一則，並可附上主要連結。
-- 如果某類別今天真的沒有值得報導的內容，誠實寫「今日無重大更新」，不要硬湊字數。
+篩選與寫作原則：
+- 忽略例行、重複、規模很小或無明顯新聞價值的項目；同一事件被多個來源報導時合併成一則，選最權威的連結。
+- 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
+- 每則的 title 要短而有力（20 字以內），summary 用一句話講出「為什麼值得看」而不是复述標題（60 字以內），語氣自然、像懂行的朋友報消息，不聳動、不誇大。
+- 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
+- intro 是 2~3 句的今日導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白。
+- 全部使用繁體中文。emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
 
-請用繁體中文輸出一則適合傳到 Discord 的日報訊息，格式如下（純文字，可用簡單的 Markdown 粗體與項目符號，不要用標題 # 語法）：
+請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）：
+{{
+  "intro": "今日導言，2~3 句",
+  "seismo": [
+    {{"emoji": "🌋", "title": "短標題", "summary": "一句話重點", "link": "https://..."}}
+  ],
+  "other": [
+    {{"emoji": "📄", "title": "短標題", "summary": "一句話重點", "link": "https://..."}}
+  ]
+}}
 
-**🌍 地球科學日報｜{{今天日期}}**
-
-**🌋 地球物理與地震學**
-- (每則一行重點說明 + 來源連結)
-
-**🔭 其他地球科學領域**
-- (每則一行重點說明 + 來源連結，若無則寫「今日無重大更新」)
+若某類別今天沒有值得報導的內容，該欄位給空陣列 []。
 
 候選項目清單：
 {candidate_block}
 """
 
 
-def call_gemini(prompt: str) -> str:
+def call_gemini(prompt: str) -> dict:
     api_key = os.environ["GOOGLE_API_KEY"]
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 1500},
+        "generationConfig": {
+            "temperature": 0.4,
+            "maxOutputTokens": 2000,
+            "responseMimeType": "application/json",
+        },
     }
     resp = requests.post(
         GEMINI_URL,
@@ -218,11 +228,80 @@ def call_gemini(prompt: str) -> str:
         timeout=60,
     )
     resp.raise_for_status()
-    data = resp.json()
-    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+    text = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+    if text.startswith("```"):
+        text = text.strip("`").removeprefix("json").strip()
+    return json.loads(text)
 
 
-def post_discord(message: str) -> None:
+COLOR_HEADER = 0x1ABC9C   # 湖水綠：導言卡
+COLOR_SEISMO = 0xE74C3C   # 紅：地球物理與地震學
+COLOR_OTHER = 0x3498DB    # 藍：其他領域
+
+WEEKDAYS_ZH = ["一", "二", "三", "四", "五", "六", "日"]
+
+
+def item_field(item: dict) -> dict:
+    title = f"{item.get('emoji', '•')} {item['title']}"
+    summary = item.get("summary", "").strip()
+    link = item.get("link", "")
+    value = summary
+    if link:
+        value += f"\n[閱讀原文 →]({link})"
+    return {"name": title[:256], "value": value[:1024] or "（見連結）", "inline": False}
+
+
+def section_embed(title: str, items: list, color: int, empty_text: str) -> dict:
+    embed = {"title": title, "color": color}
+    if items:
+        embed["fields"] = [item_field(i) for i in items[:10]]
+    else:
+        embed["description"] = empty_text
+    return embed
+
+
+def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
+    weekday = WEEKDAYS_ZH[now_tw.weekday()]
+    header = {
+        "title": f"🌍 地球科學日報",
+        "description": digest.get("intro", "早安！以下是過去 24 小時的地球科學精選。"),
+        "color": COLOR_HEADER,
+        "author": {"name": f"{now_tw.strftime('%Y 年 %m 月 %d 日')}（週{weekday}）早報"},
+    }
+    seismo = section_embed(
+        "🌋 地球物理與地震學",
+        digest.get("seismo", []),
+        COLOR_SEISMO,
+        "今日無重大更新，地球很平靜。",
+    )
+    other = section_embed(
+        "🔭 其他地球科學",
+        digest.get("other", []),
+        COLOR_OTHER,
+        "今日無重大更新。",
+    )
+    other["footer"] = {
+        "text": (
+            f"掃描 {stats['sources']} 個來源 · {stats['candidates']} 則候選 · "
+            f"精選 {stats['picked']} 則 · 由 Gemini 整理"
+        )
+    }
+    other["timestamp"] = datetime.now(timezone.utc).isoformat()
+    return [header, seismo, other]
+
+
+def post_discord_embeds(embeds: list) -> None:
+    webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
+    payload = {
+        "username": "地球科學日報",
+        "avatar_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
+        "embeds": embeds,
+    }
+    resp = requests.post(webhook_url, json=payload, timeout=30)
+    resp.raise_for_status()
+
+
+def post_discord_text(message: str) -> None:
     webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
     chunk_size = 1900
     chunks = [message[i : i + chunk_size] for i in range(0, len(message), chunk_size)] or [message]
@@ -233,15 +312,21 @@ def post_discord(message: str) -> None:
 
 def main() -> None:
     candidates = gather_candidates()
-    today = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+    now_tw = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
+    today = now_tw.strftime("%Y-%m-%d")
 
     if not candidates:
-        post_discord(f"**🌍 地球科學日報｜{today}**\n\n今日各來源皆無新內容，明天再見！")
+        post_discord_text(f"**🌍 地球科學日報｜{today}**\n\n今日各來源皆無新內容，明天再見！")
         return
 
-    prompt = build_prompt(candidates).replace("{今天日期}", today)
+    prompt = build_prompt(candidates, today)
     digest = call_gemini(prompt)
-    post_discord(digest)
+    stats = {
+        "sources": len(RSS_SOURCES) + 2,  # +2: USGS 與 EMSC API
+        "candidates": len(candidates),
+        "picked": len(digest.get("seismo", [])) + len(digest.get("other", [])),
+    }
+    post_discord_embeds(build_embeds(digest, now_tw, stats))
     mark_seen(candidates)
 
 

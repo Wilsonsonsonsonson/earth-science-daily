@@ -1,0 +1,15 @@
+{
+  "_說明": "個人品質偏好檔。這個檔案用來『過濾品質不佳的內容』，不是用來塑造主題偏好——日報仍會維持領域多樣性。改完直接 commit push，隔天生效。",
+
+  "blocked_sources": [],
+  "_blocked_sources說明": "完全封鎖的來源名稱（需與 digest.py 中 RSS_SOURCES 的 name 完全一致），例如你覺得某個來源雜訊太多可整個關掉。",
+
+  "blocked_keywords": [],
+  "_blocked_keywords說明": "標題或摘要含這些關鍵字的項目會在送給 AI 前就被丟棄（不分大小寫），例如 ['Publisher Correction', 'Retraction'] 可濾掉更正啟事。",
+
+  "editorial_guidelines": [
+    "更正啟事（Correction / Erratum）與撤稿聲明本身不值得報導，除非撤稿原因涉及重大學術爭議。",
+    "純方法微幅改進、缺乏新發現的論文，標準從嚴。"
+  ],
+  "_editorial_guidelines說明": "給 AI 編輯的額外守則，每行一條，會附加到篩選指示中。請寫『品質標準』而非『我只想看某主題』，AI 被要求無論如何維持主題多樣性。"
+}

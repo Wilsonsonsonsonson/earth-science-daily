@@ -13,16 +13,22 @@ import requests
 LOOKBACK_HOURS = 30          # cron drift buffer on top of the 24h cadence
 MAX_ITEMS_PER_SOURCE = 12    # cap noisy feeds before they reach the LLM
 SEEN_RETENTION_DAYS = 14     # how long a link is remembered to avoid repeats
-DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "seen.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_FILE = REPO_ROOT / "data" / "seen.json"
+PREFS_FILE = REPO_ROOT / "preferences.json"
 
 GEMINI_MODEL = "gemini-2.5-flash"
 GEMINI_URL = (
     f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 )
 
+# 來源白名單：只收錄權威機構（AGU、EGU/Copernicus、Nature、arXiv、USGS、EMSC、
+# Smithsonian）。系統只從這份清單抓取，掠奪性期刊無法進入日報。
+# 新增來源前請先確認出版方信譽（可查 DOAJ 收錄狀態與出版社是否為 OASPA/COPE 成員）。
 # category: "seismo" = 地球物理與地震學 (主要焦點), "other" = 其他地球科學領域
+# peer_reviewed: False 的來源（如 arXiv 預印本）會在日報中明確標註未經同儕審查
 RSS_SOURCES = [
-    {"name": "arXiv physics.geo-ph (地球物理預印本)", "url": "https://rss.arxiv.org/rss/physics.geo-ph", "category": "seismo"},
+    {"name": "arXiv physics.geo-ph (地球物理預印本)", "url": "https://rss.arxiv.org/rss/physics.geo-ph", "category": "seismo", "peer_reviewed": False},
     {"name": "JGR: Solid Earth (AGU)", "url": "https://agupubs.onlinelibrary.wiley.com/action/showFeed?type=etoc&feed=rss&jc=21699356", "category": "seismo"},
     {"name": "Geophysical Research Letters (AGU)", "url": "https://agupubs.onlinelibrary.wiley.com/action/showFeed?type=etoc&feed=rss&jc=19448007", "category": "seismo"},
     {"name": "Solid Earth (EGU/Copernicus)", "url": "https://se.copernicus.org/xml/rss2_0.xml", "category": "seismo"},
@@ -73,6 +79,7 @@ def fetch_rss(source: dict, now: datetime) -> list:
             {
                 "source": source["name"],
                 "category": source["category"],
+                "peer_reviewed": source.get("peer_reviewed", True),
                 "title": entry.get("title", "(無標題)").strip(),
                 "link": entry.get("link", ""),
                 "summary": (entry.get("summary", "") or "")[:400],
@@ -80,6 +87,27 @@ def fetch_rss(source: dict, now: datetime) -> list:
             }
         )
     return items
+
+
+def load_prefs() -> dict:
+    if PREFS_FILE.exists():
+        prefs = json.loads(PREFS_FILE.read_text())
+        return {k: v for k, v in prefs.items() if not k.startswith("_")}
+    return {}
+
+
+def apply_prefs(candidates: list, prefs: dict) -> list:
+    blocked_sources = set(prefs.get("blocked_sources", []))
+    blocked_keywords = [k.lower() for k in prefs.get("blocked_keywords", [])]
+    kept = []
+    for c in candidates:
+        if c["source"] in blocked_sources:
+            continue
+        haystack = f"{c['title']} {c['summary']}".lower()
+        if any(k in haystack for k in blocked_keywords):
+            continue
+        kept.append(c)
+    return kept
 
 
 def fetch_usgs(now: datetime) -> list:
@@ -170,14 +198,24 @@ def mark_seen(candidates: list) -> None:
     save_seen(seen)
 
 
-def build_prompt(candidates: list, today: str) -> str:
+def build_prompt(candidates: list, today: str, prefs: dict) -> str:
     lines = []
     for c in candidates:
+        review_tag = "" if c.get("peer_reviewed", True) else "【預印本，未經同儕審查】"
         lines.append(
-            f"- [{c['category']}] 來源：{c['source']} | 標題：{c['title']} | "
+            f"- [{c['category']}]{review_tag} 來源：{c['source']} | 標題：{c['title']} | "
             f"時間：{c['published']} | 連結：{c['link']} | 摘要：{c['summary']}"
         )
     candidate_block = "\n".join(lines) if lines else "(今日無新候選項目)"
+
+    guidelines = prefs.get("editorial_guidelines", [])
+    guidelines_block = ""
+    if guidelines:
+        rules = "\n".join(f"- {g}" for g in guidelines)
+        guidelines_block = f"""
+讀者自訂的品質守則（僅作為品質過濾標準，不是主題偏好——你仍必須維持領域與主題的多樣性，不可因此讓日報內容窄化到單一主題）：
+{rules}
+"""
 
     return f"""你是一份地球科學日報的主編，讀者是對地球科學有興趣的一般讀者，會在吃早餐時滑手機瀏覽。今天是 {today}。
 
@@ -190,17 +228,18 @@ def build_prompt(candidates: list, today: str) -> str:
 - 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
 - 每則的 title 要短而有力（20 字以內），summary 用一句話講出「為什麼值得看」而不是复述標題（60 字以內），語氣自然、像懂行的朋友報消息，不聳動、不誇大。
 - 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
+- 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
 - intro 是 2~3 句的今日導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白。
 - 全部使用繁體中文。emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
-
-請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）：
+{guidelines_block}
+請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）。source 欄位填該則內容的來源名稱（期刊名／機構名，合併多來源時填最權威的那個）：
 {{
   "intro": "今日導言，2~3 句",
   "seismo": [
-    {{"emoji": "🌋", "title": "短標題", "summary": "一句話重點", "link": "https://..."}}
+    {{"emoji": "🌋", "title": "短標題", "summary": "一句話重點", "link": "https://...", "source": "來源名稱"}}
   ],
   "other": [
-    {{"emoji": "📄", "title": "短標題", "summary": "一句話重點", "link": "https://..."}}
+    {{"emoji": "📄", "title": "短標題", "summary": "一句話重點", "link": "https://...", "source": "來源名稱"}}
   ]
 }}
 
@@ -245,9 +284,15 @@ def item_field(item: dict) -> dict:
     title = f"{item.get('emoji', '•')} {item['title']}"
     summary = item.get("summary", "").strip()
     link = item.get("link", "")
+    source = item.get("source", "").strip()
     value = summary
+    tail = []
+    if source:
+        tail.append(f"來源：{source}")
     if link:
-        value += f"\n[閱讀原文 →]({link})"
+        tail.append(f"[閱讀原文 →]({link})")
+    if tail:
+        value += "\n" + " · ".join(tail)
     return {"name": title[:256], "value": value[:1024] or "（見連結）", "inline": False}
 
 
@@ -311,15 +356,18 @@ def post_discord_text(message: str) -> None:
 
 
 def main() -> None:
-    candidates = gather_candidates()
+    prefs = load_prefs()
+    fresh = gather_candidates()
+    candidates = apply_prefs(fresh, prefs)
     now_tw = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
     today = now_tw.strftime("%Y-%m-%d")
 
     if not candidates:
         post_discord_text(f"**🌍 地球科學日報｜{today}**\n\n今日各來源皆無新內容，明天再見！")
+        mark_seen(fresh)
         return
 
-    prompt = build_prompt(candidates, today)
+    prompt = build_prompt(candidates, today, prefs)
     digest = call_gemini(prompt)
     stats = {
         "sources": len(RSS_SOURCES) + 2,  # +2: USGS 與 EMSC API
@@ -327,7 +375,7 @@ def main() -> None:
         "picked": len(digest.get("seismo", [])) + len(digest.get("other", [])),
     }
     post_discord_embeds(build_embeds(digest, now_tw, stats))
-    mark_seen(candidates)
+    mark_seen(fresh)
 
 
 if __name__ == "__main__":

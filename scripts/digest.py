@@ -19,10 +19,9 @@ WORDS_FILE = REPO_ROOT / "data" / "words.json"
 ARCHIVE_DIR = REPO_ROOT / "archive"
 PREFS_FILE = REPO_ROOT / "preferences.json"
 
-GEMINI_MODEL = "gemini-2.5-flash"
-GEMINI_URL = (
-    f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
-)
+# 依序嘗試：模型忙碌（503）或對新用戶關閉（404）時自動退到下一個
+GEMINI_MODELS = ["gemini-flash-latest", "gemini-flash-lite-latest", "gemini-2.5-flash-lite"]
+GEMINI_URL_TMPL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
 # 來源白名單：只收錄權威機構（AGU、EGU/Copernicus、Nature、arXiv、USGS、EMSC、
 # Smithsonian）。系統只從這份清單抓取，掠奪性期刊無法進入日報。
@@ -401,17 +400,27 @@ def call_gemini(prompt: str) -> dict:
             "responseMimeType": "application/json",
         },
     }
-    resp = requests.post(
-        GEMINI_URL,
-        params={"key": api_key},
-        json=payload,
-        timeout=60,
-    )
-    resp.raise_for_status()
-    text = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-    if text.startswith("```"):
-        text = text.strip("`").removeprefix("json").strip()
-    return json.loads(text)
+    last_error: Exception = RuntimeError("no Gemini model attempted")
+    for model in GEMINI_MODELS:
+        for attempt in range(2):
+            try:
+                resp = requests.post(
+                    GEMINI_URL_TMPL.format(model=model),
+                    params={"key": api_key},
+                    json=payload,
+                    timeout=120,
+                )
+                resp.raise_for_status()
+                parts = resp.json()["candidates"][0]["content"]["parts"]
+                text = "".join(p.get("text", "") for p in parts).strip()
+                if text.startswith("```"):
+                    text = text.strip("`").removeprefix("json").strip()
+                return json.loads(text)
+            except Exception as exc:
+                last_error = exc
+                print(f"[warn] {model} attempt {attempt + 1} failed: {exc}", file=sys.stderr)
+                time.sleep(15)
+    raise last_error
 
 
 COLOR_HEADER = 0x1ABC9C   # 湖水綠：導言卡

@@ -50,6 +50,13 @@ TAIWAN_BBOX = {"minlatitude": 21, "maxlatitude": 26.5, "minlongitude": 118.5, "m
 TAIWAN_MIN_MAG = 4.0
 CWA_URL = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/E-A0015-001"
 
+# 全球颱風動態：JMA（西太平洋，對台灣最重要）+ NHC（大西洋/東太平洋）+ JTWC（補其他海域）
+JMA_TC_LIST_URL = "https://www.jma.go.jp/bosai/typhoon/data/targetTc.json"
+JMA_TC_SPEC_URL = "https://www.jma.go.jp/bosai/typhoon/data/{tc}/specifications.json"
+JMA_TYPHOON_PAGE = "https://www.jma.go.jp/bosai/map.html#contents=typhoon"
+NHC_STORMS_URL = "https://www.nhc.noaa.gov/CurrentStorms.json"
+JTWC_RSS_URL = "https://www.metoc.navy.mil/jtwc/rss/jtwc.rss"
+
 
 def load_seen() -> dict:
     if DATA_FILE.exists():
@@ -277,6 +284,104 @@ def fetch_taiwan(now: datetime) -> list:
     return fetch_taiwan_cwa(now) or fetch_taiwan_usgs(now)
 
 
+def _strip_html(text: str) -> str:
+    import re
+
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)).strip()
+
+
+def fetch_typhoons(now: datetime) -> list:
+    """Active tropical cyclones worldwide. Status updates recur daily, so items
+    are deduped by (system, date) instead of by link."""
+    items = []
+    date_tag = now.strftime("%Y-%m-%d")
+
+    # JMA：西太平洋現役颱風／熱帶性低氣壓，結構化實況
+    try:
+        tcs = requests.get(JMA_TC_LIST_URL, timeout=20).json()
+        for tc in tcs:
+            tc_id = tc.get("tropicalCyclone", "")
+            try:
+                spec = requests.get(JMA_TC_SPEC_URL.format(tc=tc_id), timeout=20).json()
+                title_part = spec[0]
+                analysis = spec[1] if len(spec) > 1 else {}
+                name_en = (title_part.get("name") or {}).get("en") or "（未命名）"
+                num = title_part.get("typhoonNumber", "")
+                cat = (title_part.get("category") or {}).get("en", "")
+                wind_kt = ((analysis.get("maximumWind") or {}).get("sustained") or {}).get("kt", "?")
+                pressure = analysis.get("pressure", "?")
+                pos = (analysis.get("position") or {}).get("deg", ["?", "?"])
+                course = analysis.get("course", "?")
+                speed = (analysis.get("speed") or {}).get("km/h", "?")
+                location = analysis.get("location", "")
+                items.append(
+                    {
+                        "source": "日本氣象廳（JMA）颱風情報",
+                        "category": "typhoon",
+                        "peer_reviewed": True,
+                        "title": f"颱風 {name_en}（編號 {num}，國際分類 {cat}）",
+                        "link": JMA_TYPHOON_PAGE,
+                        "dedupe_key": f"jma-{tc_id}-{date_tag}",
+                        "summary": (
+                            f"中心位置 北緯{pos[0]}度、東經{pos[1]}度（{location}），中心氣壓 {pressure} hPa，"
+                            f"最大持續風速 {wind_kt} 節，向{course}移動 時速{speed}公里"
+                        ),
+                        "published": now.isoformat(),
+                    }
+                )
+            except Exception as exc:
+                print(f"[warn] JMA TC {tc_id} detail failed: {exc}", file=sys.stderr)
+    except Exception as exc:
+        print(f"[warn] JMA typhoon list failed: {exc}", file=sys.stderr)
+
+    # NHC：大西洋／東太平洋現役系統
+    try:
+        storms = requests.get(NHC_STORMS_URL, timeout=20).json().get("activeStorms", [])
+        for s in storms:
+            items.append(
+                {
+                    "source": "美國國家颶風中心（NHC）",
+                    "category": "typhoon",
+                    "peer_reviewed": True,
+                    "title": f"{s.get('classification', '')} {s.get('name', '')}（{s.get('binNumber', '')}）",
+                    "link": "https://www.nhc.noaa.gov/",
+                    "dedupe_key": f"nhc-{s.get('id', s.get('name', ''))}-{date_tag}",
+                    "summary": (
+                        f"位置 {s.get('latitudeNumeric', '?')}, {s.get('longitudeNumeric', '?')}，"
+                        f"強度 {s.get('intensity', '?')} 節，氣壓 {s.get('pressure', '?')} mb，"
+                        f"移動 {s.get('movementDir', '?')}° / {s.get('movementSpeed', '?')} 節"
+                    ),
+                    "published": now.isoformat(),
+                }
+            )
+    except Exception as exc:
+        print(f"[warn] NHC storms failed: {exc}", file=sys.stderr)
+
+    # JTWC：補其他海域（南半球、印度洋）；原始警報文字，交給 AI 摘要
+    try:
+        parsed = feedparser.parse(JTWC_RSS_URL)
+        for i, entry in enumerate(parsed.entries):
+            desc = _strip_html(entry.get("summary", ""))
+            if not desc or desc.lower().startswith("no current"):
+                continue
+            items.append(
+                {
+                    "source": "美軍聯合颱風警報中心（JTWC）",
+                    "category": "typhoon",
+                    "peer_reviewed": True,
+                    "title": entry.get("title", "JTWC 警報"),
+                    "link": "https://www.metoc.navy.mil/jtwc/jtwc.html",
+                    "dedupe_key": f"jtwc-{i}-{date_tag}",
+                    "summary": desc[:400],
+                    "published": now.isoformat(),
+                }
+            )
+    except Exception as exc:
+        print(f"[warn] JTWC feed failed: {exc}", file=sys.stderr)
+
+    return items
+
+
 def gather_candidates() -> list:
     """Return new-since-last-run items. Does NOT persist yet — call mark_seen()
     only after the digest has been posted successfully, so a failed run doesn't
@@ -287,16 +392,18 @@ def gather_candidates() -> list:
 
     # 台灣專區優先收集；全球來源中重複的同一起地震會被連結去重跳過
     candidates.extend(fetch_taiwan(now))
+    candidates.extend(fetch_typhoons(now))
     for source in RSS_SOURCES:
         candidates.extend(fetch_rss(source, now))
     candidates.extend(fetch_usgs(now))
     candidates.extend(fetch_seismicportal(now))
 
-    fresh, links = [], set()
+    fresh, keys = [], set()
     for c in candidates:
-        if c["link"] and c["link"] not in seen and c["link"] not in links:
+        key = c.get("dedupe_key") or c["link"]
+        if key and key not in seen and key not in keys:
             fresh.append(c)
-            links.add(c["link"])
+            keys.add(key)
     return fresh
 
 
@@ -304,7 +411,7 @@ def mark_seen(candidates: list) -> None:
     now = datetime.now(timezone.utc)
     seen = load_seen()
     for c in candidates:
-        seen[c["link"]] = now.isoformat()
+        seen[c.get("dedupe_key") or c["link"]] = now.isoformat()
     save_seen(seen)
 
 
@@ -341,8 +448,9 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 
     return f"""你是一份地球科學日報的主編，讀者是對地球科學有興趣的一般讀者，會在吃早餐時滑手機瀏覽。今天是 {today}。
 
-你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分三類標籤：
+你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分四類標籤：
 - [taiwan]：台灣及周邊的地震，讀者在台灣、對此最關心，全部納入 taiwan 陣列（除非明顯是同一起地震的重複報告）。
+- [typhoon]：全球現役熱帶氣旋動態。同一個颱風被多個機構（JMA/NHC/JTWC）報告時合併成一則，以 JMA 資料為準（西太平洋）。每則講清楚：名稱與編號、目前強度與位置、移動方向速度、未來趨勢，以及對台灣或鄰近地區的潛在影響（若在西太平洋）。颱風強度用台灣中央氣象署的分級稱呼（輕度颱風＝TS/STS、中度颱風＝TY、強烈颱風），並在括號附國際分類。JTWC 的原始警報文字要消化成人話。全球都無活躍系統時給空陣列。
 - [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。最多挑 8 則。
 - [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的內容，最多 3 則，不必每天都有。
 
@@ -372,6 +480,9 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
   "intro_zh": "今日導言，2~3 句",
   "taiwan": [
     {{"emoji": "🚨", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
+  ],
+  "typhoon": [
+    {{"emoji": "🌀", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：現況＋趨勢＋影響", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
   ],
   "seismo": [
     {{"emoji": "🌋", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
@@ -425,6 +536,7 @@ def call_gemini(prompt: str) -> dict:
 
 COLOR_HEADER = 0x1ABC9C   # 湖水綠：導言卡
 COLOR_TAIWAN = 0xF39C12   # 琥珀：台灣地震動態
+COLOR_TYPHOON = 0x00BCD4  # 青：全球颱風動態
 COLOR_SEISMO = 0xE74C3C   # 紅：地球物理與地震學
 COLOR_OTHER = 0x3498DB    # 藍：其他領域
 COLOR_DIVE = 0x27AE60     # 綠：今日深度導讀
@@ -491,6 +603,12 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
         COLOR_TAIWAN,
         "過去 24 小時台灣及周邊無規模 4 以上地震。",
     )
+    typhoon = section_embed(
+        "🌀 全球颱風動態",
+        digest.get("typhoon", []),
+        COLOR_TYPHOON,
+        "目前全球無活躍的熱帶氣旋。",
+    )
     seismo = section_embed(
         "🌋 地球物理與地震學",
         digest.get("seismo", []),
@@ -503,7 +621,7 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
         COLOR_OTHER,
         "今日無重大更新。",
     )
-    embeds = [header, taiwan, seismo, other]
+    embeds = [header, taiwan, typhoon, seismo, other]
 
     dive = digest.get("deep_dive") or {}
     if dive.get("body_zh"):
@@ -607,6 +725,7 @@ def render_archive_md(digest: dict, now_tw: datetime) -> str:
 
     sections = [
         ("🇹🇼 台灣地震動態", "taiwan"),
+        ("🌀 全球颱風動態", "typhoon"),
         ("🌋 地球物理與地震學", "seismo"),
         ("🔭 其他地球科學", "other"),
     ]
@@ -768,9 +887,9 @@ def main() -> None:
         prompt = build_prompt(candidates, today, prefs, load_words())
         digest = call_gemini(prompt)
         stats = {
-            "sources": len(RSS_SOURCES) + 3,  # +3: USGS、EMSC、台灣地震 API
+            "sources": len(RSS_SOURCES) + 6,  # +6: USGS、EMSC、台灣地震、JMA、NHC、JTWC
             "candidates": len(candidates),
-            "picked": sum(len(digest.get(k, [])) for k in ("taiwan", "seismo", "other")),
+            "picked": sum(len(digest.get(k, [])) for k in ("taiwan", "typhoon", "seismo", "other")),
         }
         post_discord_embeds(build_embeds(digest, now_tw, stats))
         write_archive(digest, now_tw)

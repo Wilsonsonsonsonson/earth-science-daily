@@ -31,6 +31,12 @@ jobs:
           CWA_API_KEY: ${{ secrets.CWA_API_KEY }}
         run: python scripts/digest.py
 
+      - name: Post earthquake figures (record section + ShakeMap)
+        continue-on-error: true   # 圖產不出來（無合格地震／測站資料未就緒）不影響日報
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python scripts/quakeplot.py
+
       - name: Commit state and archive
         run: |
           git config user.name "earth-science-digest-bot"

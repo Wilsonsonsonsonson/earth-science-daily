@@ -350,12 +350,14 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 篩選與寫作原則：
 - 忽略例行、重複、規模很小或無明顯新聞價值的項目；同一事件被多個來源報導時合併成一則，選最權威的連結。
 - 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
-- 日報是雙語格式（英文在前、繁體中文在後），讀者想藉此練習專業英語：
+- 日報是雙語格式（英文在前、繁體中文在後），讀者想藉此練習專業英語，也想「每天真的學到東西」，風格參考台灣的泛科學（PanSci）：有趣、有料、把科學脈絡講清楚，不是乾巴巴的事件通報：
   - title_en：精煉的英文標題（期刊論文可直接用原標題或縮短版，事件類自己寫，10 個單字以內）。
-  - summary_en：一句自然、道地的英文摘要（25 個單字以內），用學術新聞的語感，是讀者的英語教材，不要是中式英文。
+  - summary_en：一到兩句自然、道地的英文摘要（35 個單字以內），用學術新聞的語感，是讀者的英語教材，不要是中式英文。
   - title_zh：中文短標題（20 字以內）。
-  - summary_zh：中文一句話講出「為什麼值得看」，不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大（60 字以內）。
+  - summary_zh：中文 2~3 句（120 字以內），講清楚「發生什麼＋所以呢？」——重點放在意義與影響，不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大。
+  - note_zh：1~2 句科普補充（80 字以內）——這則背後的科學原理、學界原本的認知、或一個讀者可能不知道的背景知識。這是讀者「學到東西」的關鍵欄位，寧可講一個原理講透，不要堆砌名詞。沒有適合的補充時可給空字串。
 - 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
+- deep_dive（今日深度導讀）：從所有入選項目中挑「今天最有意思、最值得深入理解」的一則（優先挑地球物理／地震學），寫一篇 250~350 字的迷你科普文（body_zh）。結構：用一個生活化的比喻、問題或場景開場 → 交代背景（這領域原本知道什麼／缺什麼）→ 講清楚新發現或事件本身 → 為什麼重要、對誰有影響 → 結尾留一個 fun fact 或思考點。段落間用換行分隔，語氣像泛科學的文章，專業但不掉書袋。
 - 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
 - intro_en 是 1~2 句英文的今日導言；intro_zh 是 2~3 句中文導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
 - emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
@@ -370,14 +372,15 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
   "intro_en": "One or two sentences in English",
   "intro_zh": "今日導言，2~3 句",
   "taiwan": [
-    {{"emoji": "🚨", "title_en": "Short English title", "summary_en": "One English sentence", "title_zh": "中文短標題", "summary_zh": "中文一句話重點", "link": "https://...", "source": "來源名稱"}}
+    {{"emoji": "🚨", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
   ],
   "seismo": [
-    {{"emoji": "🌋", "title_en": "Short English title", "summary_en": "One English sentence", "title_zh": "中文短標題", "summary_zh": "中文一句話重點", "link": "https://...", "source": "來源名稱"}}
+    {{"emoji": "🌋", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
   ],
   "other": [
-    {{"emoji": "📄", "title_en": "Short English title", "summary_en": "One English sentence", "title_zh": "中文短標題", "summary_zh": "中文一句話重點", "link": "https://...", "source": "來源名稱"}}
+    {{"emoji": "📄", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
   ],
+  "deep_dive": {{"emoji": "🔬", "title_zh": "深度導讀標題", "title_en": "English title", "body_zh": "250~350字迷你科普文，段落用\\n分隔", "link": "https://...", "source": "來源名稱"}},
   "word_of_the_day": {{"term": "attenuation", "pos": "n.", "definition_en": "Simple English definition", "example_en": "A natural academic example sentence.", "zh": "衰減", "note": "一句中文記憶點"}}
 }}
 
@@ -394,7 +397,7 @@ def call_gemini(prompt: str) -> dict:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.4,
-            "maxOutputTokens": 2000,
+            "maxOutputTokens": 6000,
             "responseMimeType": "application/json",
         },
     }
@@ -415,6 +418,7 @@ COLOR_HEADER = 0x1ABC9C   # 湖水綠：導言卡
 COLOR_TAIWAN = 0xF39C12   # 琥珀：台灣地震動態
 COLOR_SEISMO = 0xE74C3C   # 紅：地球物理與地震學
 COLOR_OTHER = 0x3498DB    # 藍：其他領域
+COLOR_DIVE = 0x27AE60     # 綠：今日深度導讀
 COLOR_WORD = 0x9B59B6     # 紫：每日一詞
 COLOR_WEEKLY = 0x8E44AD   # 深紫：週日回顧
 
@@ -434,6 +438,9 @@ def item_field(item: dict) -> dict:
     zh = "｜".join(x for x in (title_zh, summary_zh) if x)
     if zh:
         lines.append(f"🇹🇼 {zh}")
+    note_zh = (item.get("note_zh") or "").strip()
+    if note_zh:
+        lines.append(f"💡 {note_zh}")
 
     tail = []
     source = (item.get("source") or "").strip()
@@ -489,6 +496,24 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
     )
     embeds = [header, taiwan, seismo, other]
 
+    dive = digest.get("deep_dive") or {}
+    if dive.get("body_zh"):
+        body = dive["body_zh"].strip()
+        tail = []
+        if dive.get("source"):
+            tail.append(f"來源：{dive['source']}")
+        if dive.get("link"):
+            tail.append(f"[閱讀原文 →]({dive['link']})")
+        if tail:
+            body += "\n\n" + " · ".join(tail)
+        title_en = (dive.get("title_en") or "").strip()
+        title = f"{dive.get('emoji', '🔬')} 今日深度導讀：{dive.get('title_zh', '')}"
+        if title_en:
+            body = f"*{title_en}*\n\n{body}"
+        embeds.append(
+            {"title": title[:256], "description": body[:4096], "color": COLOR_DIVE}
+        )
+
     word = digest.get("word_of_the_day") or {}
     if word.get("term"):
         zh = word.get("zh", "")
@@ -520,15 +545,37 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
     return embeds
 
 
+def embed_size(embed: dict) -> int:
+    total = len(embed.get("title", "")) + len(embed.get("description", ""))
+    total += len(embed.get("author", {}).get("name", ""))
+    total += len(embed.get("footer", {}).get("text", ""))
+    for f in embed.get("fields", []):
+        total += len(f.get("name", "")) + len(f.get("value", ""))
+    return total
+
+
 def post_discord_embeds(embeds: list) -> None:
+    # Discord 限制：單則訊息所有 embed 字元合計 ≤6000、embed 數 ≤10，超過就分批送
     webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
-    payload = {
-        "username": "地球科學日報",
-        "avatar_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
-        "embeds": embeds,
-    }
-    resp = requests.post(webhook_url, json=payload, timeout=30)
-    resp.raise_for_status()
+    batches, batch, size = [], [], 0
+    for e in embeds:
+        s = embed_size(e)
+        if batch and (size + s > 5500 or len(batch) >= 10):
+            batches.append(batch)
+            batch, size = [], 0
+        batch.append(e)
+        size += s
+    if batch:
+        batches.append(batch)
+
+    for b in batches:
+        payload = {
+            "username": "地球科學日報",
+            "avatar_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
+            "embeds": b,
+        }
+        resp = requests.post(webhook_url, json=payload, timeout=30)
+        resp.raise_for_status()
 
 
 def render_archive_md(digest: dict, now_tw: datetime) -> str:
@@ -571,9 +618,23 @@ def render_archive_md(digest: dict, now_tw: datetime) -> str:
             zh = "｜".join(x for x in (it.get("title_zh", ""), it.get("summary_zh", "")) if x)
             if zh:
                 lines.append(f"  🇹🇼 {zh}")
+            if it.get("note_zh"):
+                lines.append(f"  💡 {it['note_zh']}")
             if it.get("source"):
                 lines.append(f"  <sub>來源：{it['source']}</sub>")
         lines.append("")
+
+    dive = digest.get("deep_dive") or {}
+    if dive.get("body_zh"):
+        lines += [
+            f"## {dive.get('emoji', '🔬')} 今日深度導讀：{dive.get('title_zh', '')}",
+            "",
+        ]
+        if dive.get("title_en"):
+            lines += [f"*{dive['title_en']}*", ""]
+        lines += [dive["body_zh"], ""]
+        if dive.get("link"):
+            lines += [f"[閱讀原文]({dive['link']})（來源：{dive.get('source', '')}）", ""]
 
     word = digest.get("word_of_the_day") or {}
     if word.get("term"):

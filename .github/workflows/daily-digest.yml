@@ -1,0 +1,39 @@
+name: Daily Earth Science Digest
+
+on:
+  schedule:
+    # 00:00 UTC = 08:00 台北時間（台灣無日光節約時間，全年固定）
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}   # 讓你可以在 GitHub 網頁上手動按「Run workflow」測試
+
+permissions:
+  contents: write   # 需要把 data/seen.json 的更新推回 repo
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run digest
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python scripts/digest.py
+
+      - name: Commit updated seen-list
+        run: |
+          git config user.name "earth-science-digest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/seen.json
+          git diff --cached --quiet || git commit -m "chore: update seen list [skip ci]"
+          git push

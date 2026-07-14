@@ -1,0 +1,11 @@
+[
+  {
+    "date": "2026-07-14",
+    "term": "attenuation",
+    "pos": "n.",
+    "definition_en": "The gradual loss of intensity of a seismic wave as it travels through the Earth's interior.",
+    "example_en": "The high attenuation of seismic waves in the mantle provides clues about the temperature and composition of the rock.",
+    "zh": "衰減",
+    "note": "想像聲音傳過牆壁會變小聲，地震波在岩層中傳遞時能量也會被吸收或散射，這就是衰減。"
+  }
+]

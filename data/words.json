@@ -7,5 +7,14 @@
     "example_en": "The high attenuation of seismic waves in the mantle provides clues about the temperature and composition of the rock.",
     "zh": "衰減",
     "note": "想像聲音傳過牆壁會變小聲，地震波在岩層中傳遞時能量也會被吸收或散射，這就是衰減。"
+  },
+  {
+    "date": "2026-07-15",
+    "term": "slow slip",
+    "pos": "n.",
+    "definition_en": "A seismic phenomenon where tectonic plates slide past each other at a very slow rate, releasing energy over days to months without generating typical devastating seismic waves.",
+    "example_en": "The PINN-based framework successfully forecasted the evolution of the 2010 slow slip event in the Bungo Channel.",
+    "zh": "慢滑移（或稱慢地震）",
+    "note": "與一般地震在幾秒內釋放能量不同，慢滑移像是在「慢跑」，花費數週甚至數月釋放能量，是科學家預測大地震的重要前兆線索。"
   }
 ]

@@ -101,20 +101,31 @@ def parse_report(quake: dict) -> dict:
     epicenter = info.get("Epicenter", {})
     magnitude = info.get("EarthquakeMagnitude", {})
 
+    # ShakingArea 混了兩種列：InfoStatus="observe" 是各縣市實測（含測站），
+    # 另一種是「最大震度X級地區」的彙總列（無測站、縣市名可能是「南投縣、臺南市」
+    # 這種合併字串）。只取實測列，否則縣市會重複。
     areas = []
     for area in (quake.get("Intensity", {}) or {}).get("ShakingArea", []):
-        # 氣象署同時提供縣市層級與細部地區，只取縣市層級（有 CountyName）
+        if area.get("InfoStatus") != "observe":
+            continue
         county = area.get("CountyName")
         if not county:
             continue
-        stations = [
-            {
-                "name": s.get("StationName", ""),
-                "intensity": s.get("SeismicIntensity", ""),
-                "rank": intensity_rank(s.get("SeismicIntensity", "")),
-            }
-            for s in area.get("EqStation", []) or []
-        ]
+        stations = []
+        for s in area.get("EqStation", []) or []:
+            pga = s.get("pga") or {}
+            pgv = s.get("pgv") or {}
+            stations.append(
+                {
+                    "name": s.get("StationName", ""),
+                    "intensity": s.get("SeismicIntensity", ""),
+                    "rank": intensity_rank(s.get("SeismicIntensity", "")),
+                    "distance": s.get("EpicenterDistance"),
+                    "pga": pga.get("IntScaleValue"),
+                    "pgv": pgv.get("IntScaleValue"),
+                    "wave": s.get("WaveImageURI", ""),
+                }
+            )
         stations.sort(key=lambda s: s["rank"], reverse=True)
         areas.append(
             {
@@ -128,12 +139,16 @@ def parse_report(quake: dict) -> dict:
 
     origin_raw = info.get("OriginTime", "")
     try:
-        origin = datetime.strptime(origin_raw, "%Y-%m-%d %H:%M:%S").replace(tzinfo=TW_TZ)
+        # 氣象署給的是 ISO 格式含時區，例：2026-07-15T22:44:30+08:00
+        origin = datetime.fromisoformat(origin_raw)
     except ValueError:
         origin = None
 
     return {
         "no": str(quake.get("EarthquakeNo", "")),
+        # 氣象署若修訂報告會換發布時間，把它併入識別碼，修訂版會再推一次
+        "key": f"{quake.get('EarthquakeNo', '')}-{quake.get('IssueTime', '')}",
+        "issue_time": quake.get("IssueTime", ""),
         "dataset": quake.get("_dataset", ""),
         "report_type": quake.get("ReportType", "地震報告"),
         "color": quake.get("ReportColor", ""),
@@ -232,9 +247,23 @@ def build_embeds(r: dict, explanation: str) -> list:
         lines.append(f"{emoji} **最大震度**　{top['county']} {top['intensity']}")
     if r["content"]:
         lines += ["", f"> {r['content']}"]
+
+    # 最大震度測站的實測值：震度是由 PGA／PGV 換算而來，附上讓讀者對照
+    top_station = next((s for a in r["areas"] for s in a["stations"] if s["rank"] == (top["rank"] if top else -1)), None)
+    if top_station and (top_station["pga"] or top_station["pgv"]):
+        detail = f"　最大震度測站 **{top_station['name']}**"
+        if top_station["distance"] is not None:
+            detail += f"（距震央 {top_station['distance']} 公里）"
+        vals = []
+        if top_station["pga"] is not None:
+            vals.append(f"PGA {top_station['pga']} gal")
+        if top_station["pgv"] is not None:
+            vals.append(f"PGV {top_station['pgv']} kine")
+        lines += ["", detail + "：" + "、".join(vals)]
+
     if r["remark"]:
-        lines.append(f"> {r['remark']}")
-    lines += ["", f"-# 資料來源：{r['source']}｜{r['dataset']}"]
+        lines += ["", f"-# {r['remark']}"]
+    lines.append(f"-# 資料來源：{r['source']}｜{r['dataset']}｜發布時間 {r['issue_time'][11:19] if len(r['issue_time']) > 19 else r['issue_time']}")
     if r["web"]:
         lines.append(f"-# [氣象署原始報告 →]({r['web']})")
 
@@ -256,7 +285,7 @@ def build_embeds(r: dict, explanation: str) -> list:
                 tops = [s for s in a["stations"] if s["rank"] == a["rank"]][:3]
                 names = "、".join(s["name"] for s in tops)
                 if names:
-                    row += f"\n-# 　最大測站：{names}（共 {len(a['stations'])} 站有紀錄）"
+                    row += f"\n-# 　最大測站：{names}（該縣市共 {len(a['stations'])} 站有紀錄）"
             rows.append(row)
         chunks, current = [], ""
         for row in rows:
@@ -295,6 +324,21 @@ def build_embeds(r: dict, explanation: str) -> list:
             }
         )
 
+    # 最大震度測站的實際波形圖：讓讀者看到「震度」背後真正的地動記錄
+    if top_station and top_station.get("wave"):
+        embeds.append(
+            {
+                "title": f"📉 {top_station['name']}測站波形記錄",
+                "description": (
+                    f"最大震度測站（{top['county']} {top['intensity']}）的三軸地動波形。"
+                    "由上而下通常為垂直向與兩個水平向；先到的小振動是 P 波，"
+                    "隨後振幅較大的是 S 波，兩者的時間差可用來推算震央距離。"
+                ),
+                "color": color,
+                "image": {"url": top_station["wave"]},
+            }
+        )
+
     if explanation:
         embeds.append(
             {
@@ -321,7 +365,7 @@ def post(r: dict, embeds: list) -> None:
     top = r["areas"][0] if r["areas"] else None
     when = r["origin"].strftime("%m/%d %H:%M") if r["origin"] else r["origin_raw"][:16]
     place = r["location"].split("（")[0].strip()
-    thread_name = f"🚨 M{r['mag']} {place}｜{when}"
+    thread_name = f"{'🔄 [報告更新] ' if r.get('revised') else '🚨 '}M{r['mag']} {place}｜{when}"
     if top:
         thread_name += f"｜最大震度 {top['county']}{top['intensity']}"
 
@@ -363,7 +407,7 @@ def main() -> None:
     reports = [parse_report(q) for q in fetch_reports()]
     now = datetime.now(timezone.utc).isoformat()
 
-    new = [r for r in reports if r["no"] and r["no"] not in seen]
+    new = [r for r in reports if r["no"] and r["key"] not in seen]
     if not new:
         print("no new earthquake reports")
         return
@@ -372,12 +416,14 @@ def main() -> None:
     for r in new:
         if not is_noteworthy(r):
             print(f"skip (below threshold): {r['no']} M{r['mag']}")
-            seen[r["no"]] = now
+            seen[r["key"]] = now
             continue
-        print(f"posting report {r['no']}: M{r['mag']} {r['location']}")
+        # 同一個地震編號已發過、但發布時間不同 → 氣象署修訂了報告
+        r["revised"] = any(k.startswith(f"{r['no']}-") for k in seen)
+        print(f"posting {'revised ' if r['revised'] else ''}report {r['no']}: M{r['mag']} {r['location']}")
         try:
             post(r, build_embeds(r, ai_explanation(r)))
-            seen[r["no"]] = now
+            seen[r["key"]] = now
         except Exception as exc:
             print(f"[error] failed to post {r['no']}: {exc}", file=sys.stderr)
     save_seen(seen)

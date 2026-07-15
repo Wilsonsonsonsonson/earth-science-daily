@@ -16,5 +16,14 @@
     "example_en": "The PINN-based framework successfully forecasted the evolution of the 2010 slow slip event in the Bungo Channel.",
     "zh": "慢滑移（或稱慢地震）",
     "note": "與一般地震在幾秒內釋放能量不同，慢滑移像是在「慢跑」，花費數週甚至數月釋放能量，是科學家預測大地震的重要前兆線索。"
+  },
+  {
+    "date": "2026-07-15",
+    "term": "Inversion",
+    "pos": "n.",
+    "definition_en": "A mathematical process used in geophysics to estimate the properties of the Earth's interior by analyzing observed surface data.",
+    "example_en": "The researchers applied a dispersion-guided deep inverse operator to improve the inversion of shear-wave velocity profiles.",
+    "zh": "反演",
+    "note": "反演就像是「解數學逆運算」，從觀測到的結果（如震波）推導出造成結果的原因（如地底構造）。"
   }
 ]

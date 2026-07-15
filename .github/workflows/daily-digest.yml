@@ -2,8 +2,9 @@ name: Daily Earth Science Digest
 
 on:
   schedule:
-    # 00:00 UTC = 08:00 台北時間（台灣無日光節約時間，全年固定）
-    - cron: "0 0 * * *"
+    # 23:37 UTC = 07:37 台北時間。刻意避開整點（尤其 00:00 UTC 是 GitHub Actions
+    # 最壅塞的時段，排程可能延遲 1~3 小時）；用冷門分鐘數讓實際送達時間貼近 8 點。
+    - cron: "37 23 * * *"
   workflow_dispatch: {}   # 讓你可以在 GitHub 網頁上手動按「Run workflow」測試
 
 permissions:

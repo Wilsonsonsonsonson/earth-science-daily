@@ -113,9 +113,45 @@ def load_words() -> list:
 
 def save_word(entry: dict, today: str) -> None:
     words = load_words()
+    term = (entry.get("term") or "").strip().lower()
+    if any((w.get("term") or "").strip().lower() == term for w in words):
+        return  # 同一個詞不重複入庫
     words.append({"date": today, **entry})
     WORDS_FILE.parent.mkdir(parents=True, exist_ok=True)
     WORDS_FILE.write_text(json.dumps(words[-365:], ensure_ascii=False, indent=2))
+
+
+def ensure_fresh_word(digest: dict, taught_words: list) -> dict:
+    """Gemini 有時會無視「已教過」清單。程式端強制檢查：重複就單獨重抽一次，
+    再重複就今天不出每日一詞。"""
+    taught = {(w.get("term") or "").strip().lower() for w in taught_words}
+    word = digest.get("word_of_the_day") or {}
+    term = (word.get("term") or "").strip().lower()
+    if not term or term not in taught:
+        return digest
+
+    print(f"[warn] word '{term}' already taught, retrying with a dedicated call", file=sys.stderr)
+    banned = "、".join(sorted(taught))
+    retry_prompt = f"""請從地球科學（地震學、地球物理、火山、大氣、海洋）研究論文的常用專業英語中，挑一個對學習者有價值的術語做「每日一詞」。
+
+絕對禁止使用以下已教過的詞（含其變形）：{banned}
+
+要求：definition_en 用簡單英文解釋（給非母語者）、example_en 是一句自然的學術例句、zh 是台灣學界譯名（嚴禁中國大陸用語）、note 是一句繁體中文記憶點或詞源小知識。
+
+請嚴格輸出以下 JSON（不要加任何其他文字）：
+{{"term": "...", "pos": "n.", "definition_en": "...", "example_en": "...", "zh": "...", "note": "..."}}
+"""
+    try:
+        new_word = call_gemini(retry_prompt)
+        new_term = (new_word.get("term") or "").strip().lower()
+        if new_term and new_term not in taught:
+            digest["word_of_the_day"] = new_word
+            return digest
+    except Exception as exc:
+        print(f"[warn] word retry failed: {exc}", file=sys.stderr)
+    print("[warn] dropping word of the day for today (still duplicate)", file=sys.stderr)
+    digest["word_of_the_day"] = None
+    return digest
 
 
 def load_prefs() -> dict:
@@ -297,21 +333,37 @@ def fetch_typhoons(now: datetime) -> list:
     date_tag = now.strftime("%Y-%m-%d")
 
     # JMA：西太平洋現役颱風／熱帶性低氣壓，結構化實況
+    # 分類代碼 → 台灣慣用說法。LOW = 已轉化為溫帶低氣壓，不能再稱「颱風」！
+    jma_cat_zh = {
+        "TD": "熱帶性低氣壓",
+        "TS": "輕度颱風（TS）",
+        "STS": "輕度颱風（STS）",
+        "TY": "颱風（TY，中度或強烈，視風速）",
+        "LOW": "已轉化為溫帶低氣壓（不再是颱風）",
+    }
+    # JMA 方位詞是日文語序（北東），轉成台灣語序（東北）；三字方位兩地相同不需轉
+    jp_dir = {"北東": "東北", "南東": "東南", "北西": "西北", "南西": "西南"}
     try:
         tcs = requests.get(JMA_TC_LIST_URL, timeout=20).json()
         for tc in tcs:
             tc_id = tc.get("tropicalCyclone", "")
+            list_cat = tc.get("category", "")
             try:
                 spec = requests.get(JMA_TC_SPEC_URL.format(tc=tc_id), timeout=20).json()
                 title_part = spec[0]
                 analysis = spec[1] if len(spec) > 1 else {}
                 name_en = (title_part.get("name") or {}).get("en") or "（未命名）"
                 num = title_part.get("typhoonNumber", "")
-                cat = (title_part.get("category") or {}).get("en", "")
+                num_zh = f"{now.year}年第{int(num[2:])}號" if len(num) == 4 and num[2:].isdigit() else num
+                # targetTc 清單的分類比 specifications 即時（例如剛轉化為溫帶低氣壓時）
+                cat = list_cat or (title_part.get("category") or {}).get("en", "")
+                cat_zh = jma_cat_zh.get(cat, cat)
+                issue_utc = ((title_part.get("issue") or {}).get("UTC", ""))
                 wind_kt = ((analysis.get("maximumWind") or {}).get("sustained") or {}).get("kt", "?")
                 pressure = analysis.get("pressure", "?")
                 pos = (analysis.get("position") or {}).get("deg", ["?", "?"])
                 course = analysis.get("course", "?")
+                course = jp_dir.get(course, course)
                 speed = (analysis.get("speed") or {}).get("km/h", "?")
                 location = analysis.get("location", "")
                 items.append(
@@ -319,12 +371,13 @@ def fetch_typhoons(now: datetime) -> list:
                         "source": "日本氣象廳（JMA）颱風情報",
                         "category": "typhoon",
                         "peer_reviewed": True,
-                        "title": f"颱風 {name_en}（編號 {num}，國際分類 {cat}）",
+                        "title": f"{name_en}（{num_zh}），目前分類：{cat_zh}",
                         "link": JMA_TYPHOON_PAGE,
                         "dedupe_key": f"jma-{tc_id}-{date_tag}",
                         "summary": (
-                            f"中心位置 北緯{pos[0]}度、東經{pos[1]}度（{location}），中心氣壓 {pressure} hPa，"
-                            f"最大持續風速 {wind_kt} 節，向{course}移動 時速{speed}公里"
+                            f"中心位置 北緯{pos[0]}度、東經{pos[1]}度（{location}，此地名為日文），中心氣壓 {pressure} hPa，"
+                            f"最大持續風速 {wind_kt} 節，向{course}移動 時速{speed}公里。"
+                            f"JMA 發布時間 {issue_utc}（UTC）"
                         ),
                         "published": now.isoformat(),
                     }
@@ -450,7 +503,12 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 
 你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分四類標籤：
 - [taiwan]：台灣及周邊的地震，讀者在台灣、對此最關心，全部納入 taiwan 陣列（除非明顯是同一起地震的重複報告）。
-- [typhoon]：全球現役熱帶氣旋動態。同一個颱風被多個機構（JMA/NHC/JTWC）報告時合併成一則，以 JMA 資料為準（西太平洋）。每則講清楚：名稱與編號、目前強度與位置、移動方向速度、未來趨勢，以及對台灣或鄰近地區的潛在影響（若在西太平洋）。颱風強度用台灣中央氣象署的分級稱呼（輕度颱風＝TS/STS、中度颱風＝TY、強烈颱風），並在括號附國際分類。JTWC 的原始警報文字要消化成人話。全球都無活躍系統時給空陣列。
+- [typhoon]：全球現役熱帶氣旋動態。同一個颱風被多個機構（JMA/NHC/JTWC）報告時合併成一則，以 JMA 資料為準（西太平洋）。每則講清楚：名稱與編號、目前強度與位置、移動方向速度、未來趨勢，以及對台灣或鄰近地區的潛在影響（若在西太平洋）。JTWC 的原始警報文字要消化成人話。全球都無活躍系統時給空陣列。以下規則攸關正確性，必須嚴格遵守：
+  - 分類以候選項目標明的「目前分類」為準，不可自行升降級。標明「已轉化為溫帶低氣壓」的系統，絕對不可再稱為颱風，要寫「XX 已轉化為溫帶低氣壓」。
+  - 颱風強度用台灣中央氣象署分級稱呼（輕度颱風＝TS/STS、中度颱風、強烈颱風），括號附國際分類。
+  - 颱風中文名只能用中央氣象署官方譯名（例：Bavi＝巴威、Haishen＝海神、Maysak＝梅莎）。不確定官方譯名時，直接保留英文原名（如「颱風 Bavi」），嚴禁自創音譯——錯誤的名字比沒有中文名更糟。
+  - 資料中的日文地名要轉成台灣慣用說法（例：フィリピンの東＝菲律賓東方海面、日本海＝日本海、黄海＝黃海）。
+  - 所有數字（氣壓、風速、位置、移動速度）照抄候選資料，不可推算或改寫。
 - [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。最多挑 8 則。
 - [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的內容，最多 3 則，不必每天都有。
 
@@ -470,9 +528,9 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 - emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
 {terminology_block}{guidelines_block}
 另外，請從今天入選的內容中挑一個對學習者最有價值的地球科學專業英語術語，做成「每日一詞」：
-- 優先挑今天內容中實際出現、且對讀地科論文常用的詞（如 attenuation、subduction、aseismic）。
+- 優先挑今天內容中實際出現、且對讀地科論文常用的詞（如 subduction、aseismic、liquefaction）。
 - definition_en 用簡單英文解釋（給非母語者），example_en 是一句自然的學術例句（最好呼應今天的新聞），zh 是台灣學界譯名，note 是一句中文記憶點或詞源小知識。
-- 這些詞已經教過，不要重複：{taught_block}
+- 【最重要的規則】以下的詞已經教過，絕對禁止再選，選了整份日報都會失效：{taught_block}
 
 請嚴格輸出以下 JSON 格式（不要加任何其他文字或 markdown 圍欄）。source 欄位填該則內容的來源名稱（期刊名／機構名，合併多來源時填最權威的那個）：
 {{
@@ -884,8 +942,10 @@ def main() -> None:
     today = now_tw.strftime("%Y-%m-%d")
 
     if candidates:
-        prompt = build_prompt(candidates, today, prefs, load_words())
+        taught_words = load_words()
+        prompt = build_prompt(candidates, today, prefs, taught_words)
         digest = call_gemini(prompt)
+        digest = ensure_fresh_word(digest, taught_words)
         stats = {
             "sources": len(RSS_SOURCES) + 6,  # +6: USGS、EMSC、台灣地震、JMA、NHC、JTWC
             "candidates": len(candidates),

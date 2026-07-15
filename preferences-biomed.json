@@ -1,0 +1,46 @@
+{
+  "_說明": "醫學生物日報的個人品質偏好檔。與地科版的 preferences.json 各自獨立。改完 commit push，隔天生效。",
+
+  "blocked_sources": [],
+  "_blocked_sources說明": "完全封鎖的來源名稱（需與 biomed.py 中 RSS_SOURCES 的 name 完全一致）。",
+
+  "blocked_keywords": ["Publisher Correction", "Author Correction", "Retraction Note"],
+  "_blocked_keywords說明": "標題或摘要含這些關鍵字的項目會在送給 AI 前就被丟棄（不分大小寫）。",
+
+  "terminology": [
+    "in vitro → 體外（實驗）（勿用：離體）",
+    "in vivo → 體內（實驗）",
+    "cohort study → 世代研究（勿用：隊列研究）",
+    "randomized controlled trial → 隨機對照試驗",
+    "gene expression → 基因表現（勿用：基因表達）",
+    "protein → 蛋白質（勿用：蛋白）",
+    "mitochondria → 粒線體（勿用：線粒體）",
+    "ribosome → 核糖體",
+    "enzyme → 酵素（勿用：酶，台灣中學與大學慣用酵素）",
+    "cytokine → 細胞激素（勿用：細胞因子）",
+    "antibody → 抗體",
+    "vaccine → 疫苗",
+    "screening → 篩檢（勿用：篩查）",
+    "prognosis → 預後",
+    "incidence → 發生率（勿用：發病率）",
+    "prevalence → 盛行率（勿用：患病率）",
+    "sensitivity / specificity → 敏感度／特異度",
+    "stem cell → 幹細胞",
+    "CRISPR gene editing → 基因編輯",
+    "sequencing → 定序（勿用：測序）",
+    "algorithm → 演算法（勿用：算法）",
+    "data → 資料（勿用：數據）",
+    "quality → 品質（勿用：質量）",
+    "information → 資訊（勿用：信息）",
+    "artificial intelligence → 人工智慧（勿用：人工智能）"
+  ],
+  "_terminology說明": "台灣醫學／生科學術用語對照表，會直接交給 AI 要求遵守。發現用了中國用語時，把正確對照加進來即可。",
+
+  "editorial_guidelines": [
+    "更正啟事（Correction / Erratum）與撤稿聲明本身不值得報導，除非撤稿原因涉及重大學術爭議。",
+    "純綜述（review）除非提出新的整合觀點，否則標準從嚴。",
+    "商業新藥公關稿式的內容不報導；要有實際研究數據。",
+    "一次只挑一則預印本，且必須是真的重要的題目。"
+  ],
+  "_editorial_guidelines說明": "給 AI 編輯的額外守則。請寫『品質標準』而非『我只想看某主題』，AI 被要求無論如何維持主題多樣性。"
+}

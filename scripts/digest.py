@@ -19,6 +19,25 @@ WORDS_FILE = REPO_ROOT / "data" / "words.json"
 ARCHIVE_DIR = REPO_ROOT / "archive"
 PREFS_FILE = REPO_ROOT / "preferences.json"
 
+# ── 刊物設定 ─────────────────────────────────────────────
+# 本模組同時是「地球科學日報」本體與其他刊物的共用引擎。新刊物只要 import 本模組、
+# 覆寫下面這些全域變數（見 scripts/biomed.py），就能有自己的來源、頻道與版面。
+WEBHOOK_ENV = "DISCORD_WEBHOOK_URL"
+BOT_NAME = "地球科學日報"
+AVATAR_URL = "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png"
+HEADER_TITLE = "🌍 地球科學日報 · Earth Science Daily"
+THREAD_PREFIX = "🌍 地球科學日報"
+ARCHIVE_TITLE = "📚 地球科學日報歸檔"
+READER_FIELD = "地球科學"
+EDITION_ROLE = "一份地球科學日報的主編"
+WORD_DOMAIN = "地球科學（地震學、地球物理、火山、大氣、海洋）"
+WORD_EXAMPLES = "subduction、aseismic、liquefaction"
+DIVE_HINT = "優先挑地球物理／地震學"
+EMOJI_HINT = "🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星"
+PREPRINT_LABEL = "arXiv 預印本（未經同儕審查）"
+EXTRA_RULES = "- 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。"
+EXTRA_SOURCE_COUNT = 6  # 統計頁尾用：RSS 之外的來源數（USGS、EMSC、台灣地震、JMA、NHC、JTWC）
+
 # 依序嘗試：模型忙碌（503）或對新用戶關閉（404）時自動退到下一個
 GEMINI_MODELS = ["gemini-flash-latest", "gemini-flash-lite-latest", "gemini-2.5-flash-lite"]
 GEMINI_URL_TMPL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -132,7 +151,7 @@ def ensure_fresh_word(digest: dict, taught_words: list) -> dict:
 
     print(f"[warn] word '{term}' already taught, retrying with a dedicated call", file=sys.stderr)
     banned = "、".join(sorted(taught))
-    retry_prompt = f"""請從地球科學（地震學、地球物理、火山、大氣、海洋）研究論文的常用專業英語中，挑一個對學習者有價值的術語做「每日一詞」。
+    retry_prompt = f"""請從{WORD_DOMAIN}研究論文的常用專業英語中，挑一個對學習者有價值的術語做「每日一詞」。
 
 絕對禁止使用以下已教過的詞（含其變形）：{banned}
 
@@ -494,27 +513,19 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
     if terminology:
         pairs = "\n".join(f"- {t}" for t in terminology)
         terminology_block = f"""
-中文一律使用台灣學術界慣用語（繁體中文、台灣譯名），嚴禁使用中國大陸的學術用語。讀者是台灣的地球科學學習者，錯誤用語會養壞他的專業語感。常見對照（左為英文，右為台灣正確用法）：
+中文一律使用台灣學術界慣用語（繁體中文、台灣譯名），嚴禁使用中國大陸的學術用語。讀者是台灣的{READER_FIELD}學習者，錯誤用語會養壞他的專業語感。常見對照（左為英文，右為台灣正確用法）：
 {pairs}
 不在對照表內的詞彙，也一律優先選擇台灣學界與國家教育研究院雙語詞彙資料庫的慣用譯名。
 """
 
-    return f"""你是一份地球科學日報的主編，讀者是台灣的地球科學學習者，每天早上會花「15 分鐘」完整閱讀這份日報——這不是快訊摘要，是一份真正的晨間科學讀物。整份日報的正文目標 3500~5000 字，每一則都要寫成有頭有尾的小篇新聞，讓讀者讀完真的學到東西。今天是 {today}。
+    return f"""你是{EDITION_ROLE}，讀者是台灣的{READER_FIELD}學習者，每天早上會花「15 分鐘」完整閱讀這份日報——這不是快訊摘要，是一份真正的晨間科學讀物。整份日報的正文目標 3500~5000 字，每一則都要寫成有頭有尾的小篇新聞，讓讀者讀完真的學到東西。今天是 {today}。
 
-你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分四類標籤：
-- [taiwan]：台灣及周邊的地震，讀者在台灣、對此最關心，全部納入 taiwan 陣列（除非明顯是同一起地震的重複報告）。
-- [typhoon]：全球現役熱帶氣旋動態。同一個颱風被多個機構（JMA/NHC/JTWC）報告時合併成一則，以 JMA 資料為準（西太平洋）。每則講清楚：名稱與編號、目前強度與位置、移動方向速度、未來趨勢，以及對台灣或鄰近地區的潛在影響（若在西太平洋）。JTWC 的原始警報文字要消化成人話。全球都無活躍系統時給空陣列。以下規則攸關正確性，必須嚴格遵守：
-  - 分類以候選項目標明的「目前分類」為準，不可自行升降級。標明「已轉化為溫帶低氣壓」的系統，絕對不可再稱為颱風，要寫「XX 已轉化為溫帶低氣壓」。
-  - 颱風強度用台灣中央氣象署分級稱呼（輕度颱風＝TS/STS、中度颱風、強烈颱風），括號附國際分類。
-  - 颱風中文名只能用中央氣象署官方譯名（例：Bavi＝巴威、Haishen＝海神、Maysak＝梅莎）。不確定官方譯名時，直接保留英文原名（如「颱風 Bavi」），嚴禁自創音譯——錯誤的名字比沒有中文名更糟。
-  - 資料中的日文地名要轉成台灣慣用說法（例：フィリピンの東＝菲律賓東方海面、日本海＝日本海、黄海＝黃海）。
-  - 所有數字（氣壓、風速、位置、移動速度）照抄候選資料，不可推算或改寫。
-- [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。最多挑 8 則。
-- [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的內容，最多 3 則，不必每天都有。
+你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分類如下：
+{CATEGORY_RULES}
 
 篩選與寫作原則：
-- 忽略例行、重複、規模很小或無明顯新聞價值的項目；同一事件被多個來源報導時合併成一則，選最權威的連結。
-- 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
+- 忽略例行、重複、或無明顯新聞價值的項目；同一事件被多個來源報導時合併成一則，選最權威的連結。
+{EXTRA_RULES}
 - 日報是雙語格式（英文在前、繁體中文在後），讀者想藉此練習專業英語，也想「每天真的學到東西」，風格參考台灣的泛科學（PanSci）：有趣、有料、把科學脈絡講清楚，不是乾巴巴的事件通報：
   - title_en：精煉的英文標題（期刊論文可直接用原標題或縮短版，事件類自己寫，10 個單字以內）。
   - summary_en：2~4 句自然、道地的英文（40~70 個單字），像 Nature News 的導言段，是讀者的英語教材，不要是中式英文。
@@ -522,13 +533,13 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
   - summary_zh：一段完整的中文（150~250 字），像小篇新聞的正文：先交代背景或問題（這領域原本在意什麼），再講發生了什麼／研究做了什麼，最後說「所以呢」——意義、影響、後續值得注意什麼。不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大。禁止一句話帶過。
   - note_zh：2~3 句科普補充（100~150 字）——這則背後的科學原理、學界原本的認知、或一個讀者可能不知道的背景知識，可以帶一個生活化比喻。這是讀者「學到東西」的關鍵欄位，把一個原理講透，不要堆砌名詞。沒有適合的補充時可給空字串。
 - 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
-- deep_dive（今日深度導讀）：從所有入選項目中挑「今天最有意思、最值得深入理解」的一則（優先挑地球物理／地震學），寫一篇 600~900 字、3~5 段的科普文（body_zh），這是整份日報的主菜。結構：用一個生活化的比喻、問題或場景開場 → 交代背景（這領域原本知道什麼／缺什麼，可以帶到相關的基礎知識或歷史）→ 講清楚新發現或事件本身（方法、資料、結果）→ 為什麼重要、對誰有影響、還有什麼未解問題 → 結尾留一個 fun fact 或思考點。段落間用換行分隔，語氣像泛科學的文章，專業但不掉書袋。讀者要能靠這篇文章跟同學講出一個完整的故事。
-- 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
+- deep_dive（今日深度導讀）：從所有入選項目中挑「今天最有意思、最值得深入理解」的一則（{DIVE_HINT}），寫一篇 600~900 字、3~5 段的科普文（body_zh），這是整份日報的主菜。結構：用一個生活化的比喻、問題或場景開場 → 交代背景（這領域原本知道什麼／缺什麼，可以帶到相關的基礎知識或歷史）→ 講清楚新發現或事件本身（方法、資料、結果）→ 為什麼重要、對誰有影響、還有什麼未解問題 → 結尾留一個 fun fact 或思考點。段落間用換行分隔，語氣像泛科學的文章，專業但不掉書袋。讀者要能靠這篇文章跟同學講出一個完整的故事。
+- 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「{PREPRINT_LABEL}」，讓讀者知道其結論尚未定案。
 - intro_en 是 2~3 句英文的今日導言；intro_zh 是一段 100~180 字的中文導言：先點出今天最大亮點，再快速導覽今天有哪些內容（「今天我們會看到…」），語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
-- emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
+- emoji 為每則挑一個貼切的（如 {EMOJI_HINT}）。
 {terminology_block}{guidelines_block}
-另外，請從今天入選的內容中挑一個對學習者最有價值的地球科學專業英語術語，做成「每日一詞」：
-- 優先挑今天內容中實際出現、且對讀地科論文常用的詞（如 subduction、aseismic、liquefaction）。
+另外，請從今天入選的內容中挑一個對學習者最有價值的{READER_FIELD}專業英語術語，做成「每日一詞」：
+- 優先挑今天內容中實際出現、且對讀該領域論文常用的詞（如 {WORD_EXAMPLES}）。
 - definition_en 用簡單英文解釋（給非母語者），example_en 是一句自然的學術例句（最好呼應今天的新聞），zh 是台灣學界譯名，note 是一句中文記憶點或詞源小知識。
 - 【最重要的規則】以下的詞已經教過，絕對禁止再選，選了整份日報都會失效：{taught_block}
 
@@ -536,19 +547,8 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 {{
   "intro_en": "One or two sentences in English",
   "intro_zh": "今日導言，2~3 句",
-  "taiwan": [
-    {{"emoji": "🚨", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
-  ],
-  "typhoon": [
-    {{"emoji": "🌀", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：現況＋趨勢＋影響", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
-  ],
-  "seismo": [
-    {{"emoji": "🌋", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
-  ],
-  "other": [
-    {{"emoji": "📄", "title_en": "Short English title", "summary_en": "One or two English sentences", "title_zh": "中文短標題", "summary_zh": "中文2~3句：發生什麼＋所以呢", "note_zh": "1~2句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}
-  ],
-  "deep_dive": {{"emoji": "🔬", "title_zh": "深度導讀標題", "title_en": "English title", "body_zh": "250~350字迷你科普文，段落用\\n分隔", "link": "https://...", "source": "來源名稱"}},
+{SCHEMA_SECTIONS},
+  "deep_dive": {{"emoji": "🔬", "title_zh": "深度導讀標題", "title_en": "English title", "body_zh": "600~900字科普文，段落用\\n分隔", "link": "https://...", "source": "來源名稱"}},
   "word_of_the_day": {{"term": "attenuation", "pos": "n.", "definition_en": "Simple English definition", "example_en": "A natural academic example sentence.", "zh": "衰減", "note": "一句中文記憶點"}}
 }}
 
@@ -600,6 +600,33 @@ COLOR_OTHER = 0x3498DB    # 藍：其他領域
 COLOR_DIVE = 0x27AE60     # 綠：今日深度導讀
 COLOR_WORD = 0x9B59B6     # 紫：每日一詞
 COLOR_WEEKLY = 0x8E44AD   # 深紫：週日回顧
+
+# 版面章節：(JSON 欄位, 標題, 顏色, 無內容時的文字)。刊物可覆寫。
+SECTION_DEFS = [
+    ("taiwan", "🇹🇼 台灣地震動態", COLOR_TAIWAN, "過去 24 小時台灣及周邊無規模 4 以上地震。"),
+    ("typhoon", "🌀 全球颱風動態", COLOR_TYPHOON, "目前全球無活躍的熱帶氣旋。"),
+    ("seismo", "🌋 地球物理與地震學", COLOR_SEISMO, "今日無重大更新，地球很平靜。"),
+    ("other", "🔭 其他地球科學", COLOR_OTHER, "今日無重大更新。"),
+]
+
+# 分類說明（給 AI 的篩選規則）與對應的 JSON schema 片段。刊物可覆寫。
+CATEGORY_RULES = """- [taiwan]：台灣及周邊的地震，讀者在台灣、對此最關心，全部納入 taiwan 陣列（除非明顯是同一起地震的重複報告）。
+- [typhoon]：全球現役熱帶氣旋動態。同一個颱風被多個機構（JMA/NHC/JTWC）報告時合併成一則，以 JMA 資料為準（西太平洋）。每則講清楚：名稱與編號、目前強度與位置、移動方向速度、未來趨勢，以及對台灣或鄰近地區的潛在影響（若在西太平洋）。JTWC 的原始警報文字要消化成人話。全球都無活躍系統時給空陣列。以下規則攸關正確性，必須嚴格遵守：
+  - 分類以候選項目標明的「目前分類」為準，不可自行升降級。標明「已轉化為溫帶低氣壓」的系統，絕對不可再稱為颱風，要寫「XX 已轉化為溫帶低氣壓」。
+  - 颱風強度用台灣中央氣象署分級稱呼（輕度颱風＝TS/STS、中度颱風、強烈颱風），括號附國際分類。
+  - 颱風中文名只能用中央氣象署官方譯名（例：Bavi＝巴威、Haishen＝海神、Maysak＝梅莎）。不確定官方譯名時，直接保留英文原名（如「颱風 Bavi」），嚴禁自創音譯——錯誤的名字比沒有中文名更糟。
+  - 資料中的日文地名要轉成台灣慣用說法（例：フィリピンの東＝菲律賓東方海面、日本海＝日本海、黄海＝黃海）。
+  - 所有數字（氣壓、風速、位置、移動速度）照抄候選資料，不可推算或改寫。
+- [seismo]：地球物理與地震學，這是本日報的主要焦點，請優先且較寬鬆地納入（例如規模較大或有感地震、重要新論文、火山活動明顯變化）。最多挑 8 則。
+- [other]：其他地球科學領域（地質、大氣、海洋、行星科學等），作為次要補充，只挑真正有意思或重要的內容，最多 3 則，不必每天都有。"""
+
+_ITEM_SCHEMA = ('{{"emoji": "{emoji}", "title_en": "Short English title", "summary_en": "2~4 English sentences", '
+                '"title_zh": "中文短標題", "summary_zh": "中文150~250字完整段落", '
+                '"note_zh": "2~3句科普補充（可為空字串）", "link": "https://...", "source": "來源名稱"}}')
+SCHEMA_SECTIONS = ",\n".join(
+    f'  "{key}": [\n    {_ITEM_SCHEMA.format(emoji=emoji)}\n  ]'
+    for key, emoji in (("taiwan", "🚨"), ("typhoon", "🌀"), ("seismo", "🌋"), ("other", "📄"))
+)
 
 WEEKDAYS_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
@@ -665,28 +692,14 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
     intro_zh = (digest.get("intro_zh") or digest.get("intro") or "早安！以下是過去 24 小時的地球科學精選。").strip()
     description = f"*{intro_en}*\n\n{intro_zh}" if intro_en else intro_zh
     header = {
-        "title": f"🌍 地球科學日報 · Earth Science Daily",
+        "title": HEADER_TITLE,
         "description": description,
         "color": COLOR_HEADER,
         "author": {"name": f"{now_tw.strftime('%Y 年 %m 月 %d 日')}（週{weekday}）早報"},
     }
     embeds = [header]
-    embeds += section_embeds(
-        "🇹🇼 台灣地震動態", digest.get("taiwan", []), COLOR_TAIWAN,
-        "過去 24 小時台灣及周邊無規模 4 以上地震。",
-    )
-    embeds += section_embeds(
-        "🌀 全球颱風動態", digest.get("typhoon", []), COLOR_TYPHOON,
-        "目前全球無活躍的熱帶氣旋。",
-    )
-    embeds += section_embeds(
-        "🌋 地球物理與地震學", digest.get("seismo", []), COLOR_SEISMO,
-        "今日無重大更新，地球很平靜。",
-    )
-    embeds += section_embeds(
-        "🔭 其他地球科學", digest.get("other", []), COLOR_OTHER,
-        "今日無重大更新。",
-    )
+    for key, title, color, empty_text in SECTION_DEFS:
+        embeds += section_embeds(title, digest.get(key, []), color, empty_text)
 
     dive = digest.get("deep_dive") or {}
     if dive.get("body_zh"):
@@ -753,7 +766,7 @@ def _post_webhook(payload: dict, thread_name=None, thread_id=None):
     """送出一則 webhook 訊息。論壇頻道用 thread_name 開新貼文（放 JSON 內文）、
     thread_id 續貼（放網址參數）；若頻道不是論壇（thread_name 被拒絕），
     自動退回一般發送。回傳 thread id。"""
-    webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
+    webhook_url = os.environ[WEBHOOK_ENV]
     params = {"wait": "true"}
     body = dict(payload)
     if thread_id:
@@ -782,8 +795,8 @@ def post_discord_embeds(embeds: list, thread_name=None, thread_id=None):
 
     for b in batches:
         payload = {
-            "username": "地球科學日報",
-            "avatar_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
+            "username": BOT_NAME,
+            "avatar_url": AVATAR_URL,
             "embeds": b,
         }
         tid = _post_webhook(payload, thread_name, thread_id)
@@ -804,10 +817,10 @@ def render_archive_md(digest: dict, now_tw: datetime) -> str:
     weekday = WEEKDAYS_ZH[now_tw.weekday()]
     lines = [
         "---",
-        f"title: 地球科學日報 {now_tw.strftime('%Y-%m-%d')}",
+        f"title: {BOT_NAME} {now_tw.strftime('%Y-%m-%d')}",
         "---",
         "",
-        f"# 🌍 地球科學日報 {now_tw.strftime('%Y-%m-%d')}（週{weekday}）",
+        f"# {THREAD_PREFIX} {now_tw.strftime('%Y-%m-%d')}（週{weekday}）",
         "",
     ]
     intro_en = (digest.get("intro_en") or "").strip()
@@ -818,13 +831,7 @@ def render_archive_md(digest: dict, now_tw: datetime) -> str:
         lines += [f"> {intro_zh}"]
     lines.append("")
 
-    sections = [
-        ("🇹🇼 台灣地震動態", "taiwan"),
-        ("🌀 全球颱風動態", "typhoon"),
-        ("🌋 地球物理與地震學", "seismo"),
-        ("🔭 其他地球科學", "other"),
-    ]
-    for heading, key in sections:
+    for key, heading, _color, _empty in SECTION_DEFS:
         items = digest.get(key, [])
         lines.append(f"## {heading}")
         lines.append("")
@@ -885,7 +892,7 @@ def write_archive(digest: dict, now_tw: datetime) -> Path:
     entries = sorted(
         (p.stem for p in ARCHIVE_DIR.glob("????-??-??.md")), reverse=True
     )
-    index_lines = ["---", "title: 日報歸檔", "---", "", "# 📚 地球科學日報歸檔", ""]
+    index_lines = ["---", "title: 日報歸檔", "---", "", f"# {ARCHIVE_TITLE}", ""]
     index_lines += [f"- [{d}]({d}.md)" for d in entries]
     index.write_text("\n".join(index_lines) + "\n")
     return day_file
@@ -983,7 +990,7 @@ def main() -> None:
     now_tw = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
     today = now_tw.strftime("%Y-%m-%d")
     weekday = WEEKDAYS_ZH[now_tw.weekday()]
-    thread_name = f"🌍 地球科學日報 {today}（週{weekday}）"
+    thread_name = f"{THREAD_PREFIX} {today}（週{weekday}）"
 
     if candidates:
         taught_words = load_words()
@@ -991,9 +998,9 @@ def main() -> None:
         digest = call_gemini(prompt)
         digest = ensure_fresh_word(digest, taught_words)
         stats = {
-            "sources": len(RSS_SOURCES) + 6,  # +6: USGS、EMSC、台灣地震、JMA、NHC、JTWC
+            "sources": len(RSS_SOURCES) + EXTRA_SOURCE_COUNT,
             "candidates": len(candidates),
-            "picked": sum(len(digest.get(k, [])) for k in ("taiwan", "typhoon", "seismo", "other")),
+            "picked": sum(len(digest.get(k, [])) for k, *_ in SECTION_DEFS),
         }
         thread_id = post_discord_embeds(build_embeds(digest, now_tw, stats), thread_name=thread_name)
         save_thread(today, thread_id)  # 讓 quakeplot.py 把圖接在同一篇貼文

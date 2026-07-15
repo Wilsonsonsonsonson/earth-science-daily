@@ -1,4 +1,4 @@
-name: Daily Earth Science Digest
+name: Daily Science Digests
 
 on:
   schedule:
@@ -8,8 +8,9 @@ on:
   workflow_dispatch: {}   # 讓你可以在 GitHub 網頁上手動按「Run workflow」測試
 
 permissions:
-  contents: write   # 需要把 data/seen.json 的更新推回 repo
+  contents: write   # 需要把 data/ 與 archive/ 的更新推回 repo
 
+# 兩份刊物在同一個 job 內依序執行：它們會寫入同一個 repo，分開跑會 push 衝突。
 jobs:
   digest:
     runs-on: ubuntu-latest
@@ -25,7 +26,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run digest
+      # ── 🌍 地球科學日報 ──────────────────────────────
+      - name: Run earth science digest
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -38,10 +40,18 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python scripts/quakeplot.py
 
-      - name: Commit state and archive
+      # ── 🧬 醫學生物日報 ──────────────────────────────
+      - name: Run biomed digest
+        continue-on-error: true   # 生醫版失敗不影響地科版已發出的內容
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCORD_WEBHOOK_BIOMED: ${{ secrets.DISCORD_WEBHOOK_BIOMED }}
+        run: python scripts/biomed.py
+
+      - name: Commit state and archives
         run: |
-          git config user.name "earth-science-digest-bot"
+          git config user.name "science-digest-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/ archive/
-          git diff --cached --quiet || git commit -m "chore: daily digest state + archive [skip ci]"
+          git add data/ archive/ archive-biomed/
+          git diff --cached --quiet || git commit -m "chore: daily digest state + archives [skip ci]"
           git push

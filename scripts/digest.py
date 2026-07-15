@@ -499,7 +499,7 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 不在對照表內的詞彙，也一律優先選擇台灣學界與國家教育研究院雙語詞彙資料庫的慣用譯名。
 """
 
-    return f"""你是一份地球科學日報的主編，讀者是對地球科學有興趣的一般讀者，會在吃早餐時滑手機瀏覽。今天是 {today}。
+    return f"""你是一份地球科學日報的主編，讀者是台灣的地球科學學習者，每天早上會花「15 分鐘」完整閱讀這份日報——這不是快訊摘要，是一份真正的晨間科學讀物。整份日報的正文目標 3500~5000 字，每一則都要寫成有頭有尾的小篇新聞，讓讀者讀完真的學到東西。今天是 {today}。
 
 你的任務：從下面的候選項目清單中，篩選出「真正值得一看」的內容，其餘全部丟棄。候選項目分四類標籤：
 - [taiwan]：台灣及周邊的地震，讀者在台灣、對此最關心，全部納入 taiwan 陣列（除非明顯是同一起地震的重複報告）。
@@ -517,14 +517,14 @@ def build_prompt(candidates: list, today: str, prefs: dict, taught_words: list) 
 - 多起地震可以合併成一則「今日地震動態」總覽，把最大或最值得注意的一兩起講清楚（規模、地點、深度、是否近人口稠密區），其餘一句帶過。
 - 日報是雙語格式（英文在前、繁體中文在後），讀者想藉此練習專業英語，也想「每天真的學到東西」，風格參考台灣的泛科學（PanSci）：有趣、有料、把科學脈絡講清楚，不是乾巴巴的事件通報：
   - title_en：精煉的英文標題（期刊論文可直接用原標題或縮短版，事件類自己寫，10 個單字以內）。
-  - summary_en：一到兩句自然、道地的英文摘要（35 個單字以內），用學術新聞的語感，是讀者的英語教材，不要是中式英文。
+  - summary_en：2~4 句自然、道地的英文（40~70 個單字），像 Nature News 的導言段，是讀者的英語教材，不要是中式英文。
   - title_zh：中文短標題（20 字以內）。
-  - summary_zh：中文 2~3 句（120 字以內），講清楚「發生什麼＋所以呢？」——重點放在意義與影響，不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大。
-  - note_zh：1~2 句科普補充（80 字以內）——這則背後的科學原理、學界原本的認知、或一個讀者可能不知道的背景知識。這是讀者「學到東西」的關鍵欄位，寧可講一個原理講透，不要堆砌名詞。沒有適合的補充時可給空字串。
+  - summary_zh：一段完整的中文（150~250 字），像小篇新聞的正文：先交代背景或問題（這領域原本在意什麼），再講發生了什麼／研究做了什麼，最後說「所以呢」——意義、影響、後續值得注意什麼。不是 summary_en 的直譯，語氣像懂行的朋友報消息，不聳動、不誇大。禁止一句話帶過。
+  - note_zh：2~3 句科普補充（100~150 字）——這則背後的科學原理、學界原本的認知、或一個讀者可能不知道的背景知識，可以帶一個生活化比喻。這是讀者「學到東西」的關鍵欄位，把一個原理講透，不要堆砌名詞。沒有適合的補充時可給空字串。
 - 學術論文要把重點翻成一般讀者聽得懂的話，避免直譯術語堆疊。
-- deep_dive（今日深度導讀）：從所有入選項目中挑「今天最有意思、最值得深入理解」的一則（優先挑地球物理／地震學），寫一篇 250~350 字的迷你科普文（body_zh）。結構：用一個生活化的比喻、問題或場景開場 → 交代背景（這領域原本知道什麼／缺什麼）→ 講清楚新發現或事件本身 → 為什麼重要、對誰有影響 → 結尾留一個 fun fact 或思考點。段落間用換行分隔，語氣像泛科學的文章，專業但不掉書袋。
+- deep_dive（今日深度導讀）：從所有入選項目中挑「今天最有意思、最值得深入理解」的一則（優先挑地球物理／地震學），寫一篇 600~900 字、3~5 段的科普文（body_zh），這是整份日報的主菜。結構：用一個生活化的比喻、問題或場景開場 → 交代背景（這領域原本知道什麼／缺什麼，可以帶到相關的基礎知識或歷史）→ 講清楚新發現或事件本身（方法、資料、結果）→ 為什麼重要、對誰有影響、還有什麼未解問題 → 結尾留一個 fun fact 或思考點。段落間用換行分隔，語氣像泛科學的文章，專業但不掉書袋。讀者要能靠這篇文章跟同學講出一個完整的故事。
 - 標註【預印本，未經同儕審查】的項目：入選標準從嚴，且入選後 source 欄位必須寫「arXiv 預印本（未經同儕審查）」，讓讀者知道其結論尚未定案。
-- intro_en 是 1~2 句英文的今日導言；intro_zh 是 2~3 句中文導言，點出今天最大亮點，語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
+- intro_en 是 2~3 句英文的今日導言；intro_zh 是一段 100~180 字的中文導言：先點出今天最大亮點，再快速導覽今天有哪些內容（「今天我們會看到…」），語氣輕鬆但專業，像早報編輯的開場白（兩者是同一個意思的兩種表達，不必逐字對譯）。
 - emoji 為每則挑一個貼切的（如 🌋 火山、📄 論文、🌊 海嘯、📡 觀測技術、🧊 冰凍圈、🪐 行星）。
 {terminology_block}{guidelines_block}
 另外，請從今天入選的內容中挑一個對學習者最有價值的地球科學專業英語術語，做成「每日一詞」：
@@ -565,7 +565,7 @@ def call_gemini(prompt: str) -> dict:
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.4,
-            "maxOutputTokens": 6000,
+            "maxOutputTokens": 16000,
             "responseMimeType": "application/json",
         },
     }
@@ -604,19 +604,18 @@ COLOR_WEEKLY = 0x8E44AD   # 深紫：週日回顧
 WEEKDAYS_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 
-def item_field(item: dict) -> dict:
+def item_block(item: dict) -> str:
     title_en = item.get("title_en") or item.get("title", "")
-    name = f"{item.get('emoji', '•')} {title_en}"
-
-    lines = []
+    lines = [f"### {item.get('emoji', '•')} {title_en}"]
     summary_en = (item.get("summary_en") or "").strip()
     if summary_en:
-        lines.append(summary_en)
+        lines.append(f"*{summary_en}*")
     title_zh = (item.get("title_zh") or "").strip()
+    if title_zh:
+        lines.append(f"**🇹🇼 {title_zh}**")
     summary_zh = (item.get("summary_zh") or item.get("summary") or "").strip()
-    zh = "｜".join(x for x in (title_zh, summary_zh) if x)
-    if zh:
-        lines.append(f"🇹🇼 {zh}")
+    if summary_zh:
+        lines.append(summary_zh)
     note_zh = (item.get("note_zh") or "").strip()
     if note_zh:
         lines.append(f"💡 {note_zh}")
@@ -629,19 +628,35 @@ def item_field(item: dict) -> dict:
     if link:
         tail.append(f"[閱讀原文 →]({link})")
     if tail:
-        lines.append(" · ".join(tail))
-
-    value = "\n".join(lines)
-    return {"name": name[:256], "value": value[:1024] or "（見連結）", "inline": False}
+        lines.append("-# " + " · ".join(tail))
+    return "\n".join(lines)
 
 
-def section_embed(title: str, items: list, color: int, empty_text: str) -> dict:
-    embed = {"title": title, "color": color}
-    if items:
-        embed["fields"] = [item_field(i) for i in items[:10]]
-    else:
-        embed["description"] = empty_text
-    return embed
+EMBED_DESC_LIMIT = 4000  # Discord 上限 4096，留餘裕
+
+
+def section_embeds(title: str, items: list, color: int, empty_text: str) -> list:
+    """一個章節可能超過單一 embed 的描述上限，必要時拆成多張（續）。"""
+    if not items:
+        return [{"title": title, "color": color, "description": empty_text}]
+
+    blocks = [item_block(i) for i in items[:10]]
+    embeds, current = [], ""
+    for block in blocks:
+        candidate = f"{current}\n\n{block}" if current else block
+        if len(candidate) > EMBED_DESC_LIMIT and current:
+            embeds.append(current)
+            current = block
+        else:
+            current = candidate
+    if current:
+        embeds.append(current)
+
+    result = []
+    for i, desc in enumerate(embeds):
+        t = title if i == 0 else f"{title}（續）"
+        result.append({"title": t, "color": color, "description": desc[:4096]})
+    return result
 
 
 def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
@@ -655,31 +670,23 @@ def build_embeds(digest: dict, now_tw: datetime, stats: dict) -> list:
         "color": COLOR_HEADER,
         "author": {"name": f"{now_tw.strftime('%Y 年 %m 月 %d 日')}（週{weekday}）早報"},
     }
-    taiwan = section_embed(
-        "🇹🇼 台灣地震動態",
-        digest.get("taiwan", []),
-        COLOR_TAIWAN,
+    embeds = [header]
+    embeds += section_embeds(
+        "🇹🇼 台灣地震動態", digest.get("taiwan", []), COLOR_TAIWAN,
         "過去 24 小時台灣及周邊無規模 4 以上地震。",
     )
-    typhoon = section_embed(
-        "🌀 全球颱風動態",
-        digest.get("typhoon", []),
-        COLOR_TYPHOON,
+    embeds += section_embeds(
+        "🌀 全球颱風動態", digest.get("typhoon", []), COLOR_TYPHOON,
         "目前全球無活躍的熱帶氣旋。",
     )
-    seismo = section_embed(
-        "🌋 地球物理與地震學",
-        digest.get("seismo", []),
-        COLOR_SEISMO,
+    embeds += section_embeds(
+        "🌋 地球物理與地震學", digest.get("seismo", []), COLOR_SEISMO,
         "今日無重大更新，地球很平靜。",
     )
-    other = section_embed(
-        "🔭 其他地球科學",
-        digest.get("other", []),
-        COLOR_OTHER,
+    embeds += section_embeds(
+        "🔭 其他地球科學", digest.get("other", []), COLOR_OTHER,
         "今日無重大更新。",
     )
-    embeds = [header, taiwan, typhoon, seismo, other]
 
     dive = digest.get("deep_dive") or {}
     if dive.get("body_zh"):
@@ -739,9 +746,29 @@ def embed_size(embed: dict) -> int:
     return total
 
 
-def post_discord_embeds(embeds: list) -> None:
-    # Discord 限制：單則訊息所有 embed 字元合計 ≤6000、embed 數 ≤10，超過就分批送
+THREAD_FILE = REPO_ROOT / "data" / "last_thread.json"
+
+
+def _post_webhook(payload: dict, thread_name=None, thread_id=None):
+    """送出一則 webhook 訊息。論壇頻道用 thread_name 開新貼文（放 JSON 內文）、
+    thread_id 續貼（放網址參數）；若頻道不是論壇（thread_name 被拒絕），
+    自動退回一般發送。回傳 thread id。"""
     webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
+    params = {"wait": "true"}
+    body = dict(payload)
+    if thread_id:
+        params["thread_id"] = thread_id
+    elif thread_name:
+        body["thread_name"] = thread_name[:100]
+    resp = requests.post(webhook_url, params=params, json=body, timeout=30)
+    if resp.status_code == 400 and thread_name and not thread_id:
+        resp = requests.post(webhook_url, params={"wait": "true"}, json=payload, timeout=30)
+    resp.raise_for_status()
+    return resp.json().get("channel_id")
+
+
+def post_discord_embeds(embeds: list, thread_name=None, thread_id=None):
+    # Discord 限制：單則訊息所有 embed 字元合計 ≤6000、embed 數 ≤10，超過就分批送
     batches, batch, size = [], [], 0
     for e in embeds:
         s = embed_size(e)
@@ -759,8 +786,18 @@ def post_discord_embeds(embeds: list) -> None:
             "avatar_url": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f30d.png",
             "embeds": b,
         }
-        resp = requests.post(webhook_url, json=payload, timeout=30)
-        resp.raise_for_status()
+        tid = _post_webhook(payload, thread_name, thread_id)
+        if thread_id is None:
+            thread_id = tid  # 第一批建立論壇貼文，後續批次接在同一篇
+            thread_name = None
+    return thread_id
+
+
+def save_thread(today: str, thread_id) -> None:
+    if not thread_id:
+        return
+    THREAD_FILE.parent.mkdir(parents=True, exist_ok=True)
+    THREAD_FILE.write_text(json.dumps({"date": today, "thread_id": thread_id}))
 
 
 def render_archive_md(digest: dict, now_tw: datetime) -> str:
@@ -916,13 +953,15 @@ def build_weekly_embeds(weekly: dict, words: list, now_tw: datetime) -> list:
     return embeds
 
 
-def post_discord_text(message: str) -> None:
-    webhook_url = os.environ["DISCORD_WEBHOOK_URL"]
+def post_discord_text(message: str, thread_name=None) -> None:
     chunk_size = 1900
     chunks = [message[i : i + chunk_size] for i in range(0, len(message), chunk_size)] or [message]
+    thread_id = None
     for chunk in chunks:
-        resp = requests.post(webhook_url, json={"content": chunk}, timeout=30)
-        resp.raise_for_status()
+        tid = _post_webhook({"content": chunk}, thread_name, thread_id)
+        if thread_id is None:
+            thread_id = tid
+            thread_name = None
 
 
 def run_weekly(now_tw: datetime, today: str) -> None:
@@ -931,7 +970,10 @@ def run_weekly(now_tw: datetime, today: str) -> None:
     if not texts:
         return
     weekly = call_gemini(build_weekly_prompt(texts, today))
-    post_discord_embeds(build_weekly_embeds(weekly, load_words(), now_tw))
+    post_discord_embeds(
+        build_weekly_embeds(weekly, load_words(), now_tw),
+        thread_name=f"📚 週日回顧特刊 {today}",
+    )
 
 
 def main() -> None:
@@ -940,6 +982,8 @@ def main() -> None:
     candidates = apply_prefs(fresh, prefs)
     now_tw = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
     today = now_tw.strftime("%Y-%m-%d")
+    weekday = WEEKDAYS_ZH[now_tw.weekday()]
+    thread_name = f"🌍 地球科學日報 {today}（週{weekday}）"
 
     if candidates:
         taught_words = load_words()
@@ -951,13 +995,14 @@ def main() -> None:
             "candidates": len(candidates),
             "picked": sum(len(digest.get(k, [])) for k in ("taiwan", "typhoon", "seismo", "other")),
         }
-        post_discord_embeds(build_embeds(digest, now_tw, stats))
+        thread_id = post_discord_embeds(build_embeds(digest, now_tw, stats), thread_name=thread_name)
+        save_thread(today, thread_id)  # 讓 quakeplot.py 把圖接在同一篇貼文
         write_archive(digest, now_tw)
         word = digest.get("word_of_the_day") or {}
         if word.get("term"):
             save_word(word, today)
     else:
-        post_discord_text(f"**🌍 地球科學日報｜{today}**\n\n今日各來源皆無新內容，明天再見！")
+        post_discord_text(f"今日各來源皆無新內容，明天再見！", thread_name=thread_name)
     mark_seen(fresh)
 
     if now_tw.weekday() == 6:  # 週日加發回顧特刊

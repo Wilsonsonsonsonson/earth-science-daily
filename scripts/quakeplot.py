@@ -262,12 +262,36 @@ def post_figures(event: dict, section_png: bytes | None, shakemap_jpg: bytes | N
         print(json.dumps(payload, ensure_ascii=False, indent=2))
         return
 
+    # 論壇模式：日報已建立當天的貼文時，把圖接在同一篇（thread_id 放網址參數）；
+    # 否則自己開一篇（thread_name 放 JSON 內文）
+    params = {"wait": "true"}
+    thread_file = os.path.join(os.path.dirname(__file__), "..", "data", "last_thread.json")
+    today = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+    try:
+        info = json.load(open(thread_file))
+        if info.get("date") == today and info.get("thread_id"):
+            params["thread_id"] = info["thread_id"]
+    except Exception:
+        pass
+    body = dict(payload)
+    if "thread_id" not in params:
+        body["thread_name"] = f"📈 焦點地震圖解 {today}"
+
     resp = requests.post(
         webhook_url,
-        data={"payload_json": json.dumps(payload)},
+        params=params,
+        data={"payload_json": json.dumps(body)},
         files=files or None,
         timeout=120,
     )
+    if resp.status_code == 400 and "thread_name" in body:
+        resp = requests.post(
+            webhook_url,
+            params={"wait": "true"},
+            data={"payload_json": json.dumps(payload)},
+            files=files or None,
+            timeout=120,
+        )
     resp.raise_for_status()
 
 

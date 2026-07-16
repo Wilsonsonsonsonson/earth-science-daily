@@ -7,5 +7,14 @@
     "example_en": "The attenuation of the virus through serial passage in cell culture allowed for the development of a safer live-attenuated vaccine.",
     "zh": "衰減",
     "note": "源自拉丁文 'tenuis'（薄的），在生物學中常指病原體毒性降低，或訊號強度減弱。"
+  },
+  {
+    "date": "2026-07-16",
+    "term": "bioorthogonal",
+    "pos": "adj.",
+    "definition_en": "Referring to chemical reactions that can occur inside living systems without interfering with native biochemical processes.",
+    "example_en": "The researchers utilized a bioorthogonal click chemistry reaction to assemble the therapeutic conjugate directly on the surface of tumor cells in vivo.",
+    "zh": "生物正交的",
+    "note": "「orthogonal」在數學上是「正交（垂直、互不干擾）」的意思。在生物學中，「生物正交」意指化學反應與生命體內的天然生化反應「各走各的路」，互不干擾、不產生毒性，是體內標靶藥物開發的革命性概念。"
   }
 ]

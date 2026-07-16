@@ -2,36 +2,43 @@ name: Daily Science Digests
 
 on:
   schedule:
-    # 23:37 UTC = 07:37 台北時間。刻意避開整點（尤其 00:00 UTC 是 GitHub Actions
-    # 最壅塞的時段，排程可能延遲 1~3 小時）；用冷門分鐘數讓實際送達時間貼近 8 點。
-    - cron: "37 23 * * *"
-  workflow_dispatch: {}   # 讓你可以在 GitHub 網頁上手動按「Run workflow」測試
+    # GitHub Actions 的排程是「盡力而為」，尖峰時段常延遲 30~90 分鐘
+    # （2026-07-16 那次 23:37 UTC 的排程實際 01:03 UTC 才跑，慢了 86 分鐘）。
+    # 因此掛多個時間點，最先真正執行的那次發報，其餘會被程式的
+    # already_posted_today() 判斷跳過，不會重複發。
+    - cron: "20 23 * * *"   # 07:20 台北
+    - cron: "40 23 * * *"   # 07:40 台北
+    - cron: "5 0 * * *"     # 08:05 台北（保險）
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "忽略「今天已發過」的檢查，強制重發"
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # 需要把 data/ 與 archive/ 的更新推回 repo
 
-# 兩份刊物在同一個 job 內依序執行：它們會寫入同一個 repo，分開跑會 push 衝突。
 jobs:
-  digest:
+  # 兩份刊物各自獨立：一份掛掉不能拖累另一份（2026-07-16 地科版遇到 Discord
+  # 500 就是因為同一個 job 而讓生醫版完全沒執行）。
+  earth:
+    name: 🌍 地球科學日報
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── 🌍 地球科學日報 ──────────────────────────────
       - name: Run earth science digest
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           CWA_API_KEY: ${{ secrets.CWA_API_KEY }}
+          FORCE_POST: ${{ inputs.force && '1' || '' }}
         run: python scripts/digest.py
 
       - name: Post earthquake figures (record section + ShakeMap)
@@ -40,18 +47,42 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python scripts/quakeplot.py
 
-      # ── 🧬 醫學生物日報 ──────────────────────────────
-      - name: Run biomed digest
-        continue-on-error: true   # 生醫版失敗不影響地科版已發出的內容
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          DISCORD_WEBHOOK_BIOMED: ${{ secrets.DISCORD_WEBHOOK_BIOMED }}
-        run: python scripts/biomed.py
-
-      - name: Commit state and archives
+      - name: Commit state and archive
+        if: always()   # 即使前面失敗，也保留已成功寫入的狀態
         run: |
           git config user.name "science-digest-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/ archive/ archive-biomed/
-          git diff --cached --quiet || git commit -m "chore: daily digest state + archives [skip ci]"
-          git push
+          git add data/ archive/ || true
+          git diff --cached --quiet || git commit -m "chore: earth digest state + archive [skip ci]"
+          git pull --rebase --autostash origin main || true
+          git push || true
+
+  biomed:
+    name: 🧬 醫學生物日報
+    runs-on: ubuntu-latest
+    needs: earth          # 依序執行避免 push 撞車
+    if: always()          # 但地科版失敗時，生醫版照樣要發
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run biomed digest
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCORD_WEBHOOK_BIOMED: ${{ secrets.DISCORD_WEBHOOK_BIOMED }}
+          FORCE_POST: ${{ inputs.force && '1' || '' }}
+        run: python scripts/biomed.py
+
+      - name: Commit state and archive
+        if: always()
+        run: |
+          git config user.name "science-digest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ archive-biomed/ || true
+          git diff --cached --quiet || git commit -m "chore: biomed digest state + archive [skip ci]"
+          git pull --rebase --autostash origin main || true
+          git push || true

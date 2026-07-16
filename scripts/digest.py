@@ -762,6 +762,36 @@ def embed_size(embed: dict) -> int:
 THREAD_FILE = REPO_ROOT / "data" / "last_thread.json"
 
 
+def _request_with_retry(url: str, params: dict, json_body: dict, attempts: int = 5):
+    """Discord 偶發 5xx／429（2026-07-16 就有一次 500 讓整份日報消失）。
+    伺服器端錯誤與限流都重試，用戶端錯誤（4xx）直接回傳交給呼叫端判斷。"""
+    delay = 5
+    last_resp = None
+    for i in range(attempts):
+        try:
+            resp = requests.post(url, params=params, json=json_body, timeout=30)
+        except requests.RequestException as exc:
+            print(f"[warn] Discord 連線失敗（第 {i + 1} 次）：{exc}", file=sys.stderr)
+            time.sleep(delay)
+            delay = min(delay * 2, 60)
+            continue
+        last_resp = resp
+        if resp.status_code == 429:
+            wait = float(resp.headers.get("Retry-After", delay))
+            print(f"[warn] Discord 限流，{wait} 秒後重試", file=sys.stderr)
+            time.sleep(wait + 1)
+            continue
+        if resp.status_code >= 500:
+            print(f"[warn] Discord {resp.status_code}（第 {i + 1} 次），{delay} 秒後重試", file=sys.stderr)
+            time.sleep(delay)
+            delay = min(delay * 2, 60)
+            continue
+        return resp
+    if last_resp is not None:
+        return last_resp
+    raise RuntimeError("Discord 連線持續失敗")
+
+
 def _post_webhook(payload: dict, thread_name=None, thread_id=None):
     """送出一則 webhook 訊息。論壇頻道用 thread_name 開新貼文（放 JSON 內文）、
     thread_id 續貼（放網址參數）；若頻道不是論壇（thread_name 被拒絕），
@@ -773,9 +803,9 @@ def _post_webhook(payload: dict, thread_name=None, thread_id=None):
         params["thread_id"] = thread_id
     elif thread_name:
         body["thread_name"] = thread_name[:100]
-    resp = requests.post(webhook_url, params=params, json=body, timeout=30)
+    resp = _request_with_retry(webhook_url, params, body)
     if resp.status_code == 400 and thread_name and not thread_id:
-        resp = requests.post(webhook_url, params={"wait": "true"}, json=payload, timeout=30)
+        resp = _request_with_retry(webhook_url, {"wait": "true"}, payload)
     resp.raise_for_status()
     return resp.json().get("channel_id")
 
@@ -811,6 +841,17 @@ def save_thread(today: str, thread_id) -> None:
         return
     THREAD_FILE.parent.mkdir(parents=True, exist_ok=True)
     THREAD_FILE.write_text(json.dumps({"date": today, "thread_id": thread_id}))
+
+
+def already_posted_today(today: str) -> bool:
+    """排程掛多個時間點以對抗 GitHub Actions 的排程延遲；先跑成功的那次會留下
+    當天的貼文紀錄，後面補跑的就直接跳過，不會重複發報。"""
+    if os.environ.get("FORCE_POST"):
+        return False
+    try:
+        return json.loads(THREAD_FILE.read_text()).get("date") == today
+    except Exception:
+        return False
 
 
 def render_archive_md(digest: dict, now_tw: datetime) -> str:
@@ -960,7 +1001,7 @@ def build_weekly_embeds(weekly: dict, words: list, now_tw: datetime) -> list:
     return embeds
 
 
-def post_discord_text(message: str, thread_name=None) -> None:
+def post_discord_text(message: str, thread_name=None):
     chunk_size = 1900
     chunks = [message[i : i + chunk_size] for i in range(0, len(message), chunk_size)] or [message]
     thread_id = None
@@ -969,6 +1010,7 @@ def post_discord_text(message: str, thread_name=None) -> None:
         if thread_id is None:
             thread_id = tid
             thread_name = None
+    return thread_id
 
 
 def run_weekly(now_tw: datetime, today: str) -> None:
@@ -992,6 +1034,10 @@ def main() -> None:
     weekday = WEEKDAYS_ZH[now_tw.weekday()]
     thread_name = f"{THREAD_PREFIX} {today}（週{weekday}）"
 
+    if already_posted_today(today):
+        print(f"{BOT_NAME}: {today} 已發過，跳過")
+        return
+
     if candidates:
         taught_words = load_words()
         prompt = build_prompt(candidates, today, prefs, taught_words)
@@ -1009,7 +1055,8 @@ def main() -> None:
         if word.get("term"):
             save_word(word, today)
     else:
-        post_discord_text(f"今日各來源皆無新內容，明天再見！", thread_name=thread_name)
+        thread_id = post_discord_text("今日各來源皆無新內容，明天再見！", thread_name=thread_name)
+        save_thread(today, thread_id)
     mark_seen(fresh)
 
     if now_tw.weekday() == 6:  # 週日加發回顧特刊

@@ -34,5 +34,14 @@
     "example_en": "Scientists extracted ancient air trapped within the Greenland firn layers to reconstruct past atmospheric methane concentrations.",
     "zh": "萬年積雪",
     "note": "想像一下把鬆軟的刨冰用力捏成冰球的過程，介於「鬆雪」與「硬冰」之間的過渡狀態就是 firn。它是古氣候學家尋找古代空氣的「天然海綿」。"
+  },
+  {
+    "date": "2026-07-17",
+    "term": "hydrothermal",
+    "pos": "adj.",
+    "definition_en": "Relating to or produced by hot water, especially in the Earth's crust, often associated with volcanic activity and mineral deposits.",
+    "example_en": "The tectonic boundary faults channel hydrothermal fluids to the seafloor, forming rich mineral deposits.",
+    "zh": "熱液的",
+    "note": "由 hydro-（水）與 thermal（熱）組合而成，專指地球內部高溫水溶液的活動，是海底黑煙囪與金屬礦床形成的關鍵。"
   }
 ]

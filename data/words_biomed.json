@@ -16,5 +16,14 @@
     "example_en": "The researchers utilized a bioorthogonal click chemistry reaction to assemble the therapeutic conjugate directly on the surface of tumor cells in vivo.",
     "zh": "生物正交的",
     "note": "「orthogonal」在數學上是「正交（垂直、互不干擾）」的意思。在生物學中，「生物正交」意指化學反應與生命體內的天然生化反應「各走各的路」，互不干擾、不產生毒性，是體內標靶藥物開發的革命性概念。"
+  },
+  {
+    "date": "2026-07-17",
+    "term": "immunopeptidomics",
+    "pos": "n.",
+    "definition_en": "The large-scale study of the peptides presented on the cell surface by major histocompatibility complex (MHC) molecules, typically analyzed using mass spectrometry.",
+    "example_en": "Immunopeptidomics has emerged as a powerful tool to identify novel, highly conserved T cell antigens for universal vaccine design.",
+    "zh": "免疫胜肽組學",
+    "note": "字根 immuno-（免疫）加上 peptidomics（胜肽組學）。這項技術就像是給免疫系統裝上「雷達」，直接找出細胞表面呈現的抗原片段，是現代癌症免疫療法與通用疫苗開發的關鍵利器。"
   }
 ]

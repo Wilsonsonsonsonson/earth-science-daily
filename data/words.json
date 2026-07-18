@@ -43,5 +43,14 @@
     "example_en": "The tectonic boundary faults channel hydrothermal fluids to the seafloor, forming rich mineral deposits.",
     "zh": "熱液的",
     "note": "由 hydro-（水）與 thermal（熱）組合而成，專指地球內部高溫水溶液的活動，是海底黑煙囪與金屬礦床形成的關鍵。"
+  },
+  {
+    "date": "2026-07-18",
+    "term": "dislocation",
+    "pos": "n.",
+    "definition_en": "A crystallographic defect or irregularity within a crystal structure, which plays a key role in the plastic deformation of minerals under high temperature and pressure.",
+    "example_en": "The density of dislocation substructures within the creep-deformed olivine grains indicates the magnitude of shear stress experienced in the upper mantle.",
+    "zh": "差排",
+    "note": "在結晶學中，差排是晶體內部的一維缺陷。想像排隊時有人插隊導致隊伍歪斜，這個歪斜點在受力時會移動，這就是金屬或地函礦物（如橄欖石）能在高溫下發生塑性變形（蠕變）的微觀機制！"
   }
 ]

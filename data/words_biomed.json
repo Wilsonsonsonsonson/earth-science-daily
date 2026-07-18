@@ -25,5 +25,14 @@
     "example_en": "Immunopeptidomics has emerged as a powerful tool to identify novel, highly conserved T cell antigens for universal vaccine design.",
     "zh": "免疫胜肽組學",
     "note": "字根 immuno-（免疫）加上 peptidomics（胜肽組學）。這項技術就像是給免疫系統裝上「雷達」，直接找出細胞表面呈現的抗原片段，是現代癌症免疫療法與通用疫苗開發的關鍵利器。"
+  },
+  {
+    "date": "2026-07-18",
+    "term": "sequela",
+    "pos": "n.",
+    "definition_en": "A pathological condition resulting from a prior disease, injury, or attack.",
+    "example_en": "The study evaluated whether vacuum-assisted delivery is associated with long-term neurodevelopmental sequelae in children.",
+    "zh": "後遺症／續發症",
+    "note": "源自拉丁文 sequi（跟隨），字面意思是「隨之而來的事物」。在醫學上專指某種疾病、創傷或治療結束後，遺留下來的長期病理狀態或功能障礙（複數形為 sequelae）。"
   }
 ]

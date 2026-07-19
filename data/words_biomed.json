@@ -34,5 +34,14 @@
     "example_en": "The study evaluated whether vacuum-assisted delivery is associated with long-term neurodevelopmental sequelae in children.",
     "zh": "後遺症／續發症",
     "note": "源自拉丁文 sequi（跟隨），字面意思是「隨之而來的事物」。在醫學上專指某種疾病、創傷或治療結束後，遺留下來的長期病理狀態或功能障礙（複數形為 sequelae）。"
+  },
+  {
+    "date": "2026-07-19",
+    "term": "stratification",
+    "pos": "n.",
+    "definition_en": "The process of dividing a population or data into distinct subgroups based on specific characteristics (e.g., age, gender, severity of disease) to analyze risk or treatment outcomes more precisely.",
+    "example_en": "Risk stratification using electronic health records allows clinicians to identify which autistic patients are at the highest risk for suicide attempts.",
+    "zh": "分層（尤指風險分層）",
+    "note": "在臨床醫學與流行病學中，stratification（分層）是避免混淆變因、實現精準醫療的關鍵步驟。想像把混雜的沙子過篩分類，分得越細，越能看清每一類的本質。"
   }
 ]

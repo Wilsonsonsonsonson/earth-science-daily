@@ -52,5 +52,14 @@
     "example_en": "The density of dislocation substructures within the creep-deformed olivine grains indicates the magnitude of shear stress experienced in the upper mantle.",
     "zh": "差排",
     "note": "在結晶學中，差排是晶體內部的一維缺陷。想像排隊時有人插隊導致隊伍歪斜，這個歪斜點在受力時會移動，這就是金屬或地函礦物（如橄欖石）能在高溫下發生塑性變形（蠕變）的微觀機制！"
+  },
+  {
+    "date": "2026-07-19",
+    "term": "discontinuity",
+    "pos": "n.",
+    "definition_en": "A boundary surface within the Earth across which seismic wave velocities or other physical properties change abruptly.",
+    "example_en": "The 410-km discontinuity marks the transition zone where olivine transforms into wadsleyite.",
+    "zh": "不連續面",
+    "note": "源自拉丁語 'continuus'（連續的）加上否定前綴 'dis-'。在地球物理中，它指地震波速度發生突變的界面，就像光線穿過水面會折射一樣，代表地球內部的物質成分或晶體結構發生了根本性的改變。"
   }
 ]

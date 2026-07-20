@@ -43,5 +43,14 @@
     "example_en": "Risk stratification using electronic health records allows clinicians to identify which autistic patients are at the highest risk for suicide attempts.",
     "zh": "分層（尤指風險分層）",
     "note": "在臨床醫學與流行病學中，stratification（分層）是避免混淆變因、實現精準醫療的關鍵步驟。想像把混雜的沙子過篩分類，分得越細，越能看清每一類的本質。"
+  },
+  {
+    "date": "2026-07-20",
+    "term": "phenotype",
+    "pos": "n.",
+    "definition_en": "The observable physical or biochemical characteristics of an organism, determined by both genetic makeup and environmental influences.",
+    "example_en": "Researchers proposed a three-axis model to better characterize the diverse hypertension phenotypes in the patient cohort.",
+    "zh": "表型",
+    "note": "源自希臘文 phaino-（顯現、呈現）與 typos（類型）。在醫學中，同一個疾病在不同人身上呈現的臨床特徵差異，就稱為不同的臨床表型。"
   }
 ]

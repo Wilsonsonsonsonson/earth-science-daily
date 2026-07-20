@@ -61,5 +61,14 @@
     "example_en": "The 410-km discontinuity marks the transition zone where olivine transforms into wadsleyite.",
     "zh": "不連續面",
     "note": "源自拉丁語 'continuus'（連續的）加上否定前綴 'dis-'。在地球物理中，它指地震波速度發生突變的界面，就像光線穿過水面會折射一樣，代表地球內部的物質成分或晶體結構發生了根本性的改變。"
+  },
+  {
+    "date": "2026-07-20",
+    "term": "subduction",
+    "pos": "n.",
+    "definition_en": "The geological process in which one tectonic plate moves under another tectonic plate and sinks into the mantle at a convergent boundary.",
+    "example_en": "The intense seismic activity offshore Chiapas is driven by the subduction of the Cocos Plate beneath the North American Plate.",
+    "zh": "隱沒作用",
+    "note": "字根 sub- 表示「在...之下」，duct 則有「引導、拉引」之意（如 conduct、ductile）。合起來就是「被拉引到下方」，非常形象地描述了較重的海洋板塊沉入地函的過程。"
   }
 ]

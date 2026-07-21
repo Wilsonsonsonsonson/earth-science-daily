@@ -70,5 +70,14 @@
     "example_en": "The intense seismic activity offshore Chiapas is driven by the subduction of the Cocos Plate beneath the North American Plate.",
     "zh": "隱沒作用",
     "note": "字根 sub- 表示「在...之下」，duct 則有「引導、拉引」之意（如 conduct、ductile）。合起來就是「被拉引到下方」，非常形象地描述了較重的海洋板塊沉入地函的過程。"
+  },
+  {
+    "date": "2026-07-21",
+    "term": "syntaxis",
+    "pos": "n.",
+    "definition_en": "A sharp bend or change in direction of a mountain range or geological structure, typically formed at the corner of colliding tectonic plates.",
+    "example_en": "The Eastern Himalayan syntaxis is characterized by rapid tectonic uplift and complex crustal deformation.",
+    "zh": "構造結",
+    "note": "構造結（syntaxis）源自希臘語，意為「共同排列、結合」。在地質學中，它專指造山帶走向發生劇烈轉折的「拐角處」，是板塊碰撞應力最集中的地方。"
   }
 ]

@@ -61,5 +61,14 @@
     "example_en": "The genome-wide association study identified 11 novel genetic loci associated with borderline personality disorder.",
     "zh": "基因座",
     "note": "複數形是 loci（讀音為 /ˈloʊ.saɪ/）。源自拉丁文的「地方」（place），英文中的 local、location 都是同源詞。在遺傳學中，它就像是基因在染色體這本地圖上的「門牌號碼」。"
+  },
+  {
+    "date": "2026-07-22",
+    "term": "cachexia",
+    "pos": "n.",
+    "definition_en": "A complex metabolic syndrome associated with underlying severe illness, characterized by loss of muscle mass with or without loss of fat mass.",
+    "example_en": "Researchers are developing targeted therapies against inflammatory cytokines to counteract cancer-induced cachexia and improve patient survival.",
+    "zh": "惡病質（或稱惡質病）",
+    "note": "源自希臘文 kakos（惡劣）與 hexis（體質），指因慢性嚴重疾病導致極度消瘦、肌肉流失與體力衰竭的病理狀態。"
   }
 ]

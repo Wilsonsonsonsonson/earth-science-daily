@@ -79,5 +79,14 @@
     "example_en": "The Eastern Himalayan syntaxis is characterized by rapid tectonic uplift and complex crustal deformation.",
     "zh": "構造結",
     "note": "構造結（syntaxis）源自希臘語，意為「共同排列、結合」。在地質學中，它專指造山帶走向發生劇烈轉折的「拐角處」，是板塊碰撞應力最集中的地方。"
+  },
+  {
+    "date": "2026-07-22",
+    "term": "cross-correlation",
+    "pos": "n.",
+    "definition_en": "A statistical measure that evaluates the degree of similarity between two waveforms as a function of the time-lag applied to one of them.",
+    "example_en": "Seismologists applied waveform cross-correlation to continuous seismic data to detect microearthquakes below the standard threshold.",
+    "zh": "互相關（波形互相關）",
+    "note": "Prefix 'cross-' 表示交叉比對，'correlation' 為相關性。在地震學中專指比對兩段地震波形的相似度。"
   }
 ]

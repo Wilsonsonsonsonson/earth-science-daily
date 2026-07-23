@@ -88,5 +88,14 @@
     "example_en": "Seismologists applied waveform cross-correlation to continuous seismic data to detect microearthquakes below the standard threshold.",
     "zh": "互相關（波形互相關）",
     "note": "Prefix 'cross-' 表示交叉比對，'correlation' 為相關性。在地震學中專指比對兩段地震波形的相似度。"
+  },
+  {
+    "date": "2026-07-23",
+    "term": "permeability",
+    "pos": "n.",
+    "definition_en": "The capacity of a porous rock, sediment, or soil to transmit fluids through its interconnected pore spaces.",
+    "example_en": "High permeability in the reservoir rock allows injected carbon dioxide to flow efficiently through the pore network.",
+    "zh": "滲透率、透水率",
+    "note": "由拉丁文 permeare（穿過）演變而來。注意不要與 porosity（孔隙率，指岩石中空隙的總體積比例）混淆：岩石可以有很多孔隙，但若孔隙互不相通，其滲透率依然為零！"
   }
 ]

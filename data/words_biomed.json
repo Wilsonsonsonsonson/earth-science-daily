@@ -70,5 +70,14 @@
     "example_en": "Researchers are developing targeted therapies against inflammatory cytokines to counteract cancer-induced cachexia and improve patient survival.",
     "zh": "惡病質（或稱惡質病）",
     "note": "源自希臘文 kakos（惡劣）與 hexis（體質），指因慢性嚴重疾病導致極度消瘦、肌肉流失與體力衰竭的病理狀態。"
+  },
+  {
+    "date": "2026-07-23",
+    "term": "mutagenesis",
+    "pos": "n.",
+    "definition_en": "The process by which the genetic information of an organism is changed, resulting in a mutation.",
+    "example_en": "Chemotherapy, particularly with platinum-based drugs, induces substantial mutagenesis in pediatric cancer cells at relapse.",
+    "zh": "誘變；突變發生",
+    "note": "由 muta-（改變）與 -genesis（產生/形成）組成，指 DNA 序列發生改變或被化學物質、輻射誘發突變的過程。"
   }
 ]

@@ -79,5 +79,14 @@
     "example_en": "Chemotherapy, particularly with platinum-based drugs, induces substantial mutagenesis in pediatric cancer cells at relapse.",
     "zh": "誘變；突變發生",
     "note": "由 muta-（改變）與 -genesis（產生/形成）組成，指 DNA 序列發生改變或被化學物質、輻射誘發突變的過程。"
+  },
+  {
+    "date": "2026-07-24",
+    "term": "chaperone",
+    "pos": "n.",
+    "definition_en": "A macromolecule (typically a protein, or functionally an RNA) that assists in the proper folding, assembly, or stability of other synthesized proteins without becoming part of their final structure.",
+    "example_en": "Recent experimental evidence reveals that the 3'UTR of an mRNA can directly act as an RNA chaperone to guide the co-translational folding of proteins containing disordered regions.",
+    "zh": "分子護航者／分子伴侶",
+    "note": "源自法文，原指社交場合中陪同未婚女子以防行為不當的「監護人」，在分子生物學中形象地比喻協助蛋白質正確折疊、防止不當聚集的調控分子。"
   }
 ]

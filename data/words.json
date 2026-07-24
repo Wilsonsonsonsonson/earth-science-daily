@@ -97,5 +97,14 @@
     "example_en": "High permeability in the reservoir rock allows injected carbon dioxide to flow efficiently through the pore network.",
     "zh": "滲透率、透水率",
     "note": "由拉丁文 permeare（穿過）演變而來。注意不要與 porosity（孔隙率，指岩石中空隙的總體積比例）混淆：岩石可以有很多孔隙，但若孔隙互不相通，其滲透率依然為零！"
+  },
+  {
+    "date": "2026-07-24",
+    "term": "asperity",
+    "pos": "n.",
+    "definition_en": "A localized area or patch on a fault surface that is strongly locked and resists sliding, accumulating high shear strain before suddenly slipping during a major earthquake.",
+    "example_en": "Seismologists identified a deep asperity along the locked fault segment that could act as the primary nucleation point for the next large earthquake.",
+    "zh": "震源固著區（或稱強震著點、粗糙點）",
+    "note": "來自拉丁文 aspera（粗糙），在斷層力學中指斷層面上摩擦力特別大、卡得最緊的「粗糙區域」，是大地震累積能量與爆發破裂的核心焦點。"
   }
 ]

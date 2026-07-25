@@ -106,5 +106,14 @@
     "example_en": "Seismologists identified a deep asperity along the locked fault segment that could act as the primary nucleation point for the next large earthquake.",
     "zh": "震源固著區（或稱強震著點、粗糙點）",
     "note": "來自拉丁文 aspera（粗糙），在斷層力學中指斷層面上摩擦力特別大、卡得最緊的「粗糙區域」，是大地震累積能量與爆發破裂的核心焦點。"
+  },
+  {
+    "date": "2026-07-25",
+    "term": "rifting",
+    "pos": "n.",
+    "definition_en": "The process by which the Earth's crust and lithosphere are pulled apart by tectonic forces, forming rift valleys and basins.",
+    "example_en": "Thermal-mechanical models indicate that wide uplifts along rift flanks on Venus are driven by active rifting resulting from mantle plume activity.",
+    "zh": "張裂作用",
+    "note": "由動詞 rift（裂開）衍生而來，指岩石圈受張力作用撕裂、下陷形成裂谷地貌的構造過程。"
   }
 ]

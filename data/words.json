@@ -115,5 +115,14 @@
     "example_en": "Thermal-mechanical models indicate that wide uplifts along rift flanks on Venus are driven by active rifting resulting from mantle plume activity.",
     "zh": "張裂作用",
     "note": "由動詞 rift（裂開）衍生而來，指岩石圈受張力作用撕裂、下陷形成裂谷地貌的構造過程。"
+  },
+  {
+    "date": "2026-07-26",
+    "term": "stratification",
+    "pos": "n.",
+    "definition_en": "The formation of distinct layers in a body of water or atmosphere due to differences in temperature, salinity, or density.",
+    "example_en": "Strong thermal stratification in the upper ocean restricts vertical mixing and limits nutrient transport from deeper layers.",
+    "zh": "層化 / 密度層化",
+    "note": "由拉丁文 stratus（鋪設、層）演變而來。海洋學中層化越強，上下水體就越難混合，就像油與水不相融的分層現象。"
   }
 ]

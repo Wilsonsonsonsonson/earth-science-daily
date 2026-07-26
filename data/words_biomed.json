@@ -97,5 +97,14 @@
     "example_en": "Transient elastography is widely used to evaluate liver stiffness and stage fibrosis in patients with metabolic dysfunction-associated steatotic liver disease.",
     "zh": "彈性造影（彈性攝影）",
     "note": "由 elasto-（彈性）與 -graphy（造影）組成，藉由測量組織受壓或剪切波傳導速度來評估器官硬度。"
+  },
+  {
+    "date": "2026-07-26",
+    "term": "monomorphic",
+    "pos": "adj.",
+    "definition_en": "Exhibiting only one form, structure, or allele within a population, with minimal genetic variation.",
+    "example_en": "Unlike highly polymorphic HLA proteins, the MR1 antigen-presenting receptor is strictly monomorphic across human populations.",
+    "zh": "單一構型的／單一型態的",
+    "note": "由 mono-（單一）與 -morphic（形狀）組成。在免疫學中常用來形容個體間幾乎無變異的通用型抗原呈遞分子。"
   }
 ]

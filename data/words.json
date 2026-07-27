@@ -124,5 +124,14 @@
     "example_en": "Strong thermal stratification in the upper ocean restricts vertical mixing and limits nutrient transport from deeper layers.",
     "zh": "層化 / 密度層化",
     "note": "由拉丁文 stratus（鋪設、層）演變而來。海洋學中層化越強，上下水體就越難混合，就像油與水不相融的分層現象。"
+  },
+  {
+    "date": "2026-07-27",
+    "term": "hypocenter",
+    "pos": "n.",
+    "definition_en": "The exact point within the Earth where an earthquake rupture starts.",
+    "example_en": "The M5.6 Shuangxi earthquake had a hypocenter depth of 95.7 kilometers within the subducting Philippine Sea Plate.",
+    "zh": "震源",
+    "note": "「震源」（hypocenter 或 focus）是地下破裂發生的真實三維位置；而「震央」（epicenter）則是震源正上方在地表的垂直投影點。"
   }
 ]

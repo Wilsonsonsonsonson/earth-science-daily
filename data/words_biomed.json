@@ -106,5 +106,14 @@
     "example_en": "Unlike highly polymorphic HLA proteins, the MR1 antigen-presenting receptor is strictly monomorphic across human populations.",
     "zh": "單一構型的／單一型態的",
     "note": "由 mono-（單一）與 -morphic（形狀）組成。在免疫學中常用來形容個體間幾乎無變異的通用型抗原呈遞分子。"
+  },
+  {
+    "date": "2026-07-27",
+    "term": "cross-reactivity",
+    "pos": "n.",
+    "definition_en": "The ability of an antibody or immune receptor to react with two or more different antigens that share similar structural features.",
+    "example_en": "Researchers identified cross-reactive antibodies that effectively blocked H5N1 virus entry by targeting shared epitopes on viral proteins.",
+    "zh": "交叉反應性",
+    "note": "前綴 cross- 代表橫跨不同目標，免疫學中指抗體能識別結構相似的不同抗原決定位。"
   }
 ]

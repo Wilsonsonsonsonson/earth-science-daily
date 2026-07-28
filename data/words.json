@@ -133,5 +133,14 @@
     "example_en": "The M5.6 Shuangxi earthquake had a hypocenter depth of 95.7 kilometers within the subducting Philippine Sea Plate.",
     "zh": "震源",
     "note": "「震源」（hypocenter 或 focus）是地下破裂發生的真實三維位置；而「震央」（epicenter）則是震源正上方在地表的垂直投影點。"
+  },
+  {
+    "date": "2026-07-28",
+    "term": "tremor",
+    "pos": "n.",
+    "definition_en": "Low-frequency, continuous seismic signals associated with non-brittle fault movement or fluid migration along tectonic interfaces.",
+    "example_en": "Seismologists detected persistent tectonic tremor along the Antarctic–South American subduction zone.",
+    "zh": "構造微震",
+    "note": "與突發的地震破裂不同，構造微震頻率較低且持續時間長，是觀察板塊深部慢速滑移與流體活動的重要指標。"
   }
 ]

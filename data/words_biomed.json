@@ -115,5 +115,14 @@
     "example_en": "Researchers identified cross-reactive antibodies that effectively blocked H5N1 virus entry by targeting shared epitopes on viral proteins.",
     "zh": "交叉反應性",
     "note": "前綴 cross- 代表橫跨不同目標，免疫學中指抗體能識別結構相似的不同抗原決定位。"
+  },
+  {
+    "date": "2026-07-28",
+    "term": "phenoconversion",
+    "pos": "n.",
+    "definition_en": "The clinical transition from an asymptomatic state or genotype-only carrying status to the overt manifestation of disease symptoms.",
+    "example_en": "Longitudinal plasma proteomics revealed molecular alterations years prior to clinical phenoconversion in ALS mutation carriers.",
+    "zh": "表現型轉化",
+    "note": "由 phenotype（表現型）與 conversion（轉化）組合而成，常用於描述無症狀基因攜帶者正式演變出臨床疾病症狀的臨界過程。"
   }
 ]

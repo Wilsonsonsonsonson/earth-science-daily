@@ -142,5 +142,14 @@
     "example_en": "Seismologists detected persistent tectonic tremor along the Antarctic–South American subduction zone.",
     "zh": "構造微震",
     "note": "與突發的地震破裂不同，構造微震頻率較低且持續時間長，是觀察板塊深部慢速滑移與流體活動的重要指標。"
+  },
+  {
+    "date": "2026-07-29",
+    "term": "nucleation",
+    "pos": "n.",
+    "definition_en": "The initial phase of a dynamic process during which a localized stress concentration or micro-slip grows to reach a critical length, initiating a propagating earthquake rupture.",
+    "example_en": "Understanding fault roughness and stress heterogeneity is critical for determining whether nucleation will fail or cascade into a major seismic event.",
+    "zh": "破裂核化",
+    "note": "指地震破裂在斷層面上從一個微小區域開始萌生、積聚應力並突破臨界滑移距離（Dc）的初始過程，是決定地震能否演變成大震的核心階段。"
   }
 ]

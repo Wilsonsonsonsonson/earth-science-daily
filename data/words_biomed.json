@@ -124,5 +124,14 @@
     "example_en": "Longitudinal plasma proteomics revealed molecular alterations years prior to clinical phenoconversion in ALS mutation carriers.",
     "zh": "表現型轉化",
     "note": "由 phenotype（表現型）與 conversion（轉化）組合而成，常用於描述無症狀基因攜帶者正式演變出臨床疾病症狀的臨界過程。"
+  },
+  {
+    "date": "2026-07-29",
+    "term": "immunogenicity",
+    "pos": "n.",
+    "definition_en": "The ability of a substance, such as an antigen or vaccine, to provoke an immune response in the body of a human or animal.",
+    "example_en": "The phase 1/2 clinical trial demonstrated that the hexavalent group B Streptococcus vaccine had high immunogenicity, inducing robust protective antibody responses in vaccinated mothers.",
+    "zh": "免疫原性",
+    "note": "指物質（如抗原或疫苗）刺激宿主免疫系統產生特異性抗體或細胞免疫應答的能力，是評估疫苗研發成效的關鍵指標。"
   }
 ]

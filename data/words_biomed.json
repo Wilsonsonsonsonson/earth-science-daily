@@ -133,5 +133,14 @@
     "example_en": "The phase 1/2 clinical trial demonstrated that the hexavalent group B Streptococcus vaccine had high immunogenicity, inducing robust protective antibody responses in vaccinated mothers.",
     "zh": "免疫原性",
     "note": "指物質（如抗原或疫苗）刺激宿主免疫系統產生特異性抗體或細胞免疫應答的能力，是評估疫苗研發成效的關鍵指標。"
+  },
+  {
+    "date": "2026-07-30",
+    "term": "senescence",
+    "pos": "n.",
+    "definition_en": "The process or condition of deteriorating with age, or a state of irreversible cell-cycle arrest.",
+    "example_en": "Mitochondrial dysfunction can trigger cellular senescence, leading to chronic inflammation via SASP.",
+    "zh": "衰老／細胞衰老",
+    "note": "源自拉丁文 senescere（變老），在細胞生物學中特指細胞永久停止分裂但仍保持代謝活性的狀態。"
   }
 ]

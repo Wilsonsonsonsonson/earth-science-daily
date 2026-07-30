@@ -151,5 +151,14 @@
     "example_en": "Understanding fault roughness and stress heterogeneity is critical for determining whether nucleation will fail or cascade into a major seismic event.",
     "zh": "破裂核化",
     "note": "指地震破裂在斷層面上從一個微小區域開始萌生、積聚應力並突破臨界滑移距離（Dc）的初始過程，是決定地震能否演變成大震的核心階段。"
+  },
+  {
+    "date": "2026-07-30",
+    "term": "poroelasticity",
+    "pos": "n.",
+    "definition_en": "The theoretical framework describing the interactive relationship between fluid flow and pressure changes within a porous medium and the resulting solid matrix deformation.",
+    "example_en": "Researchers applied the principles of poroelasticity to explain how groundwater recharge induces seasonal vertical displacement of the land surface.",
+    "zh": "孔隙彈力學 / 孔隙彈性",
+    "note": "由岩石力學大師 Biot 提出，結合了流體力學與彈性力學，專門用來解釋「水壓變化如何讓石頭與土壤骨架膨脹或收縮」。"
   }
 ]

@@ -142,5 +142,14 @@
     "example_en": "Mitochondrial dysfunction can trigger cellular senescence, leading to chronic inflammation via SASP.",
     "zh": "衰老／細胞衰老",
     "note": "源自拉丁文 senescere（變老），在細胞生物學中特指細胞永久停止分裂但仍保持代謝活性的狀態。"
+  },
+  {
+    "date": "2026-07-31",
+    "term": "ontogeny",
+    "pos": "n.",
+    "definition_en": "The origination and development of an organism or a specific cell lineage from its inception to maturity.",
+    "example_en": "Somatic mutations can serve as molecular clocks to trace the ontogeny of human immune cells during aging.",
+    "zh": "個體發生／發育史",
+    "note": "由希臘文 ont-（存在者）與 -geny（產生）組合而成，指單一生物個體或特定細胞族群從起源到成熟的完整發育歷程。"
   }
 ]

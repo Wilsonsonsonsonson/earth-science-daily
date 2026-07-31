@@ -160,5 +160,14 @@
     "example_en": "Researchers applied the principles of poroelasticity to explain how groundwater recharge induces seasonal vertical displacement of the land surface.",
     "zh": "孔隙彈力學 / 孔隙彈性",
     "note": "由岩石力學大師 Biot 提出，結合了流體力學與彈性力學，專門用來解釋「水壓變化如何讓石頭與土壤骨架膨脹或收縮」。"
+  },
+  {
+    "date": "2026-07-31",
+    "term": "serpentinization",
+    "pos": "n.",
+    "definition_en": "A metamorphic process in which low-silica ultramafic rocks react with water to form serpentine group minerals.",
+    "example_en": "Outer-rise faulting promotes seawater penetration into the mantle lithosphere, facilitating extensive serpentinization before subduction.",
+    "zh": "蛇紋石化作用",
+    "note": "當海水沿著板塊彎曲產生的斷層深入地函橄欖岩時，會與富含鎂鐵的礦物發生水合反應生成蛇紋石，這是將海水鎖入固態岩石並送入地球深部的關鍵機制！"
   }
 ]

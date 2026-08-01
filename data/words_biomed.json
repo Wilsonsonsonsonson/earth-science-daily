@@ -151,5 +151,14 @@
     "example_en": "Somatic mutations can serve as molecular clocks to trace the ontogeny of human immune cells during aging.",
     "zh": "個體發生／發育史",
     "note": "由希臘文 ont-（存在者）與 -geny（產生）組合而成，指單一生物個體或特定細胞族群從起源到成熟的完整發育歷程。"
+  },
+  {
+    "date": "2026-08-01",
+    "term": "cytotoxicity",
+    "pos": "n.",
+    "definition_en": "The quality or state of being toxic to biological cells, often describing the destructive action of immune cells or chemical agents against target cells.",
+    "example_en": "The study showed that beta-endorphin enhances the cytotoxicity of natural killer cells against tumor targets.",
+    "zh": "細胞毒性",
+    "note": "由 cyto-（細胞）與 toxicity（毒性）組合而成，在免疫學中常用於描述 CD8+ T 細胞或 NK 細胞殺傷標的細胞的能力。"
   }
 ]

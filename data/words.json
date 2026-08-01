@@ -169,5 +169,14 @@
     "example_en": "Outer-rise faulting promotes seawater penetration into the mantle lithosphere, facilitating extensive serpentinization before subduction.",
     "zh": "蛇紋石化作用",
     "note": "當海水沿著板塊彎曲產生的斷層深入地函橄欖岩時，會與富含鎂鐵的礦物發生水合反應生成蛇紋石，這是將海水鎖入固態岩石並送入地球深部的關鍵機制！"
+  },
+  {
+    "date": "2026-08-01",
+    "term": "muography",
+    "pos": "n.",
+    "definition_en": "A geophysical imaging technique that uses naturally occurring cosmic-ray muons to produce 3D images of the internal density structure of large geological or artificial structures.",
+    "example_en": "By combining muography with conventional seismic data, researchers can independently constrain the density and elastic properties of subsurface formations.",
+    "zh": "宇宙線繆子照相術（繆子透視法）",
+    "note": "由「Muon」（繆子）與「-graphy」（繪製/成像）組成，就像是用源源不絕的宇宙射線幫火山或大樓拍 X 光透視照片！"
   }
 ]

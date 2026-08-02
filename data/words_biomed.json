@@ -160,5 +160,14 @@
     "example_en": "The study showed that beta-endorphin enhances the cytotoxicity of natural killer cells against tumor targets.",
     "zh": "細胞毒性",
     "note": "由 cyto-（細胞）與 toxicity（毒性）組合而成，在免疫學中常用於描述 CD8+ T 細胞或 NK 細胞殺傷標的細胞的能力。"
+  },
+  {
+    "date": "2026-08-02",
+    "term": "heterogeneity",
+    "pos": "n.",
+    "definition_en": "The quality or state of being diverse in character or content; in biomedicine, it refers to the variability in biological features, genetic traits, or clinical presentations within a single disease classification.",
+    "example_en": "The phenotypic heterogeneity of amyloidosis often delays clinical diagnosis, as patients present with diverse organ involvement.",
+    "zh": "異質性",
+    "note": "字根 hetero-（異、不同）+ geneity（性質），指同一種疾病在不同患者或不同組織間存在顯著的分子、基因或臨床表現型差異。"
   }
 ]

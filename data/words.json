@@ -178,5 +178,14 @@
     "example_en": "By combining muography with conventional seismic data, researchers can independently constrain the density and elastic properties of subsurface formations.",
     "zh": "宇宙線繆子照相術（繆子透視法）",
     "note": "由「Muon」（繆子）與「-graphy」（繪製/成像）組成，就像是用源源不絕的宇宙射線幫火山或大樓拍 X 光透視照片！"
+  },
+  {
+    "date": "2026-08-02",
+    "term": "dehydration",
+    "pos": "n.",
+    "definition_en": "The release or removal of bound water molecules from hydrous minerals under elevated temperatures and pressures.",
+    "example_en": "Dehydration of hydrous minerals inside the subducting slab releases high-pressure fluids that reduce effective stress and trigger deep earthquakes.",
+    "zh": "脫水作用",
+    "note": "在地質學中，脫水作用是指含水礦物在高溫高壓下釋放結構水的過程，是誘發板塊深部脆性破裂與弧陸火山作用的核心推手。"
   }
 ]

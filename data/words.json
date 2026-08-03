@@ -187,5 +187,14 @@
     "example_en": "Dehydration of hydrous minerals inside the subducting slab releases high-pressure fluids that reduce effective stress and trigger deep earthquakes.",
     "zh": "脫水作用",
     "note": "在地質學中，脫水作用是指含水礦物在高溫高壓下釋放結構水的過程，是誘發板塊深部脆性破裂與弧陸火山作用的核心推手。"
+  },
+  {
+    "date": "2026-08-03",
+    "term": "isostasy",
+    "pos": "n.",
+    "definition_en": "The state of gravitational balance between Earth's crust and the denser mantle underneath it.",
+    "example_en": "The melting of major ice sheets causes the underlying continent to rise slowly due to post-glacial rebound driven by isostasy.",
+    "zh": "地殼均衡",
+    "note": "字源來自希臘文 iso-（相等）與 stasis（平衡），概念就像冰山浮於水面，地殼也是浮在較黏稠的地函之上。"
   }
 ]

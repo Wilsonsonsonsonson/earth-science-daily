@@ -169,5 +169,14 @@
     "example_en": "The phenotypic heterogeneity of amyloidosis often delays clinical diagnosis, as patients present with diverse organ involvement.",
     "zh": "異質性",
     "note": "字根 hetero-（異、不同）+ geneity（性質），指同一種疾病在不同患者或不同組織間存在顯著的分子、基因或臨床表現型差異。"
+  },
+  {
+    "date": "2026-08-04",
+    "term": "pyroptosis",
+    "pos": "n.",
+    "definition_en": "A form of programmed cell death associated with inflammatory responses, executed by gasdermin pore formation.",
+    "example_en": "Gasdermin D forms pores in the plasma membrane to execute pyroptosis during intracellular pathogen infection.",
+    "zh": "細胞焦亡",
+    "note": "字源來自希臘文 pyro（火、發炎）與 ptosis（墜落、死亡），指伴隨強烈發炎細胞激素釋放的程式性細胞死亡。"
   }
 ]

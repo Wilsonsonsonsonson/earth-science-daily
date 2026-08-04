@@ -196,5 +196,14 @@
     "example_en": "The melting of major ice sheets causes the underlying continent to rise slowly due to post-glacial rebound driven by isostasy.",
     "zh": "地殼均衡",
     "note": "字源來自希臘文 iso-（相等）與 stasis（平衡），概念就像冰山浮於水面，地殼也是浮在較黏稠的地函之上。"
+  },
+  {
+    "date": "2026-08-04",
+    "term": "proxy",
+    "pos": "n.",
+    "definition_en": "A measurable physical, chemical, or biological property preserved in the geologic record used to infer past environmental or climatic conditions that cannot be measured directly.",
+    "example_en": "Scientists use oxygen isotope ratios in deep-sea foraminifera shells as a proxy for ancient global ice volume and ocean temperature.",
+    "zh": "代理指標、代理紀錄",
+    "note": "在地質學與古氣候學中，我們無法拿溫度計回到千萬年前量溫度，因此必須透過岩芯或冰芯中的化學元素比例（如 TEX86、碳氧同位素）作為『代理人』來間接推算當時的環境氣候。"
   }
 ]

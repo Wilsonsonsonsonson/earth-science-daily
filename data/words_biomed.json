@@ -178,5 +178,14 @@
     "example_en": "Gasdermin D forms pores in the plasma membrane to execute pyroptosis during intracellular pathogen infection.",
     "zh": "細胞焦亡",
     "note": "字源來自希臘文 pyro（火、發炎）與 ptosis（墜落、死亡），指伴隨強烈發炎細胞激素釋放的程式性細胞死亡。"
+  },
+  {
+    "date": "2026-08-05",
+    "term": "satiety",
+    "pos": "n.",
+    "definition_en": "The state or feeling of being completely full and satisfied after eating, preventing further food intake.",
+    "example_en": "The dorsal vagal complex functions as a crucial brainstem satiety center that integrates gut-derived signals and local circadian rhythms.",
+    "zh": "飽足感",
+    "note": "源自拉丁文 satis（足夠），在消化生理學與代謝醫學中特指攝食後中樞神經系統產生的滿腹與停止進食狀態。"
   }
 ]

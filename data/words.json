@@ -205,5 +205,14 @@
     "example_en": "Scientists use oxygen isotope ratios in deep-sea foraminifera shells as a proxy for ancient global ice volume and ocean temperature.",
     "zh": "代理指標、代理紀錄",
     "note": "在地質學與古氣候學中，我們無法拿溫度計回到千萬年前量溫度，因此必須透過岩芯或冰芯中的化學元素比例（如 TEX86、碳氧同位素）作為『代理人』來間接推算當時的環境氣候。"
+  },
+  {
+    "date": "2026-08-05",
+    "term": "rheology",
+    "pos": "n.",
+    "definition_en": "The study of the flow and deformation of matter, particularly under applied stress within planetary interiors.",
+    "example_en": "The high solubility of water significantly alters the rheology of post-perovskite near the core-mantle boundary.",
+    "zh": "流變學",
+    "note": "源自希臘文 rheo（流動），研究物質在受力時的變形與流動規律，是理解地函對流與板塊運動的重要物理學分支。"
   }
 ]

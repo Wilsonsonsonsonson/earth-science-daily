@@ -214,5 +214,14 @@
     "example_en": "The high solubility of water significantly alters the rheology of post-perovskite near the core-mantle boundary.",
     "zh": "流變學",
     "note": "源自希臘文 rheo（流動），研究物質在受力時的變形與流動規律，是理解地函對流與板塊運動的重要物理學分支。"
+  },
+  {
+    "date": "2026-08-06",
+    "term": "anisotropy",
+    "pos": "n.",
+    "definition_en": "The directional dependence of a physical property within a material, causing seismic waves to travel at different speeds depending on their propagation direction.",
+    "example_en": "Seismic anisotropy observed within the subducting slab indicates preferential alignment of mantle minerals along deep active fault zones.",
+    "zh": "各向異性（波速非均向性）",
+    "note": "由前綴 an-（不）、iso-（相同）與 tropy（方向）組合而成，字面意思就是「非各向同性」。在地球物理學中，常用來描述震波在不同方向傳播速度不同的現象，是判斷地函流動與晶體排列方向的利器。"
   }
 ]

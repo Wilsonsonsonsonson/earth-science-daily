@@ -187,5 +187,14 @@
     "example_en": "The dorsal vagal complex functions as a crucial brainstem satiety center that integrates gut-derived signals and local circadian rhythms.",
     "zh": "飽足感",
     "note": "源自拉丁文 satis（足夠），在消化生理學與代謝醫學中特指攝食後中樞神經系統產生的滿腹與停止進食狀態。"
+  },
+  {
+    "date": "2026-08-06",
+    "term": "plasticity",
+    "pos": "n.",
+    "definition_en": "The adaptability or capacity of an organism, cell, or tissue to alter its structure or function in response to environmental changes or injury.",
+    "example_en": "The RNA-binding protein ZFP36L2 coordinates stress-adaptive cellular plasticity during intestinal tissue regeneration and tumor metastasis.",
+    "zh": "可塑性",
+    "note": "在神經科學中指「神經可塑性」（neuroplasticity），而在幹細胞與腫瘤生物學中則指細胞改變分化狀態的「細胞可塑性」（cellular plasticity）。"
   }
 ]

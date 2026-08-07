@@ -232,5 +232,14 @@
     "example_en": "Dislocation creep in olivine crystals plays a pivotal role in straining and weakening the mantle lithosphere near plate boundaries.",
     "zh": "蠕變",
     "note": "地質學中指岩石在長期受力下發生的微慢永久變形，在高溫高壓的地函環境中尤為重要。"
+  },
+  {
+    "date": "2026-08-08",
+    "term": "geostrophic",
+    "pos": "adj.",
+    "definition_en": "Relating to or denoting a flow in a fluid mechanism resulting from a balance between the Coriolis force and pressure gradient forces.",
+    "zh": "地轉的",
+    "note": "詞源來自希臘文 geo（地球）與 strophe（旋轉），指流體運動受地球自轉的科氏力與壓力梯度力達到平衡時的狀態。",
+    "example_en": "Geostrophic motion in the Earth's liquid outer core plays a fundamental role in shaping magnetohydrodynamic flows."
   }
 ]

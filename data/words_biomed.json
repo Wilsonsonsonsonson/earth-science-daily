@@ -196,5 +196,14 @@
     "example_en": "The RNA-binding protein ZFP36L2 coordinates stress-adaptive cellular plasticity during intestinal tissue regeneration and tumor metastasis.",
     "zh": "可塑性",
     "note": "在神經科學中指「神經可塑性」（neuroplasticity），而在幹細胞與腫瘤生物學中則指細胞改變分化狀態的「細胞可塑性」（cellular plasticity）。"
+  },
+  {
+    "date": "2026-08-07",
+    "term": "efficacy",
+    "pos": "n.",
+    "definition_en": "The ability of a drug or treatment to produce a desired result under ideal conditions.",
+    "example_en": "The phase 1 trial demonstrated encouraging clinical efficacy in patients with recurrent glioblastoma.",
+    "zh": "療效",
+    "note": "在臨床試驗中常與 effectiveness（實效）對比，efficacy 指理想實驗環境下的效果，effectiveness 則指真實世界中的表現。"
   }
 ]

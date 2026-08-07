@@ -205,5 +205,14 @@
     "example_en": "The phase 1 trial demonstrated encouraging clinical efficacy in patients with recurrent glioblastoma.",
     "zh": "療效",
     "note": "在臨床試驗中常與 effectiveness（實效）對比，efficacy 指理想實驗環境下的效果，effectiveness 則指真實世界中的表現。"
+  },
+  {
+    "date": "2026-08-08",
+    "term": "autologous",
+    "pos": "adj.",
+    "definition_en": "Obtained from the same individual's own body, often referring to cells, tissues, or medical procedures.",
+    "example_en": "Researchers engineered an autologous organoid co-culture platform using the patient's own intestinal tissue to avoid immune rejection.",
+    "zh": "自體的",
+    "note": "詞源由希臘文 auto-（自我）與 -logous（關係/相同）組合而成。在癌症細胞免疫治療（如 CAR-T）中，取用患者自己的 T 細胞進行改造即稱為自體移植（autologous transplantation）。"
   }
 ]

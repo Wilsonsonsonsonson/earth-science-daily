@@ -223,5 +223,14 @@
     "example_en": "Seismic anisotropy observed within the subducting slab indicates preferential alignment of mantle minerals along deep active fault zones.",
     "zh": "各向異性（波速非均向性）",
     "note": "由前綴 an-（不）、iso-（相同）與 tropy（方向）組合而成，字面意思就是「非各向同性」。在地球物理學中，常用來描述震波在不同方向傳播速度不同的現象，是判斷地函流動與晶體排列方向的利器。"
+  },
+  {
+    "date": "2026-08-07",
+    "term": "creep",
+    "pos": "n.",
+    "definition_en": "The slow, continuous, and time-dependent deformation of rocks or solids subjected to sustained mechanical stress.",
+    "example_en": "Dislocation creep in olivine crystals plays a pivotal role in straining and weakening the mantle lithosphere near plate boundaries.",
+    "zh": "蠕變",
+    "note": "地質學中指岩石在長期受力下發生的微慢永久變形，在高溫高壓的地函環境中尤為重要。"
   }
 ]

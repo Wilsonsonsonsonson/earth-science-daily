@@ -241,5 +241,14 @@
     "zh": "地轉的",
     "note": "詞源來自希臘文 geo（地球）與 strophe（旋轉），指流體運動受地球自轉的科氏力與壓力梯度力達到平衡時的狀態。",
     "example_en": "Geostrophic motion in the Earth's liquid outer core plays a fundamental role in shaping magnetohydrodynamic flows."
+  },
+  {
+    "date": "2026-08-09",
+    "term": "tomography",
+    "pos": "n.",
+    "definition_en": "A technique for displaying a representation of a cross-section through a solid object using X-rays, ultrasound, or seismic waves.",
+    "example_en": "Seismic tomography allows geophysicists to map three-dimensional wave velocity anomalies deep within the Earth's mantle.",
+    "zh": "斷層掃描（地震斷層掃描）",
+    "note": "源自希臘文 tomos（切片）與 graphy（畫作），就像醫學上的 CT 掃描一樣，地球物理學家利用地震波傳播速度的差異，幫地球內部做「切片 CT 掃描」。"
   }
 ]

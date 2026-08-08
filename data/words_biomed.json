@@ -214,5 +214,14 @@
     "example_en": "Researchers engineered an autologous organoid co-culture platform using the patient's own intestinal tissue to avoid immune rejection.",
     "zh": "自體的",
     "note": "詞源由希臘文 auto-（自我）與 -logous（關係/相同）組合而成。在癌症細胞免疫治療（如 CAR-T）中，取用患者自己的 T 細胞進行改造即稱為自體移植（autologous transplantation）。"
+  },
+  {
+    "date": "2026-08-09",
+    "term": "postcranial",
+    "pos": "adj.",
+    "definition_en": "Relating to or designating the part of the skeleton behind or excluding the skull.",
+    "example_en": "The discovery of postcranial fossil elements enabled researchers to estimate the body weight and stature of the archaic hominin.",
+    "zh": "頭後骨骼的",
+    "note": "由 post-（在…之後）與 cranial（頭顱的）組合而成，專指古人類學與比較解剖學中除頭骨外的軀幹與四肢骨骼。"
   }
 ]

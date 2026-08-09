@@ -223,5 +223,14 @@
     "example_en": "The discovery of postcranial fossil elements enabled researchers to estimate the body weight and stature of the archaic hominin.",
     "zh": "頭後骨骼的",
     "note": "由 post-（在…之後）與 cranial（頭顱的）組合而成，專指古人類學與比較解剖學中除頭骨外的軀幹與四肢骨骼。"
+  },
+  {
+    "date": "2026-08-10",
+    "term": "fibrosis",
+    "pos": "n.",
+    "definition_en": "The thickening and scarring of connective tissue, usually as a result of injury or chronic inflammation.",
+    "example_en": "Excessive signaling through inflammatory pathways can drive uncontrolled fibrosis, severely compromising organ function.",
+    "zh": "纖維化",
+    "note": "字根 fibr- 指纖維，-osis 表示病理狀態；當受損器官無法順利再生，被大量膠原蛋白組織取代時即發生纖維化。"
   }
 ]

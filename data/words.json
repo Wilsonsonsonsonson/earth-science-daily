@@ -250,5 +250,14 @@
     "example_en": "Seismic tomography allows geophysicists to map three-dimensional wave velocity anomalies deep within the Earth's mantle.",
     "zh": "斷層掃描（地震斷層掃描）",
     "note": "源自希臘文 tomos（切片）與 graphy（畫作），就像醫學上的 CT 掃描一樣，地球物理學家利用地震波傳播速度的差異，幫地球內部做「切片 CT 掃描」。"
+  },
+  {
+    "date": "2026-08-10",
+    "term": "triple junction",
+    "pos": "n.",
+    "definition_en": "A point where the boundaries of three tectonic plates meet.",
+    "example_en": "The M5.2 earthquake occurred near the Galapagos triple junction, where the Nazca, Cocos, and Pacific plates intersect.",
+    "zh": "三向聯點",
+    "note": "板塊構造幾何學中的特殊交會點，最常見的形態是由三條中洋脊組成的脊-脊-脊（R-R-R）型聯點。"
   }
 ]

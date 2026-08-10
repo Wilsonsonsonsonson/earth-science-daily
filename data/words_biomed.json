@@ -232,5 +232,14 @@
     "example_en": "Excessive signaling through inflammatory pathways can drive uncontrolled fibrosis, severely compromising organ function.",
     "zh": "纖維化",
     "note": "字根 fibr- 指纖維，-osis 表示病理狀態；當受損器官無法順利再生，被大量膠原蛋白組織取代時即發生纖維化。"
+  },
+  {
+    "date": "2026-08-11",
+    "term": "pathogenesis",
+    "pos": "n.",
+    "definition_en": "The biological mechanism and structural or functional process through which a disease develops and progresses.",
+    "example_en": "Understanding the pathogenesis of autoimmune encephalomyelitis allows researchers to design targeted microRNA therapies.",
+    "zh": "致病機制／發病機理",
+    "note": "由 path-（疾病，如 pathology 病理學）與 -genesis（發生、起源，如 Genesis 創世紀）組合而成，字面意思就是『疾病發生的過程』。"
   }
 ]

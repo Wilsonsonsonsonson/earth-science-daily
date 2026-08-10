@@ -259,5 +259,14 @@
     "example_en": "The M5.2 earthquake occurred near the Galapagos triple junction, where the Nazca, Cocos, and Pacific plates intersect.",
     "zh": "三向聯點",
     "note": "板塊構造幾何學中的特殊交會點，最常見的形態是由三條中洋脊組成的脊-脊-脊（R-R-R）型聯點。"
+  },
+  {
+    "date": "2026-08-11",
+    "term": "heterogeneity",
+    "pos": "n.",
+    "definition_en": "The state or property of being diverse or non-uniform in structure or composition across a medium.",
+    "example_en": "Ignoring material heterogeneity in geodetic models leads to significant systematic errors when estimating megathrust slip deficits.",
+    "zh": "非均質性（或異質性）",
+    "note": "由 hetero-（異、不同）與 geneous（種類、性質）組成，廣泛用於描述岩石物理、地震波速或介質密度的不均勻分布。"
   }
 ]

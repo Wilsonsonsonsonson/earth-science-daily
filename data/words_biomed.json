@@ -241,5 +241,14 @@
     "example_en": "Understanding the pathogenesis of autoimmune encephalomyelitis allows researchers to design targeted microRNA therapies.",
     "zh": "致病機制／發病機理",
     "note": "由 path-（疾病，如 pathology 病理學）與 -genesis（發生、起源，如 Genesis 創世紀）組合而成，字面意思就是『疾病發生的過程』。"
+  },
+  {
+    "date": "2026-08-12",
+    "term": "hypermutation",
+    "pos": "n.",
+    "definition_en": "A cellular mechanism by which the immune system adapts to new foreign elements by introducing high-frequency point mutations into immunoglobulin genes during B cell maturation.",
+    "example_en": "Germline-targeting HIV vaccines aim to guide somatic hypermutation in B cells toward producing broadly neutralizing antibodies.",
+    "zh": "體細胞超變異",
+    "note": "在 B 細胞於生發中心（germinal center）成熟過程中，AID 酵素會主動引發 DNA 突變，使抗體親和力提升數百倍，是適應性免疫的演化機制！"
   }
 ]

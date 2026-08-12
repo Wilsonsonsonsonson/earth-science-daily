@@ -268,5 +268,14 @@
     "example_en": "Ignoring material heterogeneity in geodetic models leads to significant systematic errors when estimating megathrust slip deficits.",
     "zh": "非均質性（或異質性）",
     "note": "由 hetero-（異、不同）與 geneous（種類、性質）組成，廣泛用於描述岩石物理、地震波速或介質密度的不均勻分布。"
+  },
+  {
+    "date": "2026-08-12",
+    "term": "seismicity",
+    "pos": "n.",
+    "definition_en": "The geographic and historical distribution, frequency, and intensity of earthquakes in a specific region.",
+    "example_en": "The intense seismicity observed around Halmahera Island reflects the ongoing plate convergence and complex mantle dynamics in eastern Indonesia.",
+    "zh": "地震活動度",
+    "note": "地球科學論文中常用來描述某一區域地震發生的頻率與空間分布特徵（例如 high seismicity 代表該區地震非常頻繁）。"
   }
 ]

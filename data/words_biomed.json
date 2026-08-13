@@ -250,5 +250,14 @@
     "example_en": "Germline-targeting HIV vaccines aim to guide somatic hypermutation in B cells toward producing broadly neutralizing antibodies.",
     "zh": "體細胞超變異",
     "note": "在 B 細胞於生發中心（germinal center）成熟過程中，AID 酵素會主動引發 DNA 突變，使抗體親和力提升數百倍，是適應性免疫的演化機制！"
+  },
+  {
+    "date": "2026-08-13",
+    "term": "angiogenesis",
+    "pos": "n.",
+    "definition_en": "The physiological process through which new blood vessels form from pre-existing blood vessels.",
+    "example_en": "Bispecific antibodies targeting both PD-1 and VEGF aim to inhibit tumor angiogenesis while enhancing anti-cancer immune responses.",
+    "zh": "血管新生",
+    "note": "字根 angio-（血管）加上 genesis（生成）。腫瘤釋放 VEGF 會引發過度且異常的血管新生，是癌細胞轉移與免疫逃逸的重要推手。"
   }
 ]

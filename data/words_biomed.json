@@ -268,5 +268,14 @@
     "example_en": "Novel peptide surfactants enable high-throughput characterization of the native membrane proteome without disrupting multi-protein complexes.",
     "zh": "蛋白質體",
     "note": "由 protein（蛋白質）與 genome（基因體）字尾 -ome（整體）組合而成的複合字，用來指稱特定時空條件下細胞所表現的全部蛋白質總和。"
+  },
+  {
+    "date": "2026-08-15",
+    "term": "histopathology",
+    "pos": "n.",
+    "definition_en": "The study of changes in tissues affected by disease using microscopic examination of tissue sections.",
+    "example_en": "Histopathology analysis of the biopsy samples revealed distinct morphological aging signatures across multiple tissue types.",
+    "zh": "組織病理學",
+    "note": "由 histo（組織）加上 pathology（病理學）組合而成，是連接巨觀臨床表現與微觀細胞變化的橋樑。"
   }
 ]

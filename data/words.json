@@ -286,5 +286,14 @@
     "example_en": "Proper ground-to-cable coupling is essential for unburied fiber-optic sensors to accurately record seismic strain.",
     "zh": "耦合、地表耦合",
     "note": "在物理與地震學中，「耦合」（coupling）描述能量或應變從一個介質（如地層）傳遞到另一個介質（如地震儀或光纖）的效率；耦合不良會導致測得訊號嚴重失真。"
+  },
+  {
+    "date": "2026-08-14",
+    "term": "entrainment",
+    "pos": "n.",
+    "definition_en": "The process by which a turbulent fluid flow captures, draws in, and incorporates fluid from an adjacent non-turbulent or ambient medium across an interface.",
+    "example_en": "Kelvin-Helmholtz billows accelerate the entrainment of salty bottom water into the fresher estuarine surface layer.",
+    "zh": "捲吸作用（夾帶作用）",
+    "note": "源自法文 entrainer（拉入、拖拽），在海洋與大氣動力學中專指紊流流體將周圍原本靜止或分層的流體強行吸入並混合的物理過程。"
   }
 ]

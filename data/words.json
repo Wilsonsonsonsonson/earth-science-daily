@@ -295,5 +295,14 @@
     "example_en": "Kelvin-Helmholtz billows accelerate the entrainment of salty bottom water into the fresher estuarine surface layer.",
     "zh": "捲吸作用（夾帶作用）",
     "note": "源自法文 entrainer（拉入、拖拽），在海洋與大氣動力學中專指紊流流體將周圍原本靜止或分層的流體強行吸入並混合的物理過程。"
+  },
+  {
+    "date": "2026-08-15",
+    "term": "aftershock",
+    "pos": "n.",
+    "definition_en": "A smaller earthquake that occurs after a previous larger earthquake in the same area.",
+    "example_en": "The magnitude 7.7 mainshock was followed by a series of moderate aftershocks in the Flores region.",
+    "zh": "餘震",
+    "note": "由主震（mainshock）釋放應力後，周遭斷層因應力重新分配而引發的一連串較小規模地震。"
   }
 ]

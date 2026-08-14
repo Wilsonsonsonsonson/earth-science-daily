@@ -259,5 +259,14 @@
     "example_en": "Bispecific antibodies targeting both PD-1 and VEGF aim to inhibit tumor angiogenesis while enhancing anti-cancer immune responses.",
     "zh": "血管新生",
     "note": "字根 angio-（血管）加上 genesis（生成）。腫瘤釋放 VEGF 會引發過度且異常的血管新生，是癌細胞轉移與免疫逃逸的重要推手。"
+  },
+  {
+    "date": "2026-08-14",
+    "term": "proteome",
+    "pos": "n.",
+    "definition_en": "The complete set of proteins expressed by an organism, tissue, or cell at a specific time under defined conditions.",
+    "example_en": "Novel peptide surfactants enable high-throughput characterization of the native membrane proteome without disrupting multi-protein complexes.",
+    "zh": "蛋白質體",
+    "note": "由 protein（蛋白質）與 genome（基因體）字尾 -ome（整體）組合而成的複合字，用來指稱特定時空條件下細胞所表現的全部蛋白質總和。"
   }
 ]

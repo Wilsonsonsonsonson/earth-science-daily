@@ -304,5 +304,13 @@
     "example_en": "The magnitude 7.7 mainshock was followed by a series of moderate aftershocks in the Flores region.",
     "zh": "餘震",
     "note": "由主震（mainshock）釋放應力後，周遭斷層因應力重新分配而引發的一連串較小規模地震。"
+  },
+  {
+    "date": "2026-08-16",
+    "term": "graben",
+    "pos": "n.",
+    "definition_en": "An elongated, depressed crustal block bounded on both sides by parallel normal faults.",
+    "zh": "地塹",
+    "note": "源自德文「壕溝（ditch/trench）」之意。在張裂地質環境中，兩側地層沿著正斷層相對上升稱為「地壘（horst）」，中央下陷的平坦槽谷即為「地塹（graben）」。"
   }
 ]

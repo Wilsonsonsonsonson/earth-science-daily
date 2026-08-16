@@ -312,5 +312,14 @@
     "definition_en": "An elongated, depressed crustal block bounded on both sides by parallel normal faults.",
     "zh": "地塹",
     "note": "源自德文「壕溝（ditch/trench）」之意。在張裂地質環境中，兩側地層沿著正斷層相對上升稱為「地壘（horst）」，中央下陷的平坦槽谷即為「地塹（graben）」。"
+  },
+  {
+    "date": "2026-08-17",
+    "term": "swarm",
+    "pos": "n.",
+    "definition_en": "A sequence of seismic events occurring in a local area over a relatively short period without a single identifiable mainshock of distinctly larger magnitude.",
+    "example_en": "The intense seismic swarm in the Flores Sea was characterized by multiple moderate-magnitude events occurring within hours of each other.",
+    "zh": "群震 / 地震群",
+    "note": "指在沒有明顯單一巨大主震的情況下，短時間、小區域內連續爆發規模相近的地震序列，常見於火山岩漿侵入或流體驅動的斷層帶。"
   }
 ]

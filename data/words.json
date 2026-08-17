@@ -321,5 +321,14 @@
     "example_en": "The intense seismic swarm in the Flores Sea was characterized by multiple moderate-magnitude events occurring within hours of each other.",
     "zh": "群震 / 地震群",
     "note": "指在沒有明顯單一巨大主震的情況下，短時間、小區域內連續爆發規模相近的地震序列，常見於火山岩漿侵入或流體驅動的斷層帶。"
+  },
+  {
+    "date": "2026-08-18",
+    "term": "supershear",
+    "pos": "adj.",
+    "definition_en": "Describing an earthquake rupture propagation speed that exceeds the speed of shear waves (S-waves) in the surrounding crustal rock.",
+    "example_en": "The supershear rupture generated Mach waves that produced unusually intense high-frequency ground shaking along the strike-slip fault.",
+    "zh": "超剪切",
+    "note": "super-（超過）+ shear（剪切），指破裂速度超越地層剪力波速的現象，相當於地震學中的「音障破裂」，會產生類似音爆的震波馬赫波錐。"
   }
 ]

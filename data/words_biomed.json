@@ -295,5 +295,14 @@
     "example_en": "Genomic surveillance revealed a novel Plasmodium falciparum haplotype conferring reduced susceptibility to frontline antimalarials.",
     "zh": "單倍型",
     "note": "由 haplo-（單一）與 type（型態）組合而成，指同一條染色體上緊密相連、通常會「成套」遺傳給下一代的一組特定基因突變組合。"
+  },
+  {
+    "date": "2026-08-19",
+    "term": "cohort",
+    "pos": "n.",
+    "definition_en": "A group of people with a shared characteristic or experience who are studied over a period of time in scientific research.",
+    "example_en": "The study followed a retrospective cohort of patients with early-stage metabolic disorders.",
+    "zh": "世代",
+    "note": "在台灣醫學界，研究設計中的 cohort study 一律譯為「世代研究」，切勿使用大陸常用的「隊列研究」。"
   }
 ]

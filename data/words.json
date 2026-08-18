@@ -330,5 +330,14 @@
     "example_en": "The supershear rupture generated Mach waves that produced unusually intense high-frequency ground shaking along the strike-slip fault.",
     "zh": "超剪切",
     "note": "super-（超過）+ shear（剪切），指破裂速度超越地層剪力波速的現象，相當於地震學中的「音障破裂」，會產生類似音爆的震波馬赫波錐。"
+  },
+  {
+    "date": "2026-08-19",
+    "term": "liquidus",
+    "pos": "n.",
+    "definition_en": "The line or surface in a phase diagram representing the temperatures above which a given substance is entirely liquid.",
+    "example_en": "Determining the liquidus of core-forming alloys is crucial for understanding the thermal state and crystallization history of the Earth's outer core.",
+    "zh": "液相線",
+    "note": "指物質完全熔化為液態的最低溫度界線，在地質學中常用来探討岩漿熔融與地核金屬的相態轉變。"
   }
 ]

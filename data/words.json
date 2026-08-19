@@ -339,5 +339,14 @@
     "example_en": "Determining the liquidus of core-forming alloys is crucial for understanding the thermal state and crystallization history of the Earth's outer core.",
     "zh": "液相線",
     "note": "指物質完全熔化為液態的最低溫度界線，在地質學中常用来探討岩漿熔融與地核金屬的相態轉變。"
+  },
+  {
+    "date": "2026-08-20",
+    "term": "metamodel",
+    "pos": "n.",
+    "definition_en": "A model of a model, often used in computational science to approximate complex numerical simulations quickly.",
+    "example_en": "The research team applied a metamodel to rapidly predict sea levels and marine flooding maps for early-warning systems.",
+    "zh": "後設模型",
+    "note": "中文常譯為「代理模型」或「後設模型」，意思是建立一個模型的模型，用來大幅縮短複雜物理模擬的計算時間。"
   }
 ]

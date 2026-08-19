@@ -304,5 +304,14 @@
     "example_en": "The study followed a retrospective cohort of patients with early-stage metabolic disorders.",
     "zh": "世代",
     "note": "在台灣醫學界，研究設計中的 cohort study 一律譯為「世代研究」，切勿使用大陸常用的「隊列研究」。"
+  },
+  {
+    "date": "2026-08-20",
+    "term": "homeostasis",
+    "pos": "n.",
+    "definition_en": "The ability of a system to maintain a stable internal state in response to environmental changes.",
+    "example_en": "Disruption of metabolic homeostasis is a hallmark of type 2 diabetes.",
+    "zh": "恆定（狀態）",
+    "note": "源自希臘語 homeo（相似的）加上 stasis（站立、停留），意指維持不變的狀態。"
   }
 ]

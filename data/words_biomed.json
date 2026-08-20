@@ -313,5 +313,14 @@
     "example_en": "Disruption of metabolic homeostasis is a hallmark of type 2 diabetes.",
     "zh": "恆定（狀態）",
     "note": "源自希臘語 homeo（相似的）加上 stasis（站立、停留），意指維持不變的狀態。"
+  },
+  {
+    "date": "2026-08-21",
+    "term": "translocase",
+    "pos": "n.",
+    "definition_en": "An enzyme that assists in moving another molecule across a cell membrane.",
+    "example_en": "Single-molecule proteomics often relies on a dynamic translocase to feed proteins through a nanopore.",
+    "zh": "轉位酶",
+    "note": "字根 trans-（跨越）加上 -locase（來自 locate，定位），指幫忙把分子「搬運」過膜的酵素。"
   }
 ]

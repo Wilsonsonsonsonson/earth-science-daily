@@ -348,5 +348,14 @@
     "example_en": "The research team applied a metamodel to rapidly predict sea levels and marine flooding maps for early-warning systems.",
     "zh": "後設模型",
     "note": "中文常譯為「代理模型」或「後設模型」，意思是建立一個模型的模型，用來大幅縮短複雜物理模擬的計算時間。"
+  },
+  {
+    "date": "2026-08-21",
+    "term": "reconstruction",
+    "pos": "n.",
+    "definition_en": "The process of building or creating something again, or in geophysics, restoring missing or degraded data signals to their original state.",
+    "example_en": "Advanced algorithms are widely applied for seismic data reconstruction to recover missing wavefield signals.",
+    "zh": "重建",
+    "note": "在地球物理學中，「data reconstruction（資料重建）」常指利用數學或機器學習方法，將因測站缺失或雜訊干擾而殘缺的信號還原，是處理觀測資料的關鍵步驟。"
   }
 ]

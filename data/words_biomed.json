@@ -322,5 +322,14 @@
     "example_en": "Single-molecule proteomics often relies on a dynamic translocase to feed proteins through a nanopore.",
     "zh": "轉位酶",
     "note": "字根 trans-（跨越）加上 -locase（來自 locate，定位），指幫忙把分子「搬運」過膜的酵素。"
+  },
+  {
+    "date": "2026-08-22",
+    "term": "dysbiosis",
+    "pos": "n.",
+    "definition_en": "An imbalance in the community of microorganisms (such as gut bacteria) residing in or on the body, often linked to disease.",
+    "example_en": "Intestinal dysbiosis has been closely associated with the progression of inflammatory bowel disease and metabolic disorders.",
+    "zh": "菌相失衡",
+    "note": "源自希臘字根「dys-」（異常、不良）與「biosis」（共生生活），常用於描述體內共生微菌叢結構與功能遭到破壞的狀態。"
   }
 ]

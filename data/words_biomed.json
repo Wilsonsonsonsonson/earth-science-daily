@@ -331,5 +331,14 @@
     "example_en": "Intestinal dysbiosis has been closely associated with the progression of inflammatory bowel disease and metabolic disorders.",
     "zh": "菌相失衡",
     "note": "源自希臘字根「dys-」（異常、不良）與「biosis」（共生生活），常用於描述體內共生微菌叢結構與功能遭到破壞的狀態。"
+  },
+  {
+    "date": "2026-08-23",
+    "term": "proteostasis",
+    "pos": "n.",
+    "definition_en": "The biological process and network regulating the synthesis, folding, trafficking, and degradation of proteins to maintain cellular health.",
+    "example_en": "Disruption of cellular proteostasis leads to the pathological accumulation of misfolded TDP-43 aggregates in neurodegenerative disorders.",
+    "zh": "蛋白質體恆定",
+    "note": "由 protein（蛋白質）與 homeostasis（體內恆定）組合而成的複合字，指細胞維持蛋白質從製造、摺疊到分解平衡的完整品質管制網絡。"
   }
 ]

@@ -366,5 +366,14 @@
     "example_en": "Changes in mantle viscosity significantly affect the dynamics of subduction zones and plate tectonics.",
     "zh": "黏滯度",
     "note": "雖然地函是固態岩石，但在地質時間尺度下，它展現出類似流體的流變特性，黏滯度高低決定了板塊運動的快慢。"
+  },
+  {
+    "date": "2026-08-23",
+    "term": "interferometry",
+    "pos": "n.",
+    "definition_en": "A technique that uses the interference of waves (usually light or radio waves) to make precise measurements.",
+    "example_en": "Seismic interferometry allows researchers to extract Green's functions from ambient seismic noise recorded by dense arrays.",
+    "zh": "干涉測量法",
+    "note": "由 interference（干涉）衍生而來，地球科學中常應用於雷達（InSAR）與地震波分析，用來捕捉毫米級的地表變形或微小波速改變。"
   }
 ]

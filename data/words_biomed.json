@@ -340,5 +340,14 @@
     "example_en": "Disruption of cellular proteostasis leads to the pathological accumulation of misfolded TDP-43 aggregates in neurodegenerative disorders.",
     "zh": "蛋白質體恆定",
     "note": "由 protein（蛋白質）與 homeostasis（體內恆定）組合而成的複合字，指細胞維持蛋白質從製造、摺疊到分解平衡的完整品質管制網絡。"
+  },
+  {
+    "date": "2026-08-24",
+    "term": "proteomics",
+    "pos": "n.",
+    "definition_en": "The large-scale study of proteins, particularly their structures and functions within a cell or tissue.",
+    "example_en": "Recent proteomics of human cancer-associated T cells revealed novel regulators of functionality.",
+    "zh": "蛋白質體學",
+    "note": "字尾 -omics 衍生自基因體學（genomics），用來指稱對某一生物分子群體的高通量全貌研究。"
   }
 ]

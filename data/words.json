@@ -375,5 +375,14 @@
     "example_en": "Seismic interferometry allows researchers to extract Green's functions from ambient seismic noise recorded by dense arrays.",
     "zh": "干涉測量法",
     "note": "由 interference（干涉）衍生而來，地球科學中常應用於雷達（InSAR）與地震波分析，用來捕捉毫米級的地表變形或微小波速改變。"
+  },
+  {
+    "date": "2026-08-24",
+    "term": "bathymetry",
+    "pos": "n.",
+    "definition_en": "The measurement of the depth of water in oceans, seas, or lakes, essentially the topography of the seafloor.",
+    "example_en": "High-resolution bathymetry data revealed detailed submarine volcanic structures along the mid-ocean ridge.",
+    "zh": "海底地形測量",
+    "note": "源自希臘文 bathys（深）與 metron（測量），專門指水下地形的深度測量資料。"
   }
 ]

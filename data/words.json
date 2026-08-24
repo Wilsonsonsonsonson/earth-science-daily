@@ -384,5 +384,14 @@
     "example_en": "High-resolution bathymetry data revealed detailed submarine volcanic structures along the mid-ocean ridge.",
     "zh": "海底地形測量",
     "note": "源自希臘文 bathys（深）與 metron（測量），專門指水下地形的深度測量資料。"
+  },
+  {
+    "date": "2026-08-25",
+    "term": "upwelling",
+    "pos": "n.",
+    "definition_en": "A process in which deep, cold, and nutrient-rich water rises toward the ocean surface.",
+    "example_en": "Coastal upwelling driven by alongshore winds supplies essential nutrients to surface waters, boosting marine primary productivity.",
+    "zh": "湧升流",
+    "note": "由 up（向上）與 well（湧出）組合而成，指風力推離表層海水後，深層冰冷且富含營養鹽的海水向上遞補的現象。"
   }
 ]

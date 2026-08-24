@@ -349,5 +349,14 @@
     "example_en": "Recent proteomics of human cancer-associated T cells revealed novel regulators of functionality.",
     "zh": "蛋白質體學",
     "note": "字尾 -omics 衍生自基因體學（genomics），用來指稱對某一生物分子群體的高通量全貌研究。"
+  },
+  {
+    "date": "2026-08-25",
+    "term": "prophylaxis",
+    "pos": "n.",
+    "definition_en": "Action taken to prevent disease, especially by medical means before exposure or symptom onset.",
+    "example_en": "Post-exposure prophylaxis with monoclonal antibodies was well tolerated by patients exposed to the virus.",
+    "zh": "預防、預防性投藥",
+    "note": "源自希臘文，pro（在前）加上 phylassein（防守、警戒），意指在敵人（病原體）打進門之前先做好防禦工事。"
   }
 ]

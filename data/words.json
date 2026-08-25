@@ -393,5 +393,14 @@
     "example_en": "Coastal upwelling driven by alongshore winds supplies essential nutrients to surface waters, boosting marine primary productivity.",
     "zh": "湧升流",
     "note": "由 up（向上）與 well（湧出）組合而成，指風力推離表層海水後，深層冰冷且富含營養鹽的海水向上遞補的現象。"
+  },
+  {
+    "date": "2026-08-26",
+    "term": "obduction",
+    "pos": "n.",
+    "definition_en": "The thrusting of oceanic lithosphere onto the edge of a continental plate during plate convergence.",
+    "example_en": "The emplacement of the ophiolite suite was facilitated by the obduction of oceanic crust onto the continental margin.",
+    "zh": "地殼仰冲",
+    "note": "字首 ob- 表示反方向，與 subduction（隱沒）相對，指海洋岩石圈覆蓋在大陸板塊之上。"
   }
 ]

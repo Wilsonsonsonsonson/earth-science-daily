@@ -367,5 +367,14 @@
     "example_en": "Genome-wide association studies revealed extensive pleiotropy, showing that a single genetic variant could increase the risk for both autoimmune diseases and psychiatric disorders.",
     "zh": "基因多效性",
     "note": "源自希臘文 pleio-（更多、多個）與 tropos（方向、轉變），指單一基因能「多方轉向」影響多種互不相干的性狀表現。"
+  },
+  {
+    "date": "2026-08-27",
+    "term": "polymorphism",
+    "pos": "n.",
+    "definition_en": "The presence of two or more variant forms of a specific DNA sequence among individuals of the same species.",
+    "example_en": "Pre-existing polymorphisms in bacterial signaling pathways can alter the evolutionary trajectories of drug resistance.",
+    "zh": "多型性",
+    "note": "指同種生物基因體中存在多種不同等位基因或序列變異的現象，是演化與個體差異的基礎。"
   }
 ]

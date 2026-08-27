@@ -402,5 +402,14 @@
     "example_en": "The emplacement of the ophiolite suite was facilitated by the obduction of oceanic crust onto the continental margin.",
     "zh": "地殼仰冲",
     "note": "字首 ob- 表示反方向，與 subduction（隱沒）相對，指海洋岩石圈覆蓋在大陸板塊之上。"
+  },
+  {
+    "date": "2026-08-27",
+    "term": "epicenter",
+    "pos": "n.",
+    "definition_en": "The point on the Earth's surface directly above the hypocenter where an earthquake originates.",
+    "example_en": "The epicenter of the magnitude 6.0 earthquake was located approximately 20 kilometers offshore.",
+    "zh": "震央",
+    "note": "源自希臘語 epi-（在……上方）與 kentron（中心），指地表正對震源之處。"
   }
 ]

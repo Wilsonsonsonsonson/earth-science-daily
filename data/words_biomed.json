@@ -376,5 +376,14 @@
     "example_en": "Pre-existing polymorphisms in bacterial signaling pathways can alter the evolutionary trajectories of drug resistance.",
     "zh": "多型性",
     "note": "指同種生物基因體中存在多種不同等位基因或序列變異的現象，是演化與個體差異的基礎。"
+  },
+  {
+    "date": "2026-08-28",
+    "term": "pathway",
+    "pos": "n.",
+    "definition_en": "A series of actions among molecules in a cell that leads to a certain product or a change in a cell.",
+    "example_en": "The study identified a key neural pathway that regulates metabolic suppression during hibernation.",
+    "zh": "路徑",
+    "note": "在生化與神經科學中經常出現，指分子代謝或神經訊息傳遞的特定傳導軌跡。"
   }
 ]

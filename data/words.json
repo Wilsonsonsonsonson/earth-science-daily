@@ -411,5 +411,14 @@
     "example_en": "The epicenter of the magnitude 6.0 earthquake was located approximately 20 kilometers offshore.",
     "zh": "震央",
     "note": "源自希臘語 epi-（在……上方）與 kentron（中心），指地表正對震源之處。"
+  },
+  {
+    "date": "2026-08-28",
+    "term": "batholith",
+    "pos": "n.",
+    "definition_en": "A large mass of igneous rock that formed when magma melted or forced its way into existing rock and cooled slowly deep underground.",
+    "example_en": "The extensive granite batholith forms the core of the mountain range.",
+    "zh": "岩基",
+    "note": "源自希臘文 bathos（深）與 lithos（石頭），指地底深處冷凝而成的巨大火成岩體。"
   }
 ]

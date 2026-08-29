@@ -420,5 +420,14 @@
     "example_en": "The extensive granite batholith forms the core of the mountain range.",
     "zh": "岩基",
     "note": "源自希臘文 bathos（深）與 lithos（石頭），指地底深處冷凝而成的巨大火成岩體。"
+  },
+  {
+    "date": "2026-08-29",
+    "term": "flexure",
+    "pos": "n.",
+    "definition_en": "The bending or structural warping of the Earth's lithosphere in response to applied mechanical loads, such as ice sheets, volcanoes, or sediment.",
+    "example_en": "Lateral variations in elastic thickness modulate the flexure of the continental lithosphere under glacial unloading.",
+    "zh": "撓曲",
+    "note": "源自拉丁文 flexura（彎曲），在固體地球物理學中特指岩石圈板塊像一塊彈性薄板般，因表面承受巨大冰蓋、火山島鏈或沉積物荷重而發生的彎曲下沉與邊緣隆起現象。"
   }
 ]

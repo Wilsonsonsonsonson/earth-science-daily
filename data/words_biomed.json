@@ -385,5 +385,14 @@
     "example_en": "The study identified a key neural pathway that regulates metabolic suppression during hibernation.",
     "zh": "路徑",
     "note": "在生化與神經科學中經常出現，指分子代謝或神經訊息傳遞的特定傳導軌跡。"
+  },
+  {
+    "date": "2026-08-29",
+    "term": "epigenetic",
+    "pos": "adj.",
+    "definition_en": "Relating to changes in gene expression that do not involve changes to the underlying DNA sequence.",
+    "example_en": "The 5-year-old brain organoids exhibit epigenetic aging dynamics that mirror those seen in vivo.",
+    "zh": "表徵遺傳的",
+    "note": "字首 epi- 意指「在……之上」，epigenetics 探討的是DNA序列本身不變，但透過甲基化或組蛋白修飾等開關來調控基因表現的機制。"
   }
 ]

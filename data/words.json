@@ -429,5 +429,14 @@
     "example_en": "Lateral variations in elastic thickness modulate the flexure of the continental lithosphere under glacial unloading.",
     "zh": "撓曲",
     "note": "源自拉丁文 flexura（彎曲），在固體地球物理學中特指岩石圈板塊像一塊彈性薄板般，因表面承受巨大冰蓋、火山島鏈或沉積物荷重而發生的彎曲下沉與邊緣隆起現象。"
+  },
+  {
+    "date": "2026-08-30",
+    "term": "thermocline",
+    "pos": "n.",
+    "definition_en": "A distinct layer in a body of water or the atmosphere where temperature changes rapidly with depth.",
+    "example_en": "During the summer months, a sharp thermocline prevents the mixing of warm surface water with nutrient-rich deep water.",
+    "zh": "斜溫層",
+    "note": "源自希臘文 thermo-（熱）與 cline（傾斜），指水體中溫度隨深度劇烈「傾斜」驟降的過渡層。"
   }
 ]

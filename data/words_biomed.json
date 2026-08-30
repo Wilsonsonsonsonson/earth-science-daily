@@ -394,5 +394,14 @@
     "example_en": "The 5-year-old brain organoids exhibit epigenetic aging dynamics that mirror those seen in vivo.",
     "zh": "表徵遺傳的",
     "note": "字首 epi- 意指「在……之上」，epigenetics 探討的是DNA序列本身不變，但透過甲基化或組蛋白修飾等開關來調控基因表現的機制。"
+  },
+  {
+    "date": "2026-08-30",
+    "term": "metagenome",
+    "pos": "n.",
+    "definition_en": "The genetic material recovered directly from environmental or clinical samples, representing the collective genomes of all microorganisms present.",
+    "example_en": "Next-generation sequencing of the bacterial metagenome allows researchers to study complex microbial communities without culturing them.",
+    "zh": "宏基因體",
+    "note": "由「meta-」（跨越、超）與「genome」（基因體）結合而成，指跳過單一物種純化培養，直接對環境或檢體中所有生物的基因體進行總體定序。"
   }
 ]

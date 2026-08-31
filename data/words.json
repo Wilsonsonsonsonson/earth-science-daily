@@ -438,5 +438,14 @@
     "example_en": "During the summer months, a sharp thermocline prevents the mixing of warm surface water with nutrient-rich deep water.",
     "zh": "斜溫層",
     "note": "源自希臘文 thermo-（熱）與 cline（傾斜），指水體中溫度隨深度劇烈「傾斜」驟降的過渡層。"
+  },
+  {
+    "date": "2026-08-31",
+    "term": "liquefaction",
+    "pos": "n.",
+    "definition_en": "The process in which water-saturated soil temporarily loses its stiffness and acts like a liquid during strong ground shaking.",
+    "example_en": "Widespread soil liquefaction caused severe damage to building foundations following the earthquake.",
+    "zh": "土壤液化",
+    "note": "源自拉丁語 liquere（呈液態）與 facere（使形成），字面意思即「轉化為液體」。"
   }
 ]

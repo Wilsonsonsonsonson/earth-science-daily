@@ -403,5 +403,14 @@
     "example_en": "Next-generation sequencing of the bacterial metagenome allows researchers to study complex microbial communities without culturing them.",
     "zh": "宏基因體",
     "note": "由「meta-」（跨越、超）與「genome」（基因體）結合而成，指跳過單一物種純化培養，直接對環境或檢體中所有生物的基因體進行總體定序。"
+  },
+  {
+    "date": "2026-08-31",
+    "term": "oligonucleotide",
+    "pos": "n.",
+    "definition_en": "A short single-stranded synthetic sequence of nucleic acids (DNA or RNA) used in research, diagnostics, and targeted therapeutics to modulate gene expression.",
+    "example_en": "Antisense oligonucleotides bind complementary target mRNA sequences to induce enzymatic degradation and inhibit disease-causing protein synthesis.",
+    "zh": "寡核苷酸",
+    "note": "詞首 oligo- 源自希臘文，意為「少數的」或「短的」，因此 oligonucleotide 指由少數幾個（通常數十個以內）核苷酸組裝而成的短核酸鏈。"
   }
 ]

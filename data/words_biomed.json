@@ -412,5 +412,14 @@
     "example_en": "Antisense oligonucleotides bind complementary target mRNA sequences to induce enzymatic degradation and inhibit disease-causing protein synthesis.",
     "zh": "寡核苷酸",
     "note": "詞首 oligo- 源自希臘文，意為「少數的」或「短的」，因此 oligonucleotide 指由少數幾個（通常數十個以內）核苷酸組裝而成的短核酸鏈。"
+  },
+  {
+    "date": "2026-09-01",
+    "term": "avidity",
+    "pos": "n.",
+    "definition_en": "The overall binding strength between a molecule with multiple binding sites and its target, resulting from all individual interactions combined.",
+    "example_en": "The engineered monoclonal antibody demonstrated significantly higher avidity for the viral surface antigen compared to the original isolate.",
+    "zh": "親合力",
+    "note": "不同於 affinity（單一結合力），avidity 強調多價結合的總體結合強度。"
   }
 ]

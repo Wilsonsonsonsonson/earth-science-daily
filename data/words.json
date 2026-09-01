@@ -447,5 +447,14 @@
     "example_en": "Widespread soil liquefaction caused severe damage to building foundations following the earthquake.",
     "zh": "土壤液化",
     "note": "源自拉丁語 liquere（呈液態）與 facere（使形成），字面意思即「轉化為液體」。"
+  },
+  {
+    "date": "2026-09-01",
+    "term": "pycnocline",
+    "pos": "n.",
+    "definition_en": "A layer of water in the ocean or a lake where density increases rapidly with depth.",
+    "example_en": "Internal waves propagating along the pycnocline significantly enhance vertical nutrient transport in the upper ocean.",
+    "zh": "密躍層",
+    "note": "源自希臘文 pyknos（稠密）與 klinein（傾斜、梯度），用來描述密度隨深度劇烈變化的水層。"
   }
 ]

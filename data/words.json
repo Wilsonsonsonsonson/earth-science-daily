@@ -456,5 +456,14 @@
     "example_en": "Internal waves propagating along the pycnocline significantly enhance vertical nutrient transport in the upper ocean.",
     "zh": "密躍層",
     "note": "源自希臘文 pyknos（稠密）與 klinein（傾斜、梯度），用來描述密度隨深度劇烈變化的水層。"
+  },
+  {
+    "date": "2026-09-02",
+    "term": "lithosphere",
+    "pos": "n.",
+    "definition_en": "The rigid outer part of the earth, consisting of the crust and upper mantle.",
+    "example_en": "Lithospheric deformation plays a crucial role in controlling regional mountain building and tectonic stress distribution.",
+    "zh": "岩石圈",
+    "note": "由地殼與最上部地函的堅硬岩石組成，是板塊構造學說中的基本運動單元。"
   }
 ]

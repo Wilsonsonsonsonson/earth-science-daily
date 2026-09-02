@@ -421,5 +421,14 @@
     "example_en": "The engineered monoclonal antibody demonstrated significantly higher avidity for the viral surface antigen compared to the original isolate.",
     "zh": "親合力",
     "note": "不同於 affinity（單一結合力），avidity 強調多價結合的總體結合強度。"
+  },
+  {
+    "date": "2026-09-02",
+    "term": "myelination",
+    "pos": "n.",
+    "definition_en": "The biological process in which a protective, lipid-rich myelin sheath forms around nerve fibers to insulate axons and accelerate electrical signal transmission.",
+    "example_en": "Age-related deficits in myelination and glial metabolic support can significantly impair signal transmission across cortical neural circuits.",
+    "zh": "髓鞘形成（或 髓鞘化）",
+    "note": "字根源自 myelin（髓磷脂，由希臘文 myelos『髓質、骨髓』演變而來），指神經膠質細胞包裹軸突形成多層絕緣膜的關鍵發育與修復過程。"
   }
 ]

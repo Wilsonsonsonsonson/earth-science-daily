@@ -465,5 +465,14 @@
     "example_en": "Lithospheric deformation plays a crucial role in controlling regional mountain building and tectonic stress distribution.",
     "zh": "岩石圈",
     "note": "由地殼與最上部地函的堅硬岩石組成，是板塊構造學說中的基本運動單元。"
+  },
+  {
+    "date": "2026-09-03",
+    "term": "solidus",
+    "pos": "n.",
+    "definition_en": "The boundary on a phase diagram below which a given substance or rock system is completely solid, representing the temperature at which initial melting begins upon heating.",
+    "example_en": "As the buoyant mantle peridotite upwells adiabatically, it crosses the solidus and undergoes partial melting.",
+    "zh": "固相線",
+    "note": "來自拉丁文 solidus（堅固的）。在地函岩石學與相圖中，固相線是岩石開始融化（初熔）的溫度邊界，只要溫度低於固相線，系統就百分之百呈現固態。"
   }
 ]

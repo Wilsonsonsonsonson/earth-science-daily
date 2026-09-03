@@ -430,5 +430,14 @@
     "example_en": "Age-related deficits in myelination and glial metabolic support can significantly impair signal transmission across cortical neural circuits.",
     "zh": "髓鞘形成（或 髓鞘化）",
     "note": "字根源自 myelin（髓磷脂，由希臘文 myelos『髓質、骨髓』演變而來），指神經膠質細胞包裹軸突形成多層絕緣膜的關鍵發育與修復過程。"
+  },
+  {
+    "date": "2026-09-03",
+    "term": "chimeric",
+    "pos": "adj.",
+    "definition_en": "Composed of genetic material or tissues from multiple distinct sources.",
+    "example_en": "Inflammation promotes the formation of functional chimeric mRNAs in mammalian immune cells.",
+    "zh": "嵌合的",
+    "note": "源自希臘神話中擁有獅頭、羊身、蛇尾的怪物 Chimera，在生物學中泛指由不同來源組合而成的細胞、基因或蛋白質。"
   }
 ]

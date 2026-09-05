@@ -483,5 +483,14 @@
     "example_en": "The focal mechanism solution indicates that the earthquake rupture was characterized by significant oblique slip along the plate boundary.",
     "zh": "斜滑",
     "note": "由dip-slip（傾滑）與strike-slip（走滑）組合成的複合運動型態。"
+  },
+  {
+    "date": "2026-09-05",
+    "term": "hydration",
+    "pos": "n.",
+    "definition_en": "The chemical combination of water with another substance or mineral crystal structure.",
+    "example_en": "Seismic evidence reveals deep hydration of the mantle transition zone beneath Tibet.",
+    "zh": "水化作用、含水化",
+    "note": "指水分子進入礦物晶格或與岩石發生化學反應的過程，常會改變地函岩石的物理性質。"
   }
 ]

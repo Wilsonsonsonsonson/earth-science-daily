@@ -439,5 +439,14 @@
     "example_en": "Inflammation promotes the formation of functional chimeric mRNAs in mammalian immune cells.",
     "zh": "嵌合的",
     "note": "源自希臘神話中擁有獅頭、羊身、蛇尾的怪物 Chimera，在生物學中泛指由不同來源組合而成的細胞、基因或蛋白質。"
+  },
+  {
+    "date": "2026-09-05",
+    "term": "longitudinal",
+    "pos": "adj.",
+    "definition_en": "Relating to a study or process that involves looking at variables over a period of time, often years or decades.",
+    "example_en": "The researchers analyzed longitudinal electronic health records to forecast maternal and infant conditions.",
+    "zh": "縱貫性的",
+    "note": "在臨床與流行病學研究中常與 cross-sectional（橫斷性）相對，指追蹤同一群研究對象一段時間的資料。"
   }
 ]

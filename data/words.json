@@ -492,5 +492,14 @@
     "example_en": "Seismic evidence reveals deep hydration of the mantle transition zone beneath Tibet.",
     "zh": "水化作用、含水化",
     "note": "指水分子進入礦物晶格或與岩石發生化學反應的過程，常會改變地函岩石的物理性質。"
+  },
+  {
+    "date": "2026-09-06",
+    "term": "scattering",
+    "pos": "n.",
+    "definition_en": "The process in which seismic waves or other energy forms are deflected in various directions by small-scale heterogeneities in the Earth's interior.",
+    "example_en": "Analysis of wave scattering in the Kashmir seismic gap reveals complex structural heterogeneity within the crust.",
+    "zh": "散射",
+    "note": "當地震波遇到地底大小不一碎塊時會四處亂跑，這就是波的散射，學會這個詞就能讀懂地殼不均勻體的研究！"
   }
 ]

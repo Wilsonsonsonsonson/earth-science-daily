@@ -448,5 +448,14 @@
     "example_en": "The researchers analyzed longitudinal electronic health records to forecast maternal and infant conditions.",
     "zh": "縱貫性的",
     "note": "在臨床與流行病學研究中常與 cross-sectional（橫斷性）相對，指追蹤同一群研究對象一段時間的資料。"
+  },
+  {
+    "date": "2026-09-06",
+    "term": "sensitivity",
+    "pos": "n.",
+    "definition_en": "The ability of a test to correctly identify patients who have a disease.",
+    "example_en": "The clinical sensitivity of the virtual reality pupillometry screening must be validated in larger cohorts.",
+    "zh": "敏感度",
+    "note": "指檢驗正確抓出「真正有病」患者的能力，常與特異度（specificity）一同評估。"
   }
 ]

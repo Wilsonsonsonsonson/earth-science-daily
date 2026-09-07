@@ -457,5 +457,14 @@
     "example_en": "The clinical sensitivity of the virtual reality pupillometry screening must be validated in larger cohorts.",
     "zh": "敏感度",
     "note": "指檢驗正確抓出「真正有病」患者的能力，常與特異度（specificity）一同評估。"
+  },
+  {
+    "date": "2026-09-07",
+    "term": "pathogenicity",
+    "pos": "n.",
+    "definition_en": "The ability of a pathogen or a specific cell type to cause disease or damage to a host.",
+    "example_en": "The researchers classified the T-cell subsets based on their distinct functional pathogenicity.",
+    "zh": "致病性",
+    "note": "由pathogen（病原體）延伸而來，在免疫學論文中常用来區分細胞或微生物「會不會惹事生非」的重要指標。"
   }
 ]

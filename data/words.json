@@ -501,5 +501,14 @@
     "example_en": "Analysis of wave scattering in the Kashmir seismic gap reveals complex structural heterogeneity within the crust.",
     "zh": "散射",
     "note": "當地震波遇到地底大小不一碎塊時會四處亂跑，這就是波的散射，學會這個詞就能讀懂地殼不均勻體的研究！"
+  },
+  {
+    "date": "2026-09-07",
+    "term": "ridge",
+    "pos": "n.",
+    "definition_en": "A long, narrow elevated strip of land, or in geology, an underwater mountain chain such as a mid-ocean ridge.",
+    "example_en": "Seismic activity along the southern East Pacific ridge provides crucial insights into oceanic crust formation.",
+    "zh": "海脊、山脊",
+    "note": "在海洋地質學中特別常與 mid-ocean（中洋脊）連用，指板塊張裂處隆起的海底山脈。"
   }
 ]

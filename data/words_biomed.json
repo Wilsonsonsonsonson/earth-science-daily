@@ -466,5 +466,14 @@
     "example_en": "The researchers classified the T-cell subsets based on their distinct functional pathogenicity.",
     "zh": "致病性",
     "note": "由pathogen（病原體）延伸而來，在免疫學論文中常用来區分細胞或微生物「會不會惹事生非」的重要指標。"
+  },
+  {
+    "date": "2026-09-08",
+    "term": "generalizability",
+    "pos": "n.",
+    "definition_en": "The extent to which research findings can be applied to other settings, populations, or broader contexts.",
+    "example_en": "The limited diversity of the training cohort severely restricts the generalizability of this artificial intelligence model.",
+    "zh": "泛化能力",
+    "note": "源自 general（一般的），在機器學習與流行病學中常用來指模型或研究結果能否「推廣」到其他族群或真實世界中。"
   }
 ]

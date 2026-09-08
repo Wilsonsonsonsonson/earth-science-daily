@@ -510,5 +510,14 @@
     "example_en": "Seismic activity along the southern East Pacific ridge provides crucial insights into oceanic crust formation.",
     "zh": "海脊、山脊",
     "note": "在海洋地質學中特別常與 mid-ocean（中洋脊）連用，指板塊張裂處隆起的海底山脈。"
+  },
+  {
+    "date": "2026-09-08",
+    "term": "sublimation",
+    "pos": "n.",
+    "definition_en": "The transition of a substance directly from the solid to the gas state without passing through the liquid state.",
+    "example_en": "Atmospheric studies show that sublimation of snowpack plays a significant role in the water balance of high-altitude regions.",
+    "zh": "昇華",
+    "note": "常用於大氣科學與冰川學，指冰雪直接轉化為水蒸氣的過程。"
   }
 ]

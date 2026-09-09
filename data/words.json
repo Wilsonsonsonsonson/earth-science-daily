@@ -519,5 +519,14 @@
     "example_en": "Atmospheric studies show that sublimation of snowpack plays a significant role in the water balance of high-altitude regions.",
     "zh": "昇華",
     "note": "常用於大氣科學與冰川學，指冰雪直接轉化為水蒸氣的過程。"
+  },
+  {
+    "date": "2026-09-09",
+    "term": "decollement",
+    "pos": "n.",
+    "definition_en": "A regional, low-angle fault surface parallel to rock layers along which large rock sheets slide during tectonic compression.",
+    "example_en": "The Main Himalayan Thrust acts as a primary decollement that accommodates the convergence between India and Eurasia.",
+    "zh": "滑脫面",
+    "note": "源自法語動詞 décoller（揭開、分離），指沉積岩層或上部地殼沿著某一脆弱層平行滑動脫離的構造界面。"
   }
 ]

@@ -475,5 +475,14 @@
     "example_en": "The limited diversity of the training cohort severely restricts the generalizability of this artificial intelligence model.",
     "zh": "泛化能力",
     "note": "源自 general（一般的），在機器學習與流行病學中常用來指模型或研究結果能否「推廣」到其他族群或真實世界中。"
+  },
+  {
+    "date": "2026-09-09",
+    "term": "phylogenetic",
+    "pos": "adj.",
+    "definition_en": "Relating to the evolutionary development and diversification of a species or group of organisms.",
+    "example_en": "The distribution of fitness effects varies phylogenetically across diverse animal species.",
+    "zh": "系統發生的",
+    "note": "由 phylo（種系、部族）與 genetic（基因、起源）組合而成，讀論文時看到 phylogenetic tree 就是指演化樹。"
   }
 ]

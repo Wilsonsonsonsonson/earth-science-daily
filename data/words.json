@@ -528,5 +528,14 @@
     "example_en": "The Main Himalayan Thrust acts as a primary decollement that accommodates the convergence between India and Eurasia.",
     "zh": "滑脫面",
     "note": "源自法語動詞 décoller（揭開、分離），指沉積岩層或上部地殼沿著某一脆弱層平行滑動脫離的構造界面。"
+  },
+  {
+    "date": "2026-09-10",
+    "term": "gravimetry",
+    "pos": "n.",
+    "definition_en": "The measurement of the strength of a gravitational field, often used in geophysics to detect subsurface density variations.",
+    "example_en": "Ground-based gravimetry provides direct information on variations in subsurface water mass.",
+    "zh": "重力測量",
+    "note": "由 gravity（重力）加上 -metry（測量字尾）組成，是地科探勘地下構造與水資源的重要手段。"
   }
 ]

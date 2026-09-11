@@ -537,5 +537,14 @@
     "example_en": "Ground-based gravimetry provides direct information on variations in subsurface water mass.",
     "zh": "重力測量",
     "note": "由 gravity（重力）加上 -metry（測量字尾）組成，是地科探勘地下構造與水資源的重要手段。"
+  },
+  {
+    "date": "2026-09-11",
+    "term": "advection",
+    "pos": "n.",
+    "definition_en": "The transport of an atmospheric or oceanic property, such as heat, moisture, or salinity, by the horizontal movement of fluid.",
+    "example_en": "Cold air advection behind the passing cold front led to a sharp drop in coastal sea surface temperatures.",
+    "zh": "平流",
+    "note": "源自拉丁文「advehere」（朝向…載運），在氣象與海洋物理中通常專指水平方向的流體傳輸，用以和垂直方向為主的對流（convection）相對應。"
   }
 ]

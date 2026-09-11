@@ -492,5 +492,14 @@
     "definition_en": "The presence of two or more genetically distinct populations of cells within an individual that originated from a single fertilized egg.",
     "zh": "鑲嵌現象",
     "note": "源自「馬賽克拼貼（mosaic）」，指同一個生物體內卻拼貼著不同基因組的細胞群，是早期胚胎基因編輯中最棘手的安全隱患之一。"
+  },
+  {
+    "date": "2026-09-11",
+    "term": "glioma",
+    "pos": "n.",
+    "definition_en": "A type of tumor that occurs in the brain and spinal cord, originating from glial cells that support nerve cells.",
+    "example_en": "Drugs that imitate the effect of GABAergic neurons slow the growth of gliomas in mice.",
+    "zh": "神經膠質瘤",
+    "note": "由中樞神經系統的膠質細胞惡性轉變而成的腫瘤，是原發性腦瘤中最常見的一種類型。"
   }
 ]

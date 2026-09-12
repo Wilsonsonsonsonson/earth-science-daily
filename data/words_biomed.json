@@ -501,5 +501,14 @@
     "example_en": "Drugs that imitate the effect of GABAergic neurons slow the growth of gliomas in mice.",
     "zh": "神經膠質瘤",
     "note": "由中樞神經系統的膠質細胞惡性轉變而成的腫瘤，是原發性腦瘤中最常見的一種類型。"
+  },
+  {
+    "date": "2026-09-12",
+    "term": "resilience",
+    "pos": "n.",
+    "definition_en": "The capacity of a biological system, organ, or cognitive function to withstand, adapt to, or recover from pathological stress, injury, or neurodegeneration.",
+    "example_en": "High cognitive resilience allows elderly individuals to maintain intact memory performance despite substantial Alzheimer's disease neuropathology.",
+    "zh": "韌性（抗逆力）",
+    "note": "源自拉丁文「resilire」（彈回）。在神經科學中，「cognitive resilience（認知韌性）」常與「cognitive reserve（認知儲備）」並提，用來形容大腦承受實質結構損害時依然維持正常功能的緩衝能力。"
   }
 ]

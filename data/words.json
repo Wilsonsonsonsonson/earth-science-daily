@@ -555,5 +555,14 @@
     "example_en": "By implementing a differentiable shallow water equations solver, researchers can efficiently compute gradients for tsunami source inversion.",
     "zh": "可微的",
     "note": "源自微積分的 fundamental concept。在現代地球物理建模中，「可微模型」（differentiable modeling）是指將數值物理方程式與自動微分演算法結合，使電腦能自動逆推地質參數。"
+  },
+  {
+    "date": "2026-09-13",
+    "term": "evaporite",
+    "pos": "n.",
+    "definition_en": "A natural salt or mineral deposit left behind after the evaporation of a body of saline water, such as gypsum, halite, or anhydrite.",
+    "example_en": "Subsurface evaporite beds can mechanically weaken fault zones, promoting aseismic creep instead of brittle earthquakes.",
+    "zh": "蒸發岩",
+    "note": "詞根源自 evaporate（蒸發），常見的蒸發岩礦物包括石膏（gypsum）和岩鹽（halite），它們因具備易塑性變形的力學特性，在地質構造中常扮演滑脫層或斷層潤滑劑的角色。"
   }
 ]

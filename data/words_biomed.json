@@ -519,5 +519,14 @@
     "example_en": "Pathogenic tau transmission causes neurovascular uncoupling, leaving neurons starved of oxygen during synaptic activation.",
     "zh": "去耦合 / 失偶聯",
     "note": "由字首 un-（解開）與 coupling（結合、偶聯）組成，在生理學常指原本緊密同步的生理反應失去協同作用（如神經活動與血流反應脫節）。"
+  },
+  {
+    "date": "2026-09-14",
+    "term": "penetrance",
+    "pos": "n.",
+    "definition_en": "The proportion of individuals carrying a specific genetic variant who actually show the associated physical traits or clinical symptoms.",
+    "example_en": "Although the pathogenic mutation is inherited in an autosomal dominant pattern, its incomplete penetrance explains why some carriers remain completely healthy.",
+    "zh": "外顯率",
+    "note": "源自拉丁文「penetrare」（穿透），比喻基因突變的影響力是否能夠成功「穿透」並在臨床表型中顯露出來。"
   }
 ]

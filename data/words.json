@@ -564,5 +564,14 @@
     "example_en": "Subsurface evaporite beds can mechanically weaken fault zones, promoting aseismic creep instead of brittle earthquakes.",
     "zh": "蒸發岩",
     "note": "詞根源自 evaporate（蒸發），常見的蒸發岩礦物包括石膏（gypsum）和岩鹽（halite），它們因具備易塑性變形的力學特性，在地質構造中常扮演滑脫層或斷層潤滑劑的角色。"
+  },
+  {
+    "date": "2026-09-15",
+    "term": "assimilate",
+    "pos": "v.",
+    "definition_en": "To incorporate and integrate new observation data into a computer model to improve its accuracy.",
+    "example_en": "Modern numerical weather and geophysical prediction systems assimilate high-frequency observations to update ensemble forecasts.",
+    "zh": "同化",
+    "note": "源自拉丁文，原意為「使相似」，在地球科學中指將實際觀測資料巧妙融入電腦數值模型以校正初始場。"
   }
 ]

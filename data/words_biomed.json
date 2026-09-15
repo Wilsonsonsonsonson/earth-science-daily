@@ -528,5 +528,14 @@
     "example_en": "Although the pathogenic mutation is inherited in an autosomal dominant pattern, its incomplete penetrance explains why some carriers remain completely healthy.",
     "zh": "外顯率",
     "note": "源自拉丁文「penetrare」（穿透），比喻基因突變的影響力是否能夠成功「穿透」並在臨床表型中顯露出來。"
+  },
+  {
+    "date": "2026-09-15",
+    "term": "prospective",
+    "pos": "adj.",
+    "definition_en": "Looking forward; involving a study in which participants are identified and followed over time into the future.",
+    "example_en": "Trust in clinical artificial intelligence must be earned through rigorous prospective studies in real-world clinical settings.",
+    "zh": "前瞻性的",
+    "note": "記憶口訣：pro（向前）+ spect（看），向前看就是前瞻性研究，與回顧性（retrospective）相對。"
   }
 ]

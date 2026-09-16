@@ -537,5 +537,14 @@
     "example_en": "Trust in clinical artificial intelligence must be earned through rigorous prospective studies in real-world clinical settings.",
     "zh": "前瞻性的",
     "note": "記憶口訣：pro（向前）+ spect（看），向前看就是前瞻性研究，與回顧性（retrospective）相對。"
+  },
+  {
+    "date": "2026-09-16",
+    "term": "theranostics",
+    "pos": "n.",
+    "definition_en": "An approach that combines targeted therapy and diagnostic imaging into a single medical procedure.",
+    "example_en": "Theranostics has emerged as a promising paradigm in oncology for simultaneous tumor imaging and targeted radionuclide therapy.",
+    "zh": "診療合一",
+    "note": "結合治療（therapeutics）與診斷（diagnostics）的混成詞，代表精準醫療的新趨勢。"
   }
 ]

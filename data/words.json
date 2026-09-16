@@ -573,5 +573,14 @@
     "example_en": "Modern numerical weather and geophysical prediction systems assimilate high-frequency observations to update ensemble forecasts.",
     "zh": "同化",
     "note": "源自拉丁文，原意為「使相似」，在地球科學中指將實際觀測資料巧妙融入電腦數值模型以校正初始場。"
+  },
+  {
+    "date": "2026-09-16",
+    "term": "convection",
+    "pos": "n.",
+    "definition_en": "The transfer of heat through the upward movement of warmer, less dense fluid and the downward movement of cooler, denser material.",
+    "example_en": "Mantle convection is the fundamental driving mechanism behind plate tectonics and continental drift.",
+    "zh": "對流",
+    "note": "熱對流是地球內部熱量傳遞的主要方式，地函中的對流就像熱水壺底部加熱時水循環翻滾的過程。"
   }
 ]

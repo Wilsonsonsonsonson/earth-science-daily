@@ -546,5 +546,14 @@
     "example_en": "Theranostics has emerged as a promising paradigm in oncology for simultaneous tumor imaging and targeted radionuclide therapy.",
     "zh": "診療合一",
     "note": "結合治療（therapeutics）與診斷（diagnostics）的混成詞，代表精準醫療的新趨勢。"
+  },
+  {
+    "date": "2026-09-17",
+    "term": "organoid",
+    "pos": "n.",
+    "definition_en": "A miniature and simplified version of an organ produced in vitro in three dimensions that shows realistic micro-anatomy.",
+    "example_en": "Researchers transplanted human brain organoids into mouse cortices to study neurodevelopmental disorders.",
+    "zh": "類器官",
+    "note": "由 organ（器官）加上代表相似的字尾 -oid 組成，指在體外培養出具有該器官部分結構與功能的微型三維組織。"
   }
 ]

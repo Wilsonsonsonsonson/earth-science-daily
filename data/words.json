@@ -582,5 +582,14 @@
     "example_en": "Mantle convection is the fundamental driving mechanism behind plate tectonics and continental drift.",
     "zh": "對流",
     "note": "熱對流是地球內部熱量傳遞的主要方式，地函中的對流就像熱水壺底部加熱時水循環翻滾的過程。"
+  },
+  {
+    "date": "2026-09-18",
+    "term": "gravitational energy",
+    "pos": "n.",
+    "definition_en": "Potential energy associated with the gravitational field, which in geophysics drives the sinking of dense tectonic plates into the mantle.",
+    "example_en": "The conversion of gravitational energy into heat at subduction zones provides a crucial thermal supply for island-arc volcanism.",
+    "zh": "重力能",
+    "note": "指物體因處於重力場中所具有的能量。在板塊構造中，密度較大的海洋岩石圈因重力而向下沉入地函，是驅動板塊運動的主要動力來源之一。"
   }
 ]

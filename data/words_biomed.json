@@ -555,5 +555,13 @@
     "example_en": "Researchers transplanted human brain organoids into mouse cortices to study neurodevelopmental disorders.",
     "zh": "類器官",
     "note": "由 organ（器官）加上代表相似的字尾 -oid 組成，指在體外培養出具有該器官部分結構與功能的微型三維組織。"
+  },
+  {
+    "date": "2026-09-18",
+    "term": "perturbation",
+    "pos": "n.",
+    "definition_en": "An alteration of the function or state of a biological system induced by external chemical, genetic, or environmental changes.",
+    "zh": "微擾；擾動",
+    "note": "源自拉丁文 perturbare（使混亂），在分子生物學與系統生物學中專指用藥物、基因敲除或物理刺激去「干擾」細胞，觀察系統如何動態反饋。"
   }
 ]

@@ -563,5 +563,14 @@
     "definition_en": "An alteration of the function or state of a biological system induced by external chemical, genetic, or environmental changes.",
     "zh": "微擾；擾動",
     "note": "源自拉丁文 perturbare（使混亂），在分子生物學與系統生物學中專指用藥物、基因敲除或物理刺激去「干擾」細胞，觀察系統如何動態反饋。"
+  },
+  {
+    "date": "2026-09-19",
+    "term": "niche",
+    "pos": "n.",
+    "definition_en": "A localized microenvironment that supports and regulates stem cell behavior and fate.",
+    "example_en": "The stem cell niche provides essential biochemical signals that maintain tissue homeostasis.",
+    "zh": "生態位／微環境",
+    "note": "在幹細胞生物學中，niche 指的是包圍幹細胞的微環境，決定了細胞是要保持靜止還是開始分化。"
   }
 ]

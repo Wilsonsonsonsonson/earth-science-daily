@@ -572,5 +572,14 @@
     "example_en": "The stem cell niche provides essential biochemical signals that maintain tissue homeostasis.",
     "zh": "生態位／微環境",
     "note": "在幹細胞生物學中，niche 指的是包圍幹細胞的微環境，決定了細胞是要保持靜止還是開始分化。"
+  },
+  {
+    "date": "2026-09-20",
+    "term": "statistical power",
+    "pos": "n.",
+    "definition_en": "The probability that a study will detect an effect when there is an effect to be detected.",
+    "example_en": "Many single-cell studies lack sufficient statistical power to detect genes with small effect sizes.",
+    "zh": "統計力",
+    "note": "指實驗能夠正確拒絕虛無假設（即偵測到真實差異）的能力，通常設定在 0.8 以上。"
   }
 ]

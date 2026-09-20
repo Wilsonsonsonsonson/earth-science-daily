@@ -600,5 +600,14 @@
     "example_en": "Iron-rich silicate melts generated at the Martian core-mantle boundary tend to form a dense basal layer.",
     "zh": "熔體",
     "note": "在地球科學中，「melt」常當作名詞使用，專指地函或地殼部分熔融所產生的液態岩漿，與固體岩石（rock）和結晶（crystals）相對。"
+  },
+  {
+    "date": "2026-09-20",
+    "term": "divergent",
+    "pos": "adj.",
+    "definition_en": "Moving or extending in different directions from a common point, used in geology to describe tectonic plates pulling apart.",
+    "example_en": "The Reykjanes Ridge is a classic example of a divergent plate boundary where new oceanic crust is continuously formed.",
+    "zh": "張裂性、分歧的",
+    "note": "指板塊彼此遠離的運動型態，常與中洋脊和裂谷作用一同出現。"
   }
 ]

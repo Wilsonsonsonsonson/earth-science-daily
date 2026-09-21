@@ -581,5 +581,14 @@
     "example_en": "Many single-cell studies lack sufficient statistical power to detect genes with small effect sizes.",
     "zh": "統計力",
     "note": "指實驗能夠正確拒絕虛無假設（即偵測到真實差異）的能力，通常設定在 0.8 以上。"
+  },
+  {
+    "date": "2026-09-21",
+    "term": "Biomarker",
+    "pos": "n.",
+    "definition_en": "A measurable biological molecule or characteristic that indicates the presence of a disease, physiological state, or response to a treatment.",
+    "example_en": "Plasma levels of neurofilament light chain serve as a promising biomarker for axonal injury in neurodegenerative diseases.",
+    "zh": "生物標記",
+    "note": "由 biological 與 marker 組合而成，是轉譯醫學與臨床試驗中評估病情與療效的核心指標。"
   }
 ]

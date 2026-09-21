@@ -609,5 +609,14 @@
     "example_en": "The Reykjanes Ridge is a classic example of a divergent plate boundary where new oceanic crust is continuously formed.",
     "zh": "張裂性、分歧的",
     "note": "指板塊彼此遠離的運動型態，常與中洋脊和裂谷作用一同出現。"
+  },
+  {
+    "date": "2026-09-21",
+    "term": "magma chamber",
+    "pos": "n.",
+    "definition_en": "A large underground pool of molten rock found beneath the surface of the Earth.",
+    "example_en": "Seismic monitoring revealed low-velocity anomalies beneath the volcano, indicating the presence of a shallow magma chamber.",
+    "zh": "岩漿庫",
+    "note": "由 magma（岩漿）與 chamber（房室、密室）組成，指地底下儲藏岩漿的巨大空間。"
   }
 ]

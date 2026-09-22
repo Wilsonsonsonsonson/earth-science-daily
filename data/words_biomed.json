@@ -590,5 +590,14 @@
     "example_en": "Plasma levels of neurofilament light chain serve as a promising biomarker for axonal injury in neurodegenerative diseases.",
     "zh": "生物標記",
     "note": "由 biological 與 marker 組合而成，是轉譯醫學與臨床試驗中評估病情與療效的核心指標。"
+  },
+  {
+    "date": "2026-09-22",
+    "term": "extravasation",
+    "pos": "n.",
+    "definition_en": "The leakage or movement of cells, fluids, or drugs from a blood vessel into the surrounding tissue.",
+    "example_en": "Tumor cell extravasation through the endothelial barrier is a critical rate-limiting step in cancer metastasis.",
+    "zh": "血管外滲",
+    "note": "由拉丁字首 extra-（外）與 vas（血管）結合而成，字面意思即為「穿出或滲出血管之外」。"
   }
 ]

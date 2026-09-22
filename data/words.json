@@ -618,5 +618,14 @@
     "example_en": "Seismic monitoring revealed low-velocity anomalies beneath the volcano, indicating the presence of a shallow magma chamber.",
     "zh": "岩漿庫",
     "note": "由 magma（岩漿）與 chamber（房室、密室）組成，指地底下儲藏岩漿的巨大空間。"
+  },
+  {
+    "date": "2026-09-22",
+    "term": "modulator",
+    "pos": "n.",
+    "definition_en": "A substance, factor, or device that adjusts, regulates, or controls the rate or intensity of a process.",
+    "example_en": "Hydrous minerals act as an important modulator for water distribution within Earth's mantle transition zone.",
+    "zh": "調節器、調控因子",
+    "note": "在地球科學論文中常指控制某種物理或化學過程（如水文循環、地震波速）的關鍵機制。"
   }
 ]

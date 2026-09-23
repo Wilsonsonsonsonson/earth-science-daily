@@ -627,5 +627,14 @@
     "example_en": "Hydrous minerals act as an important modulator for water distribution within Earth's mantle transition zone.",
     "zh": "調節器、調控因子",
     "note": "在地球科學論文中常指控制某種物理或化學過程（如水文循環、地震波速）的關鍵機制。"
+  },
+  {
+    "date": "2026-09-23",
+    "term": "exoplanet",
+    "pos": "n.",
+    "definition_en": "A planet that orbits a star outside our solar system.",
+    "example_en": "Super-Earth exoplanets are among the most abundant planets known, yet their bulk densities leave their interior states degenerate.",
+    "zh": "系外行星",
+    "note": "由 exo-（外部的）與 planet（行星）組合而成，是近年行星科學與地球物理學研究熱門的領域。"
   }
 ]

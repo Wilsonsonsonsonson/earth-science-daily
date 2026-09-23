@@ -599,5 +599,14 @@
     "example_en": "Tumor cell extravasation through the endothelial barrier is a critical rate-limiting step in cancer metastasis.",
     "zh": "血管外滲",
     "note": "由拉丁字首 extra-（外）與 vas（血管）結合而成，字面意思即為「穿出或滲出血管之外」。"
+  },
+  {
+    "date": "2026-09-23",
+    "term": "chemotaxis",
+    "pos": "n.",
+    "definition_en": "The directed movement of a cell or organism toward or away from a specific chemical substance.",
+    "example_en": "Neutrophils rely on chemotaxis to migrate rapidly toward sites of tissue injury along a gradient of inflammatory signals.",
+    "zh": "趨化性 / 趨化作用",
+    "note": "由 chemo-（化學）與希臘文 taxis（排列、定向運動）組成，常指免疫細胞「循著化學訊號氣味追蹤」的定向移動能力。"
   }
 ]

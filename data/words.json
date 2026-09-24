@@ -636,5 +636,14 @@
     "example_en": "Super-Earth exoplanets are among the most abundant planets known, yet their bulk densities leave their interior states degenerate.",
     "zh": "系外行星",
     "note": "由 exo-（外部的）與 planet（行星）組合而成，是近年行星科學與地球物理學研究熱門的領域。"
+  },
+  {
+    "date": "2026-09-24",
+    "term": "diffusion",
+    "pos": "n.",
+    "definition_en": "A process of spreading out or a generative modeling technique that removes noise step-by-step to generate structured data.",
+    "example_en": "Recent geophysical studies apply diffusion models to capture statistical priors for seismic velocity model building.",
+    "zh": "擴散",
+    "note": "從物理學的物質擴散概念，到如今人工智慧中透過逐步去除雜訊來生成複雜構造影像的演算法，擴散模型已成為地科前沿研究的新利器。"
   }
 ]

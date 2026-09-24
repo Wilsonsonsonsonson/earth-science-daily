@@ -608,5 +608,14 @@
     "example_en": "Neutrophils rely on chemotaxis to migrate rapidly toward sites of tissue injury along a gradient of inflammatory signals.",
     "zh": "趨化性 / 趨化作用",
     "note": "由 chemo-（化學）與希臘文 taxis（排列、定向運動）組成，常指免疫細胞「循著化學訊號氣味追蹤」的定向移動能力。"
+  },
+  {
+    "date": "2026-09-24",
+    "term": "adjuvant",
+    "pos": "n.",
+    "definition_en": "A substance added to a vaccine or drug to enhance the body's immune response to the main ingredient.",
+    "example_en": "The newly developed vaccine utilizes an aluminum-based adjuvant to boost neutralizing antibody titers in elderly participants.",
+    "zh": "佐劑",
+    "note": "源自拉丁語 adjuvare（意為「幫助」），在免疫學中指能「協助」疫苗引發更強免疫反應的輔助成分。"
   }
 ]

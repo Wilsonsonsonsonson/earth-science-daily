@@ -617,5 +617,14 @@
     "example_en": "The newly developed vaccine utilizes an aluminum-based adjuvant to boost neutralizing antibody titers in elderly participants.",
     "zh": "佐劑",
     "note": "源自拉丁語 adjuvare（意為「幫助」），在免疫學中指能「協助」疫苗引發更強免疫反應的輔助成分。"
+  },
+  {
+    "date": "2026-09-25",
+    "term": "refractory",
+    "pos": "adj.",
+    "definition_en": "Not yielding to treatment; resistant to standard medical therapy.",
+    "example_en": "The clinical trial evaluated evorpacept in patients with HER2-positive advanced gastric cancer that was refractory to previous anti-HER2 therapies.",
+    "zh": "難治的、抗藥的",
+    "note": "在腫瘤學論文中經常看到 refractory disease，指對常規治療沒有反應的頑固性疾病。"
   }
 ]

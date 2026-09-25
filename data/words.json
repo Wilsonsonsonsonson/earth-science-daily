@@ -645,5 +645,14 @@
     "example_en": "Recent geophysical studies apply diffusion models to capture statistical priors for seismic velocity model building.",
     "zh": "擴散",
     "note": "從物理學的物質擴散概念，到如今人工智慧中透過逐步去除雜訊來生成複雜構造影像的演算法，擴散模型已成為地科前沿研究的新利器。"
+  },
+  {
+    "date": "2026-09-25",
+    "term": "breach",
+    "pos": "n.",
+    "definition_en": "A sudden rupture, opening, or failure in a natural or artificial barrier, such as a dam, levee, or fault boundary, through which confined water or material catastrophically bursts forth.",
+    "example_en": "Rapid overtopping led to the progressive breach of the natural landslide dam, triggering downstream flash flooding along the river valley.",
+    "zh": "潰決、破裂口",
+    "note": "在地工地質與水文災害學中，常指堰塞湖壩體承受不住水壓或溢流沖刷而發生失穩潰垮（dam breach）；字源源自古法語 breche，原指城牆被攻破的缺口。"
   }
 ]

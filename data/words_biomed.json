@@ -626,5 +626,14 @@
     "example_en": "The clinical trial evaluated evorpacept in patients with HER2-positive advanced gastric cancer that was refractory to previous anti-HER2 therapies.",
     "zh": "難治的、抗藥的",
     "note": "在腫瘤學論文中經常看到 refractory disease，指對常規治療沒有反應的頑固性疾病。"
+  },
+  {
+    "date": "2026-09-26",
+    "term": "adaptability",
+    "pos": "n.",
+    "definition_en": "The quality of being able to adjust to new conditions or environments.",
+    "example_en": "Adaptive platform trials demonstrate remarkable adaptability in responding to emerging infectious diseases.",
+    "zh": "適應性、可調性",
+    "note": "源自拉丁語 adaprare，在臨床試驗設計（如 adaptive trial）中常指根據中期數據隨時調整的彈性。"
   }
 ]

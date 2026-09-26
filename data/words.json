@@ -654,5 +654,14 @@
     "example_en": "Rapid overtopping led to the progressive breach of the natural landslide dam, triggering downstream flash flooding along the river valley.",
     "zh": "潰決、破裂口",
     "note": "在地工地質與水文災害學中，常指堰塞湖壩體承受不住水壓或溢流沖刷而發生失穩潰垮（dam breach）；字源源自古法語 breche，原指城牆被攻破的缺口。"
+  },
+  {
+    "date": "2026-09-26",
+    "term": "Coriolis effect",
+    "pos": "n.",
+    "definition_en": "An apparent deflection of moving objects, such as wind and ocean currents, caused by the Earth's rotation.",
+    "example_en": "The Coriolis effect deflects surface winds to the right in the Northern Hemisphere and to the left in the Southern Hemisphere.",
+    "zh": "科氏力",
+    "note": "以法國科學家科里奧利命名，是大氣科學與海洋學中解釋大尺向流動偏轉的核心概念。"
   }
 ]

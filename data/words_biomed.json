@@ -635,5 +635,14 @@
     "example_en": "Adaptive platform trials demonstrate remarkable adaptability in responding to emerging infectious diseases.",
     "zh": "適應性、可調性",
     "note": "源自拉丁語 adaprare，在臨床試驗設計（如 adaptive trial）中常指根據中期數據隨時調整的彈性。"
+  },
+  {
+    "date": "2026-09-27",
+    "term": "condensate",
+    "pos": "n.",
+    "definition_en": "A dynamic, membraneless cellular structure formed by the liquid-liquid phase separation of proteins and nucleic acids.",
+    "example_en": "Multivalent interactions between transcriptional regulators drive the formation of ecDNA condensates that coordinate high levels of oncogene expression.",
+    "zh": "生物分子凝聚體",
+    "note": "源自物理學的「冷凝」概念，在現代細胞生物學中指不具脂質膜、透過相分離聚集而成的液滴狀無膜胞器。"
   }
 ]

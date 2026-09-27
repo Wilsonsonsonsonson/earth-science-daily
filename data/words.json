@@ -663,5 +663,14 @@
     "example_en": "The Coriolis effect deflects surface winds to the right in the Northern Hemisphere and to the left in the Southern Hemisphere.",
     "zh": "科氏力",
     "note": "以法國科學家科里奧利命名，是大氣科學與海洋學中解釋大尺向流動偏轉的核心概念。"
+  },
+  {
+    "date": "2026-09-27",
+    "term": "fluid",
+    "pos": "n.",
+    "definition_en": "A substance that has no fixed shape and yields easily to external pressure, including liquids and gases.",
+    "example_en": "High-pressure fluid migration along the fault zone significantly alters effective normal stress and triggers seismic activity.",
+    "zh": "流體",
+    "note": "在地球科學中，流體泛指地殼與地函中能流動的氣體與液體（如水、二氧化碳、超臨界流體），是推動板塊變質作用與引發地震的重要角色。"
   }
 ]

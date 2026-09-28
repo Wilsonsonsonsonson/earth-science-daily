@@ -672,5 +672,14 @@
     "example_en": "High-pressure fluid migration along the fault zone significantly alters effective normal stress and triggers seismic activity.",
     "zh": "流體",
     "note": "在地球科學中，流體泛指地殼與地函中能流動的氣體與液體（如水、二氧化碳、超臨界流體），是推動板塊變質作用與引發地震的重要角色。"
+  },
+  {
+    "date": "2026-09-28",
+    "term": "infrasound",
+    "pos": "n.",
+    "definition_en": "Sound waves with frequencies below the lower limit of human audibility, typically under 20 Hertz, commonly produced by earthquakes, volcanoes, and severe storms.",
+    "example_en": "Dynamic fault displacement during an earthquake generates vertical infrasound waves that perturb the ionosphere hundreds of kilometers above.",
+    "zh": "次聲波",
+    "note": "字首 infra- 在拉丁文意為「在……之下」；次聲波因波長極長、大氣吸收衰減極低，能夠在地球大氣與固體圈中跨越數千公里長距離傳播，是監測核試爆與地震破裂的絕佳利器。"
   }
 ]

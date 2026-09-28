@@ -644,5 +644,14 @@
     "example_en": "Multivalent interactions between transcriptional regulators drive the formation of ecDNA condensates that coordinate high levels of oncogene expression.",
     "zh": "生物分子凝聚體",
     "note": "源自物理學的「冷凝」概念，在現代細胞生物學中指不具脂質膜、透過相分離聚集而成的液滴狀無膜胞器。"
+  },
+  {
+    "date": "2026-09-28",
+    "term": "repositioning",
+    "pos": "n.",
+    "definition_en": "The process of developing new uses for existing drugs that are already approved for other indications.",
+    "example_en": "Drug repositioning offers a faster alternative to traditional de novo drug discovery for complex conditions.",
+    "zh": "（藥物）重新定位",
+    "note": "即俗稱的「老藥新用」，把已經通過安全性審查的舊藥拿來治新病，省時又省力。"
   }
 ]

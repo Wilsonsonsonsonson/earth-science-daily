@@ -681,5 +681,14 @@
     "example_en": "Dynamic fault displacement during an earthquake generates vertical infrasound waves that perturb the ionosphere hundreds of kilometers above.",
     "zh": "次聲波",
     "note": "字首 infra- 在拉丁文意為「在……之下」；次聲波因波長極長、大氣吸收衰減極低，能夠在地球大氣與固體圈中跨越數千公里長距離傳播，是監測核試爆與地震破裂的絕佳利器。"
+  },
+  {
+    "date": "2026-09-29",
+    "term": "sabkha",
+    "pos": "n.",
+    "definition_en": "A coastal or inland supratidal flat where high evaporation rates lead to the precipitation of saline minerals.",
+    "example_en": "The drill core samples from the coastal sabkha revealed extensive evaporite mineral deposits.",
+    "zh": "薩布哈鹽沼",
+    "note": "源自阿拉伯語，指蒸發強烈、富含高濃度鹽類沉積物的海岸或內陸潮上帶平原。"
   }
 ]

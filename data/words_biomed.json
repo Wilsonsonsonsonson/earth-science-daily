@@ -653,5 +653,14 @@
     "example_en": "Drug repositioning offers a faster alternative to traditional de novo drug discovery for complex conditions.",
     "zh": "（藥物）重新定位",
     "note": "即俗稱的「老藥新用」，把已經通過安全性審查的舊藥拿來治新病，省時又省力。"
+  },
+  {
+    "date": "2026-09-29",
+    "term": "transduction",
+    "pos": "n.",
+    "definition_en": "The process by which foreign DNA is introduced into a cell by a virus or viral vector.",
+    "example_en": "Successful transduction of neural cells using an AAV vector is critical for effective gene therapy.",
+    "zh": "轉導",
+    "note": "常指病毒將外源基因帶入宿主細胞的過程，在基因治療與病毒學論文中極為常見。"
   }
 ]

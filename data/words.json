@@ -690,5 +690,14 @@
     "example_en": "The drill core samples from the coastal sabkha revealed extensive evaporite mineral deposits.",
     "zh": "薩布哈鹽沼",
     "note": "源自阿拉伯語，指蒸發強烈、富含高濃度鹽類沉積物的海岸或內陸潮上帶平原。"
+  },
+  {
+    "date": "2026-09-30",
+    "term": "outcrop",
+    "pos": "n.",
+    "definition_en": "An exposure of bedrock or ancient deposits on the surface of the Earth.",
+    "example_en": "Geologists examined the rock fracture patterns exposed along the mountain outcrop.",
+    "zh": "露頭",
+    "note": "指地表直接露出地盤岩石的地方，是地質學家不用挖地洞就能觀察地下構造的天然窗口。"
   }
 ]

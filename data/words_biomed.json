@@ -662,5 +662,14 @@
     "example_en": "Successful transduction of neural cells using an AAV vector is critical for effective gene therapy.",
     "zh": "轉導",
     "note": "常指病毒將外源基因帶入宿主細胞的過程，在基因治療與病毒學論文中極為常見。"
+  },
+  {
+    "date": "2026-10-01",
+    "term": "introgression",
+    "pos": "n.",
+    "definition_en": "The transfer of genetic information from one species to another as a result of repeated backcrossing of an interspecific hybrid with one of its parent species.",
+    "example_en": "Adaptive introgression allows species to quickly acquire beneficial genetic material from close relatives to cope with environmental stress.",
+    "zh": "基因滲入",
+    "note": "指不同物種間透過雜交與反覆回交，使一個物種的基因片段進入另一個物種的基因庫中，是生物適應環境的重要演化機制。"
   }
 ]

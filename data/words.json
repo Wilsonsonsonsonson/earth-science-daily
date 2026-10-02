@@ -699,5 +699,14 @@
     "example_en": "Geologists examined the rock fracture patterns exposed along the mountain outcrop.",
     "zh": "露頭",
     "note": "指地表直接露出地盤岩石的地方，是地質學家不用挖地洞就能觀察地下構造的天然窗口。"
+  },
+  {
+    "date": "2026-10-02",
+    "term": "shear modulus",
+    "pos": "n.",
+    "definition_en": "A measure of a material's resistance to shear deformation, defined as the ratio of shear stress to shear strain.",
+    "example_en": "The measured shear modulus of polycrystalline davemaoite helps constrain its grain size in the lower mantle.",
+    "zh": "剪切模數",
+    "note": "指材料抵抗剪切變形能力的物理量，在地震學與礦物物理學中是計算波速（如剪切波波速）的核心參數。"
   }
 ]

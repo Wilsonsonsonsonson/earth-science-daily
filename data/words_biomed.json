@@ -671,5 +671,14 @@
     "example_en": "Adaptive introgression allows species to quickly acquire beneficial genetic material from close relatives to cope with environmental stress.",
     "zh": "基因滲入",
     "note": "指不同物種間透過雜交與反覆回交，使一個物種的基因片段進入另一個物種的基因庫中，是生物適應環境的重要演化機制。"
+  },
+  {
+    "date": "2026-10-02",
+    "term": "histology",
+    "pos": "n.",
+    "definition_en": "The study of the microscopic structure of tissues.",
+    "example_en": "The new optical imaging technology provides rapid virtual histology of intact tumor specimens during surgery.",
+    "zh": "組織學",
+    "note": "字根 histo- 意指組織，-ology 為……學，是病理學與解剖學研究細胞與組織微觀結構的基石。"
   }
 ]

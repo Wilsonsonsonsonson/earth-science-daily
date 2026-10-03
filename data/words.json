@@ -708,5 +708,14 @@
     "example_en": "The measured shear modulus of polycrystalline davemaoite helps constrain its grain size in the lower mantle.",
     "zh": "剪切模數",
     "note": "指材料抵抗剪切變形能力的物理量，在地震學與礦物物理學中是計算波速（如剪切波波速）的核心參數。"
+  },
+  {
+    "date": "2026-10-03",
+    "term": "waveform inversion",
+    "pos": "n.",
+    "definition_en": "A geophysical optimization technique that uses recorded seismic wave data to reconstruct the physical properties of the Earth's subsurface.",
+    "example_en": "Full waveform inversion helps researchers image complex geological structures with high resolution.",
+    "zh": "波形反演",
+    "note": "指透過地面接收到的波形資料逆向推導地下介質分布的數學與物理過程。"
   }
 ]

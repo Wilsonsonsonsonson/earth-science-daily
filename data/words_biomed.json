@@ -680,5 +680,14 @@
     "example_en": "The new optical imaging technology provides rapid virtual histology of intact tumor specimens during surgery.",
     "zh": "組織學",
     "note": "字根 histo- 意指組織，-ology 為……學，是病理學與解剖學研究細胞與組織微觀結構的基石。"
+  },
+  {
+    "date": "2026-10-03",
+    "term": "allostery",
+    "pos": "n.",
+    "definition_en": "The regulation of an enzyme or protein by binding an effector molecule at a site other than the active site.",
+    "example_en": "Binding of the substrate induces allostery that enhances the catalytic activity of the enzyme.",
+    "zh": "異位調節",
+    "note": "字首 allo- 代表「其他的」，steros 代表「空間」，指透過改變立體結構來調控蛋白質活性。"
   }
 ]

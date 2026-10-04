@@ -689,5 +689,14 @@
     "example_en": "Binding of the substrate induces allostery that enhances the catalytic activity of the enzyme.",
     "zh": "異位調節",
     "note": "字首 allo- 代表「其他的」，steros 代表「空間」，指透過改變立體結構來調控蛋白質活性。"
+  },
+  {
+    "date": "2026-10-04",
+    "term": "validation",
+    "pos": "n.",
+    "definition_en": "The process of checking or proving the accuracy or validity of something, such as a model or a method.",
+    "example_en": "External validation of the machine learning model is necessary before clinical implementation.",
+    "zh": "驗證",
+    "note": "在臨床研究中，模型建好後必須經過嚴格的「驗證」才能確保在不同病人身上也準確。"
   }
 ]

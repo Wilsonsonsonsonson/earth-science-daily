@@ -717,5 +717,14 @@
     "example_en": "Full waveform inversion helps researchers image complex geological structures with high resolution.",
     "zh": "波形反演",
     "note": "指透過地面接收到的波形資料逆向推導地下介質分布的數學與物理過程。"
+  },
+  {
+    "date": "2026-10-05",
+    "term": "intrusion",
+    "pos": "n.",
+    "definition_en": "The process of magma forcing its way into preexisting rocks or geological formations beneath Earth's surface.",
+    "example_en": "The recent seismic crisis was triggered by a deep-seated magma intrusion beneath the volcanic arc.",
+    "zh": "侵入、岩漿侵入",
+    "note": "指地下熔融岩漿向上擠壓並嵌入周圍圍岩 Geological formation 中的過程，是形成深成岩體與誘發火山地震的重要地質機制。"
   }
 ]

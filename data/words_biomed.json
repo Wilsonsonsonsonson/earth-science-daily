@@ -698,5 +698,14 @@
     "example_en": "External validation of the machine learning model is necessary before clinical implementation.",
     "zh": "驗證",
     "note": "在臨床研究中，模型建好後必須經過嚴格的「驗證」才能確保在不同病人身上也準確。"
+  },
+  {
+    "date": "2026-10-06",
+    "term": "optogenetics",
+    "pos": "n.",
+    "definition_en": "A biological technique that involves the use of light to control cells in living tissue, typically neurons, that have been genetically modified to express light-sensitive ion channels.",
+    "example_en": "Optogenetics has revolutionized neuroscience by allowing researchers to activate or silence specific neuronal circuits with millisecond precision.",
+    "zh": "光遺傳學",
+    "note": "由 opto-（光）與 genetics（遺傳學）結合而成，指的是利用基因工程讓細胞對光產生反應的尖端技術。"
   }
 ]

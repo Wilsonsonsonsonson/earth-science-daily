@@ -707,5 +707,14 @@
     "example_en": "Optogenetics has revolutionized neuroscience by allowing researchers to activate or silence specific neuronal circuits with millisecond precision.",
     "zh": "光遺傳學",
     "note": "由 opto-（光）與 genetics（遺傳學）結合而成，指的是利用基因工程讓細胞對光產生反應的尖端技術。"
+  },
+  {
+    "date": "2026-10-07",
+    "term": "opsonization",
+    "pos": "n.",
+    "definition_en": "A biological process where pathogens or foreign particles are coated with specific molecules, making them easier for immune cells to recognize and engulf.",
+    "example_en": "Complement activation enhances the opsonization of encapsulated bacteria, facilitating their rapid clearance by splenic macrophages.",
+    "zh": "調理作用",
+    "note": "源自希臘文 opsōnein（準備食物、調味），在免疫學上生動地比喻將病原體「調味撒上佐料」，讓吞噬細胞胃口大開並迅速吃掉。"
   }
 ]

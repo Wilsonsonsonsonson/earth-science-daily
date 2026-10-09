@@ -726,5 +726,14 @@
     "example_en": "The recent seismic crisis was triggered by a deep-seated magma intrusion beneath the volcanic arc.",
     "zh": "侵入、岩漿侵入",
     "note": "指地下熔融岩漿向上擠壓並嵌入周圍圍岩 Geological formation 中的過程，是形成深成岩體與誘發火山地震的重要地質機制。"
+  },
+  {
+    "date": "2026-10-09",
+    "term": "plasticity",
+    "pos": "n.",
+    "definition_en": "The mechanical property of a solid material to undergo permanent, irreversible deformation without rupture under sustained differential stress.",
+    "zh": "塑性",
+    "example_en": "Quantifying crystal plasticity in plagioclase is critical for constraining the ductile strength profile of the continental crust.",
+    "note": "源自希臘語『plastikos』（意為可塑的、造型的）。在構造地質學中，岩石在高溫高壓下越過彈性極限後，會透過晶體位錯滑移或擴散產生不可逆的永久流動，這種性質即為「塑性」。"
   }
 ]

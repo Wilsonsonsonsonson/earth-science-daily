@@ -716,5 +716,14 @@
     "example_en": "Complement activation enhances the opsonization of encapsulated bacteria, facilitating their rapid clearance by splenic macrophages.",
     "zh": "調理作用",
     "note": "源自希臘文 opsōnein（準備食物、調味），在免疫學上生動地比喻將病原體「調味撒上佐料」，讓吞噬細胞胃口大開並迅速吃掉。"
+  },
+  {
+    "date": "2026-10-09",
+    "term": "interoperable",
+    "pos": "adj.",
+    "definition_en": "Able to exchange and make use of information across different systems or software.",
+    "example_en": "Standardized data formats ensure that mass spectrometry datasets are fully interoperable across diverse bioinformatics pipelines.",
+    "zh": "可互通的／具互通性的",
+    "note": "由 inter-（在……之間）與 operate（操作）組合而成，在生物資訊學與精準醫學中，常指不同實驗室或醫療院所的資料格式能無縫串接交換。"
   }
 ]

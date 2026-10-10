@@ -735,5 +735,14 @@
     "zh": "塑性",
     "example_en": "Quantifying crystal plasticity in plagioclase is critical for constraining the ductile strength profile of the continental crust.",
     "note": "源自希臘語『plastikos』（意為可塑的、造型的）。在構造地質學中，岩石在高溫高壓下越過彈性極限後，會透過晶體位錯滑移或擴散產生不可逆的永久流動，這種性質即為「塑性」。"
+  },
+  {
+    "date": "2026-10-10",
+    "term": "xenolith",
+    "pos": "n.",
+    "definition_en": "A piece of rock trapped inside an igneous rock that is different from the magma that surrounded it.",
+    "example_en": "Mantle xenoliths brought to the surface by alkali basalt eruptions provide direct samples of the deep lithosphere.",
+    "zh": "捕獲岩",
+    "note": "源自希臘文「xenos」（外來的、異鄉人）與「lithos」（石頭），字面意思是「外來石」，是地質學家研究地函深部物質的天然採樣窗口。"
   }
 ]

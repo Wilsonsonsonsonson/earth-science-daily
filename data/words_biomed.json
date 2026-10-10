@@ -725,5 +725,14 @@
     "example_en": "Standardized data formats ensure that mass spectrometry datasets are fully interoperable across diverse bioinformatics pipelines.",
     "zh": "可互通的／具互通性的",
     "note": "由 inter-（在……之間）與 operate（操作）組合而成，在生物資訊學與精準醫學中，常指不同實驗室或醫療院所的資料格式能無縫串接交換。"
+  },
+  {
+    "date": "2026-10-10",
+    "term": "matrix",
+    "pos": "n.",
+    "definition_en": "An extracellular substance or tissue structure in which other structures are embedded.",
+    "example_en": "Degradation of the extracellular matrix around nerve cells can alleviate chronic pain.",
+    "zh": "基質",
+    "note": "指細胞或組織之間填補的物質，如細胞外基質（extracellular matrix），在維持組織結構與傳遞機械力上扮演關鍵角色。"
   }
 ]

@@ -734,5 +734,14 @@
     "example_en": "Degradation of the extracellular matrix around nerve cells can alleviate chronic pain.",
     "zh": "基質",
     "note": "指細胞或組織之間填補的物質，如細胞外基質（extracellular matrix），在維持組織結構與傳遞機械力上扮演關鍵角色。"
+  },
+  {
+    "date": "2026-10-11",
+    "term": "nucleosome",
+    "pos": "n.",
+    "definition_en": "The fundamental structural repeating unit of eukaryotic chromatin, composed of approximately 147 base pairs of DNA wrapped around an octamer of histone proteins.",
+    "example_en": "Pioneer transcription factors are unique in their ability to directly engage target sites wrapped tightly around the nucleosome.",
+    "zh": "核小體",
+    "note": "詞根源於 nucleus（細胞核）與希臘語 soma（身體、結構體），是真核生物將長鏈 DNA 壓縮進微小細胞核的最基礎包裝單元。"
   }
 ]

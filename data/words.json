@@ -744,5 +744,14 @@
     "example_en": "Mantle xenoliths brought to the surface by alkali basalt eruptions provide direct samples of the deep lithosphere.",
     "zh": "捕獲岩",
     "note": "源自希臘文「xenos」（外來的、異鄉人）與「lithos」（石頭），字面意思是「外來石」，是地質學家研究地函深部物質的天然採樣窗口。"
+  },
+  {
+    "date": "2026-10-11",
+    "term": "delamination",
+    "pos": "n.",
+    "definition_en": "The process in which the lower part of the lithosphere detaches from the crust and sinks into the mantle.",
+    "example_en": "Seismic observations provide strong evidence for the lithospheric delamination beneath the Pamir mountains.",
+    "zh": "拆離、剝離",
+    "note": "字根源自 lamina（薄層），delamination 就像把洋蔥或書本的其中一層剝開分離，在地質學中專指岩石圈底部的剝落現象。"
   }
 ]

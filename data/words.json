@@ -753,5 +753,14 @@
     "example_en": "Seismic observations provide strong evidence for the lithospheric delamination beneath the Pamir mountains.",
     "zh": "拆離、剝離",
     "note": "字根源自 lamina（薄層），delamination 就像把洋蔥或書本的其中一層剝開分離，在地質學中專指岩石圈底部的剝落現象。"
+  },
+  {
+    "date": "2026-10-12",
+    "term": "topography",
+    "pos": "n.",
+    "definition_en": "The physical features of an area of land, including the relative positions and elevations of natural and artificial features.",
+    "example_en": "The complexity of fault topography significantly influences earthquake rupture propagation and the distribution of microseismicity.",
+    "zh": "地形、地形學",
+    "note": "由 topo（地方）結合 graphy（書寫、描繪），原意為描繪地方的面貌，在地球科學中廣泛用於描述地表或地下構造的起伏形態。"
   }
 ]

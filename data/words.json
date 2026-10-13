@@ -762,5 +762,14 @@
     "example_en": "The complexity of fault topography significantly influences earthquake rupture propagation and the distribution of microseismicity.",
     "zh": "地形、地形學",
     "note": "由 topo（地方）結合 graphy（書寫、描繪），原意為描繪地方的面貌，在地球科學中廣泛用於描述地表或地下構造的起伏形態。"
+  },
+  {
+    "date": "2026-10-13",
+    "term": "declustering",
+    "pos": "n.",
+    "definition_en": "The statistical process of separating mainshocks from foreshocks and aftershocks in an earthquake catalog to isolate independent seismic events.",
+    "example_en": "Traditional catalog declustering algorithms may systematically underestimate foreshock rates due to asymmetric time-window criteria.",
+    "zh": "去叢集、地震去叢聚化",
+    "note": "字首 de-（去除）加上 cluster（群集、叢聚），在地震統計學中專指將成群出現的餘震與前震剔除，以求得背景地震發生率的過程。"
   }
 ]

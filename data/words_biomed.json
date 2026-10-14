@@ -752,5 +752,14 @@
     "example_en": "A population-scale analysis demonstrated that metabolic markers deteriorate sharply at the end of perimenopause.",
     "zh": "圍停經期（停經前期）",
     "note": "字首 peri- 來自希臘文，意為「在……周圍」或「過渡期間」，因此 perimenopause 指的是正式停經前後內分泌劇烈波動的關鍵過渡期。"
+  },
+  {
+    "date": "2026-10-14",
+    "term": "virulence",
+    "pos": "n.",
+    "definition_en": "The severity or harmfulness of a disease or pathogen.",
+    "example_en": "The study investigates how the inositol receptor coordinates carbon catabolite regulation and virulence in Cryptococcus neoformans.",
+    "zh": "毒力",
+    "note": "指病原體導致宿主發病與損害的嚴重程度，常與病原體的繁殖力與免疫逃脫能力有關。"
   }
 ]

@@ -771,5 +771,14 @@
     "example_en": "Traditional catalog declustering algorithms may systematically underestimate foreshock rates due to asymmetric time-window criteria.",
     "zh": "去叢集、地震去叢聚化",
     "note": "字首 de-（去除）加上 cluster（群集、叢聚），在地震統計學中專指將成群出現的餘震與前震剔除，以求得背景地震發生率的過程。"
+  },
+  {
+    "date": "2026-10-14",
+    "term": "anelasticity",
+    "pos": "n.",
+    "definition_en": "A property of materials where stress and strain are not strictly proportional and energy is dissipated during deformation, unlike perfect elasticity.",
+    "example_en": "The study reveals the anelasticity of the mantle beneath Taiwan by analyzing high-precision GPS tidal displacements.",
+    "zh": "非彈性",
+    "note": "指材料受力變形時不完全符合虎克定律，卸力後無法瞬間完全恢復原狀並會消耗能量。"
   }
 ]

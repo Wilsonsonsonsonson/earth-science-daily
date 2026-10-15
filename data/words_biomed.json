@@ -761,5 +761,14 @@
     "example_en": "The study investigates how the inositol receptor coordinates carbon catabolite regulation and virulence in Cryptococcus neoformans.",
     "zh": "毒力",
     "note": "指病原體導致宿主發病與損害的嚴重程度，常與病原體的繁殖力與免疫逃脫能力有關。"
+  },
+  {
+    "date": "2026-10-15",
+    "term": "neoantigen",
+    "pos": "n.",
+    "definition_en": "A newly formed, tumor-specific antigen resulting from somatic genomic mutations that is absent in normal non-malignant tissues.",
+    "example_en": "Personalized cancer immunotherapy designs synthetic vaccines based on patient-specific neoantigens to trigger targeted cytotoxic T-cell responses.",
+    "zh": "新抗原",
+    "note": "詞首「neo-」源自希臘文，意為「新」。新抗原是癌細胞基因突變專屬產生的異常胜肽，因完全不表現在正常細胞，是開發癌症精準疫苗與減少自體免疫副作用的夢幻標靶。"
   }
 ]

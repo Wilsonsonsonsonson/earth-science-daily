@@ -770,5 +770,14 @@
     "example_en": "Personalized cancer immunotherapy designs synthetic vaccines based on patient-specific neoantigens to trigger targeted cytotoxic T-cell responses.",
     "zh": "新抗原",
     "note": "詞首「neo-」源自希臘文，意為「新」。新抗原是癌細胞基因突變專屬產生的異常胜肽，因完全不表現在正常細胞，是開發癌症精準疫苗與減少自體免疫副作用的夢幻標靶。"
+  },
+  {
+    "date": "2026-10-16",
+    "term": "oligomerization",
+    "pos": "n.",
+    "definition_en": "A chemical or biological process that converts monomeric protein subunits into a multi-subunit protein complex of finite size.",
+    "example_en": "Membrane cholesterol restricts the oligomerization of gasdermin D subunits, preventing the formation of lytic pores.",
+    "zh": "寡聚化",
+    "note": "源自希臘字首 oligo-（少數、寡）加上 meros（部分），指少數單體分子相互結合組裝成複合物的生化過程，是孔洞形成蛋白與許多訊息傳遞受體活化的關鍵步驟。"
   }
 ]

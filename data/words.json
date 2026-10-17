@@ -798,5 +798,14 @@
     "example_en": "Microstructural grain size in dynamically recrystallized quartzite serves as an effective piezometer for quantifying tectonic paleostress.",
     "zh": "壓應力計／孔隙水壓計",
     "note": "源自希臘文 piezo-（按壓、擠壓）與 meter（測量）；在地質微構造學中，常用微觀晶粒結構反推歷史差異應力，稱為「古應力計（paleopiezometer）」。"
+  },
+  {
+    "date": "2026-10-17",
+    "term": "polarization",
+    "pos": "n.",
+    "definition_en": "The phenomenon in which electric charges in a material are slightly displaced under an external electric field, leading to dynamic energy storage and phase lags.",
+    "example_en": "Spectral induced polarization measurements reveal the relaxation characteristics of charge accumulation along mineral grain boundaries.",
+    "zh": "極化、極化作用",
+    "note": "在地電阻探勘中，極化（polarization）指交流電通過地下時，離子在孔隙或礦物表面受阻積聚而形成微小電容效應的現象。"
   }
 ]

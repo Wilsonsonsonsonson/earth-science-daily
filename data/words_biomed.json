@@ -779,5 +779,14 @@
     "example_en": "Membrane cholesterol restricts the oligomerization of gasdermin D subunits, preventing the formation of lytic pores.",
     "zh": "寡聚化",
     "note": "源自希臘字首 oligo-（少數、寡）加上 meros（部分），指少數單體分子相互結合組裝成複合物的生化過程，是孔洞形成蛋白與許多訊息傳遞受體活化的關鍵步驟。"
+  },
+  {
+    "date": "2026-10-17",
+    "term": "nociception",
+    "pos": "n.",
+    "definition_en": "The sensory neural process of encoding and processing noxious stimuli that have the potential to damage tissue.",
+    "example_en": "The mechanosensitive channel TMEM63B was recently found to contribute critically to thermal nociception in primary sensory neurons.",
+    "zh": "傷害感受（痛覺受器感知）",
+    "note": "源自拉丁字根 nocere（傷害）與 perception（感知），特指神經末梢接收並轉換物理化學致傷刺激的客觀生理歷程，在生理學上嚴格區隔於大腦主觀體驗到的「疼痛（pain）」。"
   }
 ]

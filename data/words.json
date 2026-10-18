@@ -807,5 +807,14 @@
     "example_en": "Spectral induced polarization measurements reveal the relaxation characteristics of charge accumulation along mineral grain boundaries.",
     "zh": "極化、極化作用",
     "note": "在地電阻探勘中，極化（polarization）指交流電通過地下時，離子在孔隙或礦物表面受阻積聚而形成微小電容效應的現象。"
+  },
+  {
+    "date": "2026-10-18",
+    "term": "paleomagnetism",
+    "pos": "n.",
+    "definition_en": "The study of the record of the Earth's magnetic field preserved in magnetic minerals of rocks over geological time.",
+    "example_en": "Paleomagnetism provides quantitative constraints on the paleolatitude and tectonic orientation of drifting continents.",
+    "zh": "古地磁學",
+    "note": "由 paleo-（古老的）與 magnetism（磁性）組成，它是板塊構造學說在 1960 年代得以被全球地質學界廣泛接受的最關鍵物理證據。"
   }
 ]

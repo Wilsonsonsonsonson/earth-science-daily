@@ -788,5 +788,14 @@
     "example_en": "The mechanosensitive channel TMEM63B was recently found to contribute critically to thermal nociception in primary sensory neurons.",
     "zh": "傷害感受（痛覺受器感知）",
     "note": "源自拉丁字根 nocere（傷害）與 perception（感知），特指神經末梢接收並轉換物理化學致傷刺激的客觀生理歷程，在生理學上嚴格區隔於大腦主觀體驗到的「疼痛（pain）」。"
+  },
+  {
+    "date": "2026-10-19",
+    "term": "chemogenetics",
+    "pos": "n.",
+    "definition_en": "A technique that uses engineered proteins activated exclusively by designer drugs to control cell activity in living organisms.",
+    "example_en": "Researchers used chemogenetics to selectively activate lateral hypothalamic neurons and observe changes in glucose homeostasis.",
+    "zh": "化學遺傳學",
+    "note": "由 chemical（化學）與 genetics（遺傳學）結合而成，核心概念是利用基因工程創造出只對特定人工藥物有反應的受體。"
   }
 ]

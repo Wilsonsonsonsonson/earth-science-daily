@@ -816,5 +816,14 @@
     "example_en": "Paleomagnetism provides quantitative constraints on the paleolatitude and tectonic orientation of drifting continents.",
     "zh": "古地磁學",
     "note": "由 paleo-（古老的）與 magnetism（磁性）組成，它是板塊構造學說在 1960 年代得以被全球地質學界廣泛接受的最關鍵物理證據。"
+  },
+  {
+    "date": "2026-10-19",
+    "term": "halocline",
+    "pos": "n.",
+    "definition_en": "A vertical layer in a body of water where salinity changes rapidly with depth.",
+    "example_en": "The strong halocline in the Arctic Ocean acts as a barrier, preventing deep warm water from reaching and melting the sea ice above.",
+    "zh": "鹽躍層",
+    "note": "字首源自希臘文 hals（鹽）加上 klinein（傾斜、變化），與溫躍層（thermocline）同為研究海洋分層結構的關鍵概念。"
   }
 ]

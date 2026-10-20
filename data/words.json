@@ -825,5 +825,14 @@
     "example_en": "The strong halocline in the Arctic Ocean acts as a barrier, preventing deep warm water from reaching and melting the sea ice above.",
     "zh": "鹽躍層",
     "note": "字首源自希臘文 hals（鹽）加上 klinein（傾斜、變化），與溫躍層（thermocline）同為研究海洋分層結構的關鍵概念。"
+  },
+  {
+    "date": "2026-10-20",
+    "term": "caldera",
+    "pos": "n.",
+    "definition_en": "A large, bowl-shaped volcanic crater formed when a volcano collapses into its emptied magma chamber after an eruption.",
+    "example_en": "The catastrophic eruption caused the summit to collapse, creating a vast caldera that eventually filled with rainwater.",
+    "zh": "破火山口",
+    "note": "源自西班牙語「caldera」（意為大鍋爐），精準描繪火山頂部崩解下陷後如同巨鍋般的壯觀地貌。"
   }
 ]

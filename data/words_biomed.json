@@ -797,5 +797,14 @@
     "example_en": "Researchers used chemogenetics to selectively activate lateral hypothalamic neurons and observe changes in glucose homeostasis.",
     "zh": "化學遺傳學",
     "note": "由 chemical（化學）與 genetics（遺傳學）結合而成，核心概念是利用基因工程創造出只對特定人工藥物有反應的受體。"
+  },
+  {
+    "date": "2026-10-20",
+    "term": "threshold",
+    "pos": "n.",
+    "definition_en": "The level or point at which a physiological or physical reaction begins to occur.",
+    "example_en": "Oxidative signaling thresholds shape the vulnerability of neurons in the central and peripheral nervous systems.",
+    "zh": "閾值",
+    "note": "指引發反應的最低界線或門檻，在生理學與神經科學中極為常用。"
   }
 ]

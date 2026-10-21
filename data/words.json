@@ -834,5 +834,14 @@
     "example_en": "The catastrophic eruption caused the summit to collapse, creating a vast caldera that eventually filled with rainwater.",
     "zh": "破火山口",
     "note": "源自西班牙語「caldera」（意為大鍋爐），精準描繪火山頂部崩解下陷後如同巨鍋般的壯觀地貌。"
+  },
+  {
+    "date": "2026-10-21",
+    "term": "coda",
+    "pos": "n.",
+    "definition_en": "The prolonged, decaying wave train observed at the tail end of a seismogram, produced by backscattering of seismic energy from crustal heterogeneities.",
+    "example_en": "Seismologists analyze coda wave attenuation to detect fine-scale structural heterogeneities and thermal anomalies in the continental lithosphere.",
+    "zh": "尾波",
+    "note": "源自義大利文的『尾巴』或樂曲的『尾聲』，在地震圖上指接在直達波之後那段悠長起伏的微小震盪。"
   }
 ]

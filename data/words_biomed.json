@@ -806,5 +806,14 @@
     "example_en": "Oxidative signaling thresholds shape the vulnerability of neurons in the central and peripheral nervous systems.",
     "zh": "閾值",
     "note": "指引發反應的最低界線或門檻，在生理學與神經科學中極為常用。"
+  },
+  {
+    "date": "2026-10-21",
+    "term": "agonist",
+    "pos": "n.",
+    "definition_en": "A chemical substance that binds to a specific biological receptor and activates it to trigger a physiological response.",
+    "example_en": "Selective orexin receptor agonists have demonstrated remarkable clinical efficacy in restoring wakefulness in patients with narcolepsy.",
+    "zh": "致效劑（作用劑）",
+    "note": "源自希臘文 agōnistēs（競賽者、主角，與文學中的 protagonist 同源）。在藥理學中，致效劑就像一把能轉動鎖孔開門的正確鑰匙；而只插進鎖孔卡住不轉動的則是拮抗劑（antagonist）。"
   }
 ]

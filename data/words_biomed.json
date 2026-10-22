@@ -815,5 +815,14 @@
     "example_en": "Selective orexin receptor agonists have demonstrated remarkable clinical efficacy in restoring wakefulness in patients with narcolepsy.",
     "zh": "致效劑（作用劑）",
     "note": "源自希臘文 agōnistēs（競賽者、主角，與文學中的 protagonist 同源）。在藥理學中，致效劑就像一把能轉動鎖孔開門的正確鑰匙；而只插進鎖孔卡住不轉動的則是拮抗劑（antagonist）。"
+  },
+  {
+    "date": "2026-10-22",
+    "term": "interoception",
+    "pos": "n.",
+    "definition_en": "The brain's perception and integration of physiological signals originating from within the internal organs of the body, such as heartbeat, respiration, and gastrointestinal activity.",
+    "example_en": "Aberrant interoception in the insular cortex is increasingly recognized as a key pathophysiological mechanism underlying panic disorder and somatic symptom disorders.",
+    "zh": "內感受",
+    "note": "源自拉丁文 inter-（內部）與 recipere（接收），相對於感知外界光影聲音的「外感受（exteroception）」，專指大腦對體內臟器訊號的感知。"
   }
 ]

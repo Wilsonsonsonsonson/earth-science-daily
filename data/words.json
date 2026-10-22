@@ -843,5 +843,14 @@
     "example_en": "Seismologists analyze coda wave attenuation to detect fine-scale structural heterogeneities and thermal anomalies in the continental lithosphere.",
     "zh": "尾波",
     "note": "源自義大利文的『尾巴』或樂曲的『尾聲』，在地震圖上指接在直達波之後那段悠長起伏的微小震盪。"
+  },
+  {
+    "date": "2026-10-22",
+    "term": "pyroclastic flow",
+    "pos": "n.",
+    "definition_en": "A fast-moving current of hot gas and volcanic matter that flows down the slopes of a volcano.",
+    "example_en": "The sudden collapse of the lava dome generated a destructive pyroclastic flow that swept down the valley.",
+    "zh": "火山碎屑流",
+    "note": "由 pyro（火）與 clastic（碎屑）組成，指火山噴發時高速奔流的高溫氣體與碎屑混合物。"
   }
 ]

@@ -852,5 +852,14 @@
     "example_en": "The sudden collapse of the lava dome generated a destructive pyroclastic flow that swept down the valley.",
     "zh": "火山碎屑流",
     "note": "由 pyro（火）與 clastic（碎屑）組成，指火山噴發時高速奔流的高溫氣體與碎屑混合物。"
+  },
+  {
+    "date": "2026-10-23",
+    "term": "tephra",
+    "pos": "n.",
+    "definition_en": "Rock fragments and volcanic ash of any size ejected into the air during an eruption.",
+    "example_en": "Sedimentary cores recovered from the lake preserve distinct layers of tephra that record past regional explosive eruptions.",
+    "zh": "火山碎屑物",
+    "note": "源自希臘文「tépra」（灰燼），是地質學中利用火山灰定年（tephrochronology）比對沉積層序的關鍵指標。"
   }
 ]

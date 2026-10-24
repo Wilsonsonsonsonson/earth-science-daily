@@ -824,5 +824,14 @@
     "example_en": "Aberrant interoception in the insular cortex is increasingly recognized as a key pathophysiological mechanism underlying panic disorder and somatic symptom disorders.",
     "zh": "內感受",
     "note": "源自拉丁文 inter-（內部）與 recipere（接收），相對於感知外界光影聲音的「外感受（exteroception）」，專指大腦對體內臟器訊號的感知。"
+  },
+  {
+    "date": "2026-10-24",
+    "term": "exosome",
+    "pos": "n.",
+    "definition_en": "A tiny extracellular vesicle released by cells that carries proteins, lipids, and RNA to mediate communication between cells.",
+    "example_en": "Tumor-derived exosomes facilitate intercellular communication and contribute to the remodeling of the pre-metastatic niche.",
+    "zh": "外泌體",
+    "note": "由前綴 exo-（向外）與字尾 -some（源自希臘語 soma，意為「身體、物體」）組成，是當前細胞間訊息傳遞與液態切片研究的核心熱門詞彙。"
   }
 ]

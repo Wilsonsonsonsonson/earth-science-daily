@@ -861,5 +861,14 @@
     "example_en": "Sedimentary cores recovered from the lake preserve distinct layers of tephra that record past regional explosive eruptions.",
     "zh": "火山碎屑物",
     "note": "源自希臘文「tépra」（灰燼），是地質學中利用火山灰定年（tephrochronology）比對沉積層序的關鍵指標。"
+  },
+  {
+    "date": "2026-10-24",
+    "term": "boudinage",
+    "pos": "n.",
+    "definition_en": "A geological structure formed by the stretching of a competent rock layer enclosed within softer, more ductile rock, resembling a string of sausages.",
+    "example_en": "Field observations of boudinage along the shear zone indicate intense crustal extension.",
+    "zh": "布丁狀構造",
+    "note": "源自法語單詞 boudin（血腸），因外形像一串香腸而得名，常用於描述地殼伸展變形。"
   }
 ]

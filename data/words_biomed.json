@@ -833,5 +833,14 @@
     "example_en": "Tumor-derived exosomes facilitate intercellular communication and contribute to the remodeling of the pre-metastatic niche.",
     "zh": "外泌體",
     "note": "由前綴 exo-（向外）與字尾 -some（源自希臘語 soma，意為「身體、物體」）組成，是當前細胞間訊息傳遞與液態切片研究的核心熱門詞彙。"
+  },
+  {
+    "date": "2026-10-25",
+    "term": "exhaustion",
+    "pos": "n.",
+    "definition_en": "A state of progressive functional impairment and altered gene expression in immune cells, especially T cells, driven by chronic antigen exposure and sustained inhibitory signaling.",
+    "example_en": "Dual checkpoint blockade revitalizes tumor-infiltrating lymphocytes by reversing T cell exhaustion.",
+    "zh": "耗竭",
+    "note": "源自拉丁文 exhaurire（舀乾、抽空）。在腫瘤免疫學中特指 T 細胞長期面對腫瘤抗原刺激而失去戰鬥力的狀態，不是普通的疲累，而是一種有特定基因表現特徵的細胞命運。"
   }
 ]

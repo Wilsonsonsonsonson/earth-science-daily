@@ -851,5 +851,14 @@
     "example_en": "Microbial decomposition relies on extracellular enzyme-mediated depolymerisation of complex organic matter.",
     "zh": "解聚作用",
     "note": "字根 de-（去除、分解）加上 polymer（聚合物），指將大分子拆解成小分子的過程。"
+  },
+  {
+    "date": "2026-10-29",
+    "term": "endocytosis",
+    "pos": "n.",
+    "definition_en": "The cellular process in which a cell engulfs extracellular material by wrapping its cell membrane around it to bring it inside.",
+    "example_en": "Receptor-mediated endocytosis allows cells to selectively internalize specific molecules from the extracellular environment.",
+    "zh": "胞吞作用",
+    "note": "由 'endo-'（向內）與 'cyto-'（細胞）組合而成，指細胞將外界物質「吞」進體內的經典生理機制。"
   }
 ]

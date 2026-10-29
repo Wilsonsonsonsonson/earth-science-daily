@@ -879,5 +879,14 @@
     "example_en": "Seismic reflection surveys revealed that the active accretionary prism off the subduction trench consists of intensely faulted and folded marine sediments.",
     "zh": "增積楔",
     "note": "就像推土機推平地面時在鏟刀前堆積起來的三角狀泥土堆，板塊隱沒時海洋沉積物被上盤刮削堆疊而成的地質體便稱為增積楔。"
+  },
+  {
+    "date": "2026-10-29",
+    "term": "asthenosphere",
+    "pos": "n.",
+    "definition_en": "The mechanically weak and ductile upper layer of the Earth's mantle, located just below the rigid lithosphere.",
+    "example_en": "Seismic wave velocities decrease significantly as they enter the asthenosphere due to small amounts of partial melt.",
+    "zh": "軟流圈",
+    "note": "源自希臘文 asthenēs（軟弱、無力）與 sphaira（球體），因高溫高壓具塑性流動能力，板塊即在其上方漂移。"
   }
 ]

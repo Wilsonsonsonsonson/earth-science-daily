@@ -860,5 +860,14 @@
     "example_en": "Receptor-mediated endocytosis allows cells to selectively internalize specific molecules from the extracellular environment.",
     "zh": "胞吞作用",
     "note": "由 'endo-'（向內）與 'cyto-'（細胞）組合而成，指細胞將外界物質「吞」進體內的經典生理機制。"
+  },
+  {
+    "date": "2026-10-30",
+    "term": "autophagy",
+    "pos": "n.",
+    "definition_en": "A cellular process in which a cell degrades and recycles its own damaged components to maintain health and energy.",
+    "example_en": "Defective autophagy has been linked to the accumulation of toxic protein aggregates in neurodegenerative diseases.",
+    "zh": "自噬作用",
+    "note": "源自希臘文「auto-」（自我）與「phagy」（吃），字面即為「吃掉自己」，指細胞清除老舊蛋白質或胞器以回收養分的自我清理機制。"
   }
 ]

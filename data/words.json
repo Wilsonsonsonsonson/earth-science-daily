@@ -888,5 +888,14 @@
     "example_en": "Seismic wave velocities decrease significantly as they enter the asthenosphere due to small amounts of partial melt.",
     "zh": "軟流圈",
     "note": "源自希臘文 asthenēs（軟弱、無力）與 sphaira（球體），因高溫高壓具塑性流動能力，板塊即在其上方漂移。"
+  },
+  {
+    "date": "2026-10-30",
+    "term": "tsunami",
+    "pos": "n.",
+    "definition_en": "A long high sea wave caused by an earthquake, submarine landslide, or volcanic eruption.",
+    "example_en": "Numerical models are widely used to simulate the propagation and coastal inundation of a destructive tsunami.",
+    "zh": "海嘯",
+    "note": "源自日語「津波」，指港灣中的大浪，現已成為國際通用的地球科學與海洋學專業術語。"
   }
 ]

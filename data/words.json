@@ -897,5 +897,14 @@
     "example_en": "Numerical models are widely used to simulate the propagation and coastal inundation of a destructive tsunami.",
     "zh": "海嘯",
     "note": "源自日語「津波」，指港灣中的大浪，現已成為國際通用的地球科學與海洋學專業術語。"
+  },
+  {
+    "date": "2026-10-31",
+    "term": "percolation",
+    "pos": "n.",
+    "definition_en": "The slow movement of a fluid through the microscopic pores or permeable networks of a porous solid material.",
+    "example_en": "In the new lunar mantle model, partial melt segregates from the solid matrix and undergoes upward percolation through interconnected pores.",
+    "zh": "滲流、滲濾",
+    "note": "來自拉丁文 percolare（過濾，如煮 percolated coffee），在地球物理與水文地質學中專指液體（如岩漿或地下水）通過多孔介質微小孔隙網的緩慢滲透流動過程。"
   }
 ]

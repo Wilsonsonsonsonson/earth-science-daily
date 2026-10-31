@@ -869,5 +869,13 @@
     "example_en": "Defective autophagy has been linked to the accumulation of toxic protein aggregates in neurodegenerative diseases.",
     "zh": "自噬作用",
     "note": "源自希臘文「auto-」（自我）與「phagy」（吃），字面即為「吃掉自己」，指細胞清除老舊蛋白質或胞器以回收養分的自我清理機制。"
+  },
+  {
+    "date": "2026-10-31",
+    "term": "cistrome",
+    "pos": "n.",
+    "definition_en": "The complete set of genomic targets that are bound by a specific transcription factor or chromatin-associated protein across an entire genome.",
+    "zh": "順式作用元件組／順式轉錄調節組",
+    "note": "由順式（cis-acting）與組學（-ome）合成而來，指單一轉錄因子在整個基因體上所有結合位點的總集合。"
   }
 ]

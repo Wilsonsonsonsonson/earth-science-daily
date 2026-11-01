@@ -877,5 +877,14 @@
     "definition_en": "The complete set of genomic targets that are bound by a specific transcription factor or chromatin-associated protein across an entire genome.",
     "zh": "順式作用元件組／順式轉錄調節組",
     "note": "由順式（cis-acting）與組學（-ome）合成而來，指單一轉錄因子在整個基因體上所有結合位點的總集合。"
+  },
+  {
+    "date": "2026-11-01",
+    "term": "xenograft",
+    "pos": "n.",
+    "definition_en": "A tissue graft or organ transplanted from a donor of one species to a recipient of a different species.",
+    "example_en": "Patient-derived xenograft mouse models were utilized to evaluate the therapeutic response to the candidate compound.",
+    "zh": "異種移植",
+    "note": "字首 xeno- 源自希臘文「外來的、相異的」，結合 graft（移植），在腫瘤學論文中極常以 PDX（病人來源異種移植）的縮寫出現。"
   }
 ]

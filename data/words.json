@@ -906,5 +906,14 @@
     "example_en": "In the new lunar mantle model, partial melt segregates from the solid matrix and undergoes upward percolation through interconnected pores.",
     "zh": "滲流、滲濾",
     "note": "來自拉丁文 percolare（過濾，如煮 percolated coffee），在地球物理與水文地質學中專指液體（如岩漿或地下水）通過多孔介質微小孔隙網的緩慢滲透流動過程。"
+  },
+  {
+    "date": "2026-11-01",
+    "term": "lahar",
+    "pos": "n.",
+    "definition_en": "A destructive mudflow or debris flow made of volcanic material, ash, and water moving down the slope of a volcano.",
+    "example_en": "Torrential monsoon rains triggered massive lahars that buried downstream villages several months after the explosive eruption.",
+    "zh": "火山泥流",
+    "note": "源自印尼爪哇語中的「泥流」，因東南亞火山雨季極易發生此災害，該詞已被全球火山學界廣泛採用。"
   }
 ]

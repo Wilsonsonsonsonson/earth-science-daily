@@ -915,5 +915,14 @@
     "example_en": "Torrential monsoon rains triggered massive lahars that buried downstream villages several months after the explosive eruption.",
     "zh": "火山泥流",
     "note": "源自印尼爪哇語中的「泥流」，因東南亞火山雨季極易發生此災害，該詞已被全球火山學界廣泛採用。"
+  },
+  {
+    "date": "2026-11-02",
+    "term": "vorticity",
+    "pos": "n.",
+    "definition_en": "A measure of the local spinning or rotational motion of a fluid element in the atmosphere or ocean.",
+    "example_en": "Changes in potential vorticity are essential for understanding the development of mid-latitude cyclones.",
+    "zh": "渦度",
+    "note": "源自拉丁文 vortex（漩渦），在大氣動力學與物理海洋學中是追蹤空氣或海水旋轉與波動行為的核心物理量。"
   }
 ]

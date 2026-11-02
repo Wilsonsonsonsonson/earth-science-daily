@@ -886,5 +886,14 @@
     "example_en": "Patient-derived xenograft mouse models were utilized to evaluate the therapeutic response to the candidate compound.",
     "zh": "異種移植",
     "note": "字首 xeno- 源自希臘文「外來的、相異的」，結合 graft（移植），在腫瘤學論文中極常以 PDX（病人來源異種移植）的縮寫出現。"
+  },
+  {
+    "date": "2026-11-02",
+    "term": "ascorbate",
+    "pos": "n.",
+    "definition_en": "The ionized form of vitamin C, which acts as an essential cofactor for various enzymatic reactions including epigenetic regulation by TET enzymes.",
+    "example_en": "The ascorbate-TET axis limits excessive myelopoiesis and promotes balanced hematopoiesis during infections.",
+    "zh": "抗壞血酸",
+    "note": "即維生素 C 的離子形式，在生物學研究中常作為酵素（如 TET 雙加氧酶）的關鍵輔因子。"
   }
 ]

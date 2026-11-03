@@ -924,5 +924,14 @@
     "example_en": "Changes in potential vorticity are essential for understanding the development of mid-latitude cyclones.",
     "zh": "渦度",
     "note": "源自拉丁文 vortex（漩渦），在大氣動力學與物理海洋學中是追蹤空氣或海水旋轉與波動行為的核心物理量。"
+  },
+  {
+    "date": "2026-11-03",
+    "term": "albedo",
+    "pos": "n.",
+    "definition_en": "The proportion of incident light or radiation that is reflected by a surface.",
+    "example_en": "The melting of polar ice caps significantly reduces surface albedo, accelerating regional warming through a positive feedback loop.",
+    "zh": "反照率",
+    "note": "源自拉丁文「albus」（白色），數值介於 0 到 1 之間；新雪的反照率接近 0.9，而開闊海洋通常低於 0.1。"
   }
 ]

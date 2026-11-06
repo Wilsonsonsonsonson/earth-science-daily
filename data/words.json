@@ -933,5 +933,14 @@
     "example_en": "The melting of polar ice caps significantly reduces surface albedo, accelerating regional warming through a positive feedback loop.",
     "zh": "反照率",
     "note": "源自拉丁文「albus」（白色），數值介於 0 到 1 之間；新雪的反照率接近 0.9，而開闊海洋通常低於 0.1。"
+  },
+  {
+    "date": "2026-11-06",
+    "term": "lineament",
+    "pos": "n.",
+    "definition_en": "A linear feature on the Earth's surface, such as a fault line or a straight river valley, often revealed by satellite imagery.",
+    "example_en": "Satellite imagery analysis reveals several major lineaments that correlate with known regional strike-slip faults.",
+    "zh": "線性構造",
+    "note": "源自拉丁語 lineamentum（線條），常用於地貌學與構造地質學中，指地表呈線狀排列的特徵。"
   }
 ]

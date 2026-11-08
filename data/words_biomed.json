@@ -895,5 +895,14 @@
     "example_en": "The ascorbate-TET axis limits excessive myelopoiesis and promotes balanced hematopoiesis during infections.",
     "zh": "抗壞血酸",
     "note": "即維生素 C 的離子形式，在生物學研究中常作為酵素（如 TET 雙加氧酶）的關鍵輔因子。"
+  },
+  {
+    "date": "2026-11-08",
+    "term": "amplification",
+    "pos": "n.",
+    "definition_en": "The process of increasing the volume, intensity, or magnitude of something, such as genetic material or signals.",
+    "example_en": "The method relies on T7-based linear amplification to convert DNA into polyadenylated RNA.",
+    "zh": "放大",
+    "note": "在分子生物學中常指核酸或訊號的擴增（如 PCR 聚合酶鏈鎖反應），字根來自拉丁文的 amplus（寬廣、充裕）。"
   }
 ]

@@ -942,5 +942,14 @@
     "example_en": "Satellite imagery analysis reveals several major lineaments that correlate with known regional strike-slip faults.",
     "zh": "線性構造",
     "note": "源自拉丁語 lineamentum（線條），常用於地貌學與構造地質學中，指地表呈線狀排列的特徵。"
+  },
+  {
+    "date": "2026-11-08",
+    "term": "turbidite",
+    "pos": "n.",
+    "definition_en": "A geological deposit formed by a rapid, sediment-laden underwater current flowing down a continental slope.",
+    "example_en": "Marine sediment cores revealed thick turbidite sequences that provide evidence of prehistoric megathrust earthquakes.",
+    "zh": "濁積岩",
+    "note": "字根源自拉丁語 turbidus（混亂、混濁），常被古地震學家作為追溯海底強震與海嘯復發週期的重要依據。"
   }
 ]

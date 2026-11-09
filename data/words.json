@@ -951,5 +951,14 @@
     "example_en": "Marine sediment cores revealed thick turbidite sequences that provide evidence of prehistoric megathrust earthquakes.",
     "zh": "濁積岩",
     "note": "字根源自拉丁語 turbidus（混亂、混濁），常被古地震學家作為追溯海底強震與海嘯復發週期的重要依據。"
+  },
+  {
+    "date": "2026-11-09",
+    "term": "diapir",
+    "pos": "n.",
+    "definition_en": "A relatively buoyant geological body that pierces and rises through overlying, denser rocks or sediments.",
+    "example_en": "The seismic profile clearly reveals a salt diapir piercing through the thick sedimentary layers of the basin.",
+    "zh": "底辟",
+    "note": "源自希臘文，意指「穿透」，常用於描述岩漿或鹽層因密度較低而向上擠入上覆地層的構造。"
   }
 ]

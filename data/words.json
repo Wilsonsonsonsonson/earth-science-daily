@@ -960,5 +960,14 @@
     "example_en": "The seismic profile clearly reveals a salt diapir piercing through the thick sedimentary layers of the basin.",
     "zh": "底辟",
     "note": "源自希臘文，意指「穿透」，常用於描述岩漿或鹽層因密度較低而向上擠入上覆地層的構造。"
+  },
+  {
+    "date": "2026-11-11",
+    "term": "teleseismic",
+    "pos": "adj.",
+    "definition_en": "Relating to or measuring an earthquake at a distance greater than 3,000 kilometers (approx. 30 degrees) from the measurement station.",
+    "example_en": "The researchers utilized teleseismic P and S-wave arrivals recorded across the broadband array to reconstruct the velocity structure of the upper mantle.",
+    "zh": "遠震的",
+    "note": "源自希臘字首 tele-（遙遠，如 telephone、telescope）與 seismic（地震的）。在地震學中，震央距大於 30 度的地震波會穿入深部地函再折射回地表，是照亮深部地函的絕佳天然光源。"
   }
 ]

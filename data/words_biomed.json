@@ -913,5 +913,14 @@
     "example_en": "Neuropsychological deficits are increasingly recognized as reliable endophenotypes for psychiatric disorders such as schizophrenia.",
     "zh": "內表型",
     "note": "由 endo-（內部）與 phenotype（表型）組合而成，指介於基因與臨床症狀之間的生物標記。"
+  },
+  {
+    "date": "2026-11-12",
+    "term": "desiccation",
+    "pos": "n.",
+    "definition_en": "The process of extreme drying or the removal of moisture from something.",
+    "example_en": "Desiccation stress in the environment can trigger adaptive responses and alter the virulence profile of pathogenic bacteria.",
+    "zh": "乾燥、脫水",
+    "note": "源自拉丁語 desiccare（完全乾燥），在微生物學與植物學中常指環境缺水造成的逆境。"
   }
 ]

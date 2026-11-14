@@ -969,5 +969,14 @@
     "example_en": "The researchers utilized teleseismic P and S-wave arrivals recorded across the broadband array to reconstruct the velocity structure of the upper mantle.",
     "zh": "遠震的",
     "note": "源自希臘字首 tele-（遙遠，如 telephone、telescope）與 seismic（地震的）。在地震學中，震央距大於 30 度的地震波會穿入深部地函再折射回地表，是照亮深部地函的絕佳天然光源。"
+  },
+  {
+    "date": "2026-11-14",
+    "term": "subduction zone",
+    "pos": "n.",
+    "definition_en": "A linear region of the Earth's crust where one tectonic plate slides beneath another and sinks into the mantle.",
+    "example_en": "The Japan Trench is a major subduction zone responsible for frequent large-magnitude earthquakes and volcanic activity.",
+    "zh": "隱沒帶",
+    "note": "由 sub-（在下方）與 duction（引導、帶領）組成，指板塊被帶往地函之處。"
   }
 ]

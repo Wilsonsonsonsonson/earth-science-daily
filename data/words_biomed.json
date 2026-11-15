@@ -922,5 +922,14 @@
     "example_en": "Desiccation stress in the environment can trigger adaptive responses and alter the virulence profile of pathogenic bacteria.",
     "zh": "乾燥、脫水",
     "note": "源自拉丁語 desiccare（完全乾燥），在微生物學與植物學中常指環境缺水造成的逆境。"
+  },
+  {
+    "date": "2026-11-15",
+    "term": "reprogramming",
+    "pos": "n.",
+    "definition_en": "The alteration or resetting of cellular pathways, gene expression patterns, or metabolic states in response to internal or external stimuli.",
+    "example_en": "Inflammatory metabolic reprogramming alters the cellular environment and drives tissue damage during immune-mediated adverse events.",
+    "zh": "重編程",
+    "note": "從幹細胞的「分化重編程」到癌症與免疫學中的「代謝重編程」，這個詞在現代生物學中泛指細胞系統性功能的動態改寫。"
   }
 ]

@@ -931,5 +931,14 @@
     "example_en": "Inflammatory metabolic reprogramming alters the cellular environment and drives tissue damage during immune-mediated adverse events.",
     "zh": "重編程",
     "note": "從幹細胞的「分化重編程」到癌症與免疫學中的「代謝重編程」，這個詞在現代生物學中泛指細胞系統性功能的動態改寫。"
+  },
+  {
+    "date": "2026-11-16",
+    "term": "discordance",
+    "pos": "n.",
+    "definition_en": "A lack of agreement or harmony between two or more things that are expected to be similar.",
+    "example_en": "The clinical study evaluated the metabolic risks associated with apoB and LDL-C discordance.",
+    "zh": "不一致",
+    "note": "常用於描述兩種臨床檢驗數值或基因型與表現型不相符的情況。"
   }
 ]

@@ -940,5 +940,14 @@
     "example_en": "The clinical study evaluated the metabolic risks associated with apoB and LDL-C discordance.",
     "zh": "不一致",
     "note": "常用於描述兩種臨床檢驗數值或基因型與表現型不相符的情況。"
+  },
+  {
+    "date": "2026-11-19",
+    "term": "chemokine",
+    "pos": "n.",
+    "definition_en": "A type of small cytokine secreted by cells that induces directed chemotaxis in nearby responsive cells, playing a crucial role in immune responses.",
+    "example_en": "The release of specific chemokines attracts neutrophils and other immune cells to the site of tissue inflammation.",
+    "zh": "趨化激素",
+    "note": "字首 chemo-（化學）加上 kine（運動），字面意思是「引起化學定向移動的激素」，是免疫細胞在體內導航的GPS。"
   }
 ]

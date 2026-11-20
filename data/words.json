@@ -978,5 +978,14 @@
     "example_en": "The Japan Trench is a major subduction zone responsible for frequent large-magnitude earthquakes and volcanic activity.",
     "zh": "隱沒帶",
     "note": "由 sub-（在下方）與 duction（引導、帶領）組成，指板塊被帶往地函之處。"
+  },
+  {
+    "date": "2026-11-20",
+    "term": "geoid",
+    "pos": "n.",
+    "definition_en": "The hypothetical surface of the Earth that represents the shape sea level would take under the sole influence of gravity and rotation, extending through the continents.",
+    "example_en": "Satellite altimetry data are widely used to map short-wavelength variations in the marine geoid.",
+    "zh": "大地水準面",
+    "note": "源自希臘字根「geo-」（地球）與「-oid」（形狀），本質上是一個地球重力場的等位能面。"
   }
 ]

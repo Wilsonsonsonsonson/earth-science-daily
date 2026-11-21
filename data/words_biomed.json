@@ -958,5 +958,14 @@
     "example_en": "Proprioception enables coordinated motor control by constantly sending feedback from muscle spindles and joint receptors to the brain.",
     "zh": "本體感覺",
     "note": "字首源自拉丁文 proprius（自己的），即「感知自身肢體空間位置的能力」，與 interoception（內受感覺）及 nociception（傷害性感受）構成神經感覺系統的核心分類。"
+  },
+  {
+    "date": "2026-11-21",
+    "term": "connectome",
+    "pos": "n.",
+    "definition_en": "A comprehensive map of neural connections in the brain, often referred to as the wiring diagram of neural tissue.",
+    "example_en": "The researchers utilized the newly mapped connectome of the fruit fly to construct a functional virtual model of the insect.",
+    "zh": "神經連接圖",
+    "note": "由 connect（連接）加上字尾 -ome（體，如基因體 genome）所組成，用來泛指生物體內所有神經元與突觸的完整連接藍圖。"
   }
 ]

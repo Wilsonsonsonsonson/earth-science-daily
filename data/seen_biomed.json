@@ -1,16 +1,4 @@
 {
-  "https://www.biorxiv.org/content/10.64898/2026.11.05.764496v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.07.764371v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.765007v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.764689v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.05.764291v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.756111v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.763903v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.762216v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.764749v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.06.764938v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.05.764335v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
-  "https://www.biorxiv.org/content/10.64898/2026.11.05.764593v1?rss=1": "2026-11-08T02:41:38.355215+00:00",
   "https://www.nature.com/articles/s41591-026-04787-8": "2026-11-09T03:06:44.843900+00:00",
   "https://www.nature.com/articles/s41591-026-04762-3": "2026-11-09T03:06:44.843900+00:00",
   "https://www.medrxiv.org/content/10.64898/2026.11.06.26367415v1?rss=1": "2026-11-09T03:06:44.843900+00:00",
@@ -472,5 +460,13 @@
   "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1005299": "2026-11-21T06:09:23.088588+00:00",
   "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3004129": "2026-11-21T06:09:23.088588+00:00",
   "https://www.science.org/content/article/scientists-control-virtual-fruit-fly-map-insect-s-brain": "2026-11-21T06:09:23.088588+00:00",
-  "https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer": "2026-11-21T06:09:23.088588+00:00"
+  "https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer": "2026-11-21T06:09:23.088588+00:00",
+  "https://www.nature.com/articles/d41586-026-03803-8": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.18.767647v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.20.768204v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.20.768213v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.15.766608v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.20.768104v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.20.767967v1?rss=1": "2026-11-22T03:27:22.458316+00:00",
+  "https://www.biorxiv.org/content/10.64898/2026.11.20.768214v1?rss=1": "2026-11-22T03:27:22.458316+00:00"
 }

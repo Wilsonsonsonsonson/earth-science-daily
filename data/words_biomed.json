@@ -976,5 +976,14 @@
     "example_en": "The activation of the minimal eukaryotic mutasome promotes spontaneous mutagenesis during severe replication stress.",
     "zh": "突變體製",
     "note": "由 mutation（突變）與 -some（體，複合體）組合而成，專指參與跨損傷合成並會提高突變率的蛋白質複合體。"
+  },
+  {
+    "date": "2026-11-23",
+    "term": "degron",
+    "pos": "n.",
+    "definition_en": "A specific motif or portion of a protein that targets it for cellular degradation.",
+    "example_en": "Guided by DCAF10's endogenous recognition of N-terminal acetyl-glycine degrons, researchers developed a novel targeted protein degradation strategy.",
+    "zh": "降解基序",
+    "note": "由 degradation（降解）與 -on（字尾，表單位）組合而成，指蛋白質上負責向細胞發出「把我分解掉」訊號的特定胺基酸序列片段。"
   }
 ]

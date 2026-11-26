@@ -985,5 +985,13 @@
     "example_en": "Guided by DCAF10's endogenous recognition of N-terminal acetyl-glycine degrons, researchers developed a novel targeted protein degradation strategy.",
     "zh": "降解基序",
     "note": "由 degradation（降解）與 -on（字尾，表單位）組合而成，指蛋白質上負責向細胞發出「把我分解掉」訊號的特定胺基酸序列片段。"
+  },
+  {
+    "date": "2026-11-26",
+    "term": "transcytosis",
+    "pos": "n.",
+    "definition_en": "The biological process by which macromolecules are transported across the interior of a cell within membrane-bound vesicles.",
+    "zh": "胞吞轉運作用（穿胞作用）",
+    "note": "由 trans-（穿越）與 -cytosis（細胞過程）組成，常用於描述大分子如何穿越血管內皮細胞進入組織。"
   }
 ]

@@ -987,5 +987,14 @@
     "example_en": "Satellite altimetry data are widely used to map short-wavelength variations in the marine geoid.",
     "zh": "大地水準面",
     "note": "源自希臘字根「geo-」（地球）與「-oid」（形狀），本質上是一個地球重力場的等位能面。"
+  },
+  {
+    "date": "2026-11-26",
+    "term": "permafrost",
+    "pos": "n.",
+    "definition_en": "Ground that remains completely frozen at or below 0°C (32°F) for at least two consecutive years.",
+    "example_en": "Accelerated thawing of mountain permafrost weakens structural integrity and alters alpine hydrological regimes.",
+    "zh": "永凍土、永久凍土",
+    "note": "由 permanent（永久的）與 frost（結霜、冰凍）組合而成，定義上以持續冰凍「滿兩年」為門檻，是極區與高山水文及地質災害研究的關鍵詞彙。"
   }
 ]

@@ -993,5 +993,14 @@
     "definition_en": "The biological process by which macromolecules are transported across the interior of a cell within membrane-bound vesicles.",
     "zh": "胞吞轉運作用（穿胞作用）",
     "note": "由 trans-（穿越）與 -cytosis（細胞過程）組成，常用於描述大分子如何穿越血管內皮細胞進入組織。"
+  },
+  {
+    "date": "2026-11-27",
+    "term": "aneuploidy",
+    "pos": "n.",
+    "definition_en": "A condition in which a cell has an abnormal number of chromosomes, such as having one extra or missing one.",
+    "example_en": "Age-related degradation of cohesin complexes in mammalian oocytes frequently leads to meiotic errors and subsequent aneuploidy.",
+    "zh": "非整倍體",
+    "note": "源自希臘文 an-（非、無）+ eu-（真、正常）+ ploid（倍數），字面意思就是「不屬於正常整數倍的染色體狀態」，如唐氏症（三染色體 21）即為經典案例。"
   }
 ]

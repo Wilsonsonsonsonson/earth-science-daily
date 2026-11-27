@@ -996,5 +996,14 @@
     "example_en": "Accelerated thawing of mountain permafrost weakens structural integrity and alters alpine hydrological regimes.",
     "zh": "永凍土、永久凍土",
     "note": "由 permanent（永久的）與 frost（結霜、冰凍）組合而成，定義上以持續冰凍「滿兩年」為門檻，是極區與高山水文及地質災害研究的關鍵詞彙。"
+  },
+  {
+    "date": "2026-11-27",
+    "term": "polymorph",
+    "pos": "n.",
+    "definition_en": "A mineral that shares the exact same chemical composition with another mineral but possesses a different internal crystal structure.",
+    "example_en": "High-pressure experiments revealed that MgSiO4H2 can crystallize into diverse polymorphs across the transition zone and lower mantle.",
+    "zh": "多形體／同質多象",
+    "note": "源自希臘文 poly-（多重）與 morphē（形狀），最著名的例子就是同為純碳組成的石墨與鑽石。"
   }
 ]

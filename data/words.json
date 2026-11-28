@@ -1005,5 +1005,14 @@
     "example_en": "High-pressure experiments revealed that MgSiO4H2 can crystallize into diverse polymorphs across the transition zone and lower mantle.",
     "zh": "多形體／同質多象",
     "note": "源自希臘文 poly-（多重）與 morphē（形狀），最著名的例子就是同為純碳組成的石墨與鑽石。"
+  },
+  {
+    "date": "2026-11-28",
+    "term": "fabric",
+    "pos": "n.",
+    "definition_en": "The spatial arrangement and preferred structural or crystallographic orientation of mineral grains and components in a rock or planetary core.",
+    "example_en": "Viscous flow within the solid inner core aligns iron crystals to produce a distinct seismic fabric.",
+    "zh": "織構",
+    "note": "源自拉丁語「fabrica」（工藝、結構），在地球科學中形容礦物晶體如布料經緯般定向排列的內部構造。"
   }
 ]

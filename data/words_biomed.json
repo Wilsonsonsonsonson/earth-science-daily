@@ -1002,5 +1002,14 @@
     "example_en": "Age-related degradation of cohesin complexes in mammalian oocytes frequently leads to meiotic errors and subsequent aneuploidy.",
     "zh": "非整倍體",
     "note": "源自希臘文 an-（非、無）+ eu-（真、正常）+ ploid（倍數），字面意思就是「不屬於正常整數倍的染色體狀態」，如唐氏症（三染色體 21）即為經典案例。"
+  },
+  {
+    "date": "2026-11-28",
+    "term": "regimen",
+    "pos": "n.",
+    "definition_en": "A prescribed course of medical treatment, diet, or exercise designed to improve or maintain health.",
+    "example_en": "The novel multi-drug regimen significantly shortened the duration required to clear tuberculosis bacteria from sputum.",
+    "zh": "治療方案／用藥處方",
+    "note": "源自拉丁語「regimen」（指導、統治），在醫學臨床試驗中特指針對特定疾病所設計的藥物組合、劑量與投藥時程規劃。"
   }
 ]
